@@ -1,0 +1,1041 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="De uitwisselspecificatie voor de Data Delen over Armoede en Schulden (DDAS)">
+      
+      
+        <meta name="author" content="Arjen Brienen">
+      
+      
+        <link rel="canonical" href="https://ddas-api.nl/latest/uitwisselspecificatie/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Hoofdlijnen_Model%20Vroegsignalering/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>Uitwisselspecificatie - Data Delen Armoede en Schulden (DDAS): Vroegsignalering</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#uitwisselmodel" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Data Delen Armoede en Schulden (DDAS): Vroegsignalering" class="md-header__button md-logo" aria-label="Data Delen Armoede en Schulden (DDAS): Vroegsignalering" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Delen Armoede en Schulden (DDAS): Vroegsignalering
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Uitwisselspecificatie
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/VNG-Realisatie/ddas" title="Ga naar repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Data Delen Armoede en Schulden (DDAS): Vroegsignalering" class="md-nav__button md-logo" aria-label="Data Delen Armoede en Schulden (DDAS): Vroegsignalering" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Data Delen Armoede en Schulden (DDAS): Vroegsignalering
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/VNG-Realisatie/ddas" title="Ga naar repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Uitwisselspecificatie
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Uitwisselspecificatie
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inleiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inleiding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uitwisselspecificatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uitwisselspecificatie
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voorbeelden" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voorbeelden
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voorbeelden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enkelvoudig-voorbeeld" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enkelvoudig voorbeeld
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Informatiemodel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Informatiemodel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hoofdlijnen_Model%20Vroegsignalering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hoofdlijnen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../definities/Detail_Model%20Vroegsignalering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detailspecificatie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VraagEnAntwoord/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vraag en antwoord
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Achtergrond/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Achtergrond DDAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inleiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inleiding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uitwisselspecificatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uitwisselspecificatie
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voorbeelden" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voorbeelden
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voorbeelden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enkelvoudig-voorbeeld" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enkelvoudig voorbeeld
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="uitwisselmodel">Uitwisselmodel</h1>
+<h2 id="inleiding">Inleiding</h2>
+<p>De uitwisselspecificatie specificeert welke gegevens en in welke vorm de gegevens aan het CBS aangeleverd dienen te worden. Hiertoe is een specificatie in <a href="https://json-schema.org">JSON-schema</a> gespecificeerd. De inhoud van deze JSON-schema is afgeleid van het <a href="../Hoofdlijnen_Model%20Vroegsignalering/">informatiemodel Vroegsignalering</a>. </p>
+<p>De uitwisselspecificatie kent de volgende opbouw: </p>
+<ol>
+<li>Op het hoofdniveau is het Uitwisselmodel gedefinieerd. Dit met een aantal attributen die informatie geven over de levering: start- en einddatum van de levering en de aanleverdattum en tijd;</li>
+<li>Op het tweede niveau zijn 1 of meer leveringen gedefinieerd. Iedere levering bevat steeds de vroegsignalen en de vroegsignaalzaken van precies één gemeente.</li>
+<li>Op het derde niveau worden zowel de vroegsignalen als de vroegsignaalzaken uitgevraagd. </li>
+<li>Vroegsignalen hebben een ID waarmee ze binnen de levering te identificeren zijn.</li>
+<li>In de vroegsignaalzaken wordt verwezen naar de vroegsignalen via een lijst ID's naar vroegsignalen</li>
+</ol>
+<p>Aan het eind van de specficatie staan de gebruikte datatypes en waardenlijsten (enumeraties) die worden gebruikt opgenomen. </p>
+<h2 id="encoding">Encoding</h2>
+<p>Alle bestanden dienen te worden aangeleverd in <a href="https://www.forumstandaardisatie.nl/open-standaarden/utf-8">UTF-8-formaat</a>. </p>
+<h2 id="uitwisselspecificatie">Uitwisselspecificatie</h2>
+<p>Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.1/json_schema_Uitwisselmodel.json">downloadversie</a> beschikbaar.</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
+    &quot;$id&quot;: &quot;https://raw.githubusercontent.com/VNG-Realisatie/ddas/main//json_schema_Uitwisselmodel.json&quot;,
+    &quot;title&quot;: &quot;Uitwisselmodel&quot;,
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;description&quot;: &quot;Het uitwisselmodel is een model dat de gegevens bevat die uitgewisseld worden tussen de verschillende partijen.&quot;,
+    &quot;properties&quot;: {
+        &quot;startdatumLevering&quot;: {
+            &quot;description&quot;: &quot;De begindatum van de periode waarover gerapporteerd wordt binnen de levering&quot;,
+            &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+        },
+        &quot;einddatumLevering&quot;: {
+            &quot;description&quot;: &quot;De einddatum van de periode waarover gerapporteerd wordt binnen de levering&quot;,
+            &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+        },
+        &quot;aanleverdatumEnTijd&quot;: {
+            &quot;description&quot;: &quot;De datum en tijd waarop de gegevens zijn aangeleverd.&quot;,
+            &quot;$ref&quot;: &quot;#/$defs/datum-tijd&quot;
+        },
+        &quot;codeGegevensleverancier&quot;: {
+            &quot;description&quot;: &quot;Code van de gegevensleverancier (softwareleverancier of hosting partij) die de gegevens voor 1 of meer partijen levert.&quot;,
+            &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;leveringen&quot;: {
+            &quot;type&quot;: &quot;array&quot;,
+            &quot;items&quot;: {
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;description&quot;: &quot;Een levering bevat steeds van \u00e9\u00e9n gemeente de verzameling van vroegsignalen en vroegsignaalzaken die over een bepaalde periode worden aangeleverd.&quot;,
+                &quot;properties&quot;: {
+                    &quot;teller&quot;: {
+                        &quot;description&quot;: &quot;Teller van het aantal leveringen dat in het bestand is opgenomen.&quot;,
+                        &quot;type&quot;: &quot;integer&quot;
+                    },
+                    &quot;gemeentecode&quot;: {
+                        &quot;description&quot;: &quot;Code van de gemeente names wie de levering is gedaan.&quot;,
+                        &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;aanleverende_organisatie&quot;: {
+                        &quot;type&quot;: &quot;object&quot;,
+                        &quot;properties&quot;: {
+                            &quot;naam&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;kvk-nummer&quot;: {
+                                &quot;type&quot;: &quot;string&quot;
+                            },
+                            &quot;contactpersoonen&quot;: {
+                                &quot;type&quot;: &quot;array&quot;,
+                                &quot;items&quot;: {
+                                    &quot;type&quot;: &quot;object&quot;,
+                                    &quot;description&quot;: &quot;Contactpersoon van een organisatie&quot;,
+                                    &quot;properties&quot;: {
+                                        &quot;naam&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;telefoonnummer&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;email&quot;: {
+                                            &quot;$ref&quot;: &quot;#/$defs/email&quot;
+                                        },
+                                        &quot;functietitel&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        }
+                                    }
+                                },
+                                &quot;minItems&quot;: 1,
+                                &quot;uniqueItems&quot;: true
+                            }
+                        }
+                    },
+                    &quot;vroegsignalen&quot;: {
+                        &quot;type&quot;: &quot;array&quot;,
+                        &quot;items&quot;: {
+                            &quot;type&quot;: &quot;object&quot;,
+                            &quot;description&quot;: &quot;Een Vroegsignaal is een bericht dat door een signaalpartner (zoals een zorgverzekeraar, energieleverancier of verhuurder) aan de gemeente wordt verstrekt, met als doel de gemeente te informeren over een mogelijk beginnende schuldsituatie van een inwoner. Het vroegsignaal vormt het startpunt van het gemeentelijk proces van vroegsignalering van schulden.\n\nDe juridische grondslag voor het ontvangen en verwerken van vroegsignalen is vastgelegd in artikel 2.2.1 van de Wet gemeentelijke schuldhulpverlening (Wgs). Deze wet verplicht gemeenten om vroegtijdig signalen van betalingsachterstanden te ontvangen en op basis daarvan inwoners passende hulp aan te bieden.\n&quot;,
+                            &quot;properties&quot;: {
+                                &quot;ID&quot;: {
+                                    &quot;type&quot;: &quot;string&quot;
+                                },
+                                &quot;crisissignaal&quot;: {
+                                    &quot;description&quot;: &quot;Betreft het een crisis?\n&quot;,
+                                    &quot;type&quot;: &quot;boolean&quot;
+                                },
+                                &quot;warmeOverdracht&quot;: {
+                                    &quot;description&quot;: &quot;Er is al contact met persoon. Betreft verzoek deze persoon op te pakken in het kader van vroegsignalering. &quot;,
+                                    &quot;type&quot;: &quot;boolean&quot;
+                                },
+                                &quot;bedrag&quot;: {
+                                    &quot;$ref&quot;: &quot;#/$defs/bedrag&quot;
+                                },
+                                &quot;ontstaansdatum&quot;: {
+                                    &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+                                },
+                                &quot;signaaldatum&quot;: {
+                                    &quot;description&quot;: &quot;Datum waarop de signaalpartner het signaal heeft verstuurd.&quot;,
+                                    &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+                                },
+                                &quot;status&quot;: {
+                                    &quot;$ref&quot;: &quot;#/$defs/EnumSignaalstatus&quot;
+                                },
+                                &quot;signaalpartner&quot;: {
+                                    &quot;type&quot;: &quot;object&quot;,
+                                    &quot;description&quot;: &quot;Een signaalpartner is een organisatie die op grond van artikel 2.2.1 van de Wet gemeentelijke schuldhulpverlening (Wgs) bevoegd is om signalen van betalingsachterstanden door te geven aan de gemeente met het doel vroegtijdige hulpverlening bij schulden mogelijk te maken. Signaalpartners zijn dienstverleners met een maatschappelijk belang, zoals zorgverzekeraars, energieleveranciers, drinkwaterbedrijven en woningverhuurders.\n\nEen signaalpartner verstrekt een vroegsignaal aan de gemeente wanneer bij een klant of huurder sprake is van een betalingsachterstand die voldoet aan de wettelijke en/of contractuele criteria voor signalering.\n&quot;,
+                                    &quot;properties&quot;: {
+                                        &quot;type&quot;: {
+                                            &quot;$ref&quot;: &quot;#/$defs/EnumSignaalpartner&quot;
+                                        }
+                                    }
+                                },
+                                &quot;client&quot;: {
+                                    &quot;type&quot;: &quot;object&quot;,
+                                    &quot;description&quot;: &quot;Een ingeschreven persoon die gebruik maakt van producten en diensten van de gemeente.&quot;,
+                                    &quot;properties&quot;: {
+                                        &quot;Burgerservicenummer&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;Voorletters&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;Voorvoegsel&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;Achternaam&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;Geboortedatum&quot;: {
+                                            &quot;description&quot;: &quot;De datum waarop de persoon is geboren.&quot;,
+                                            &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+                                        },
+                                        &quot;Straatnaam&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;Postcode&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;Huisnummer&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;Huisnummertoevoeging&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        },
+                                        &quot;Plaatsnaam&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
+                                        }
+                                    }
+                                }
+                            },
+                            &quot;required&quot;: [
+                                &quot;client&quot;,
+                                &quot;ID&quot;,
+                                &quot;signaalpartner&quot;
+                            ],
+                            &quot;additionalProperties&quot;: false
+                        }
+                    },
+                    &quot;vroegsignaalzaken&quot;: {
+                        &quot;type&quot;: &quot;array&quot;,
+                        &quot;items&quot;: {
+                            &quot;type&quot;: &quot;object&quot;,
+                            &quot;description&quot;: &quot;Een Vroegsignaalzaak is procesmatige eenheid binnen de gemeentelijke organisatie waarin de behandeling van &amp;#233;&amp;#233;n of meerdere vroegsigna(a)len is/zijn ondergebracht. De vroegsignaalzaak omvat alle handelingen die de gemeente verricht naar aanleiding van het ontvangen vroegsignaal, zoals het vastleggen van het signaal, het uitvoeren van een eerste beoordeling, het leggen van contact met de inwoner, het registreren van contactpogingen en -resultaten, en het eventueel toeleiden naar schuldhulpverlening of andere passende ondersteuning.&quot;,
+                            &quot;properties&quot;: {
+                                &quot;resultaat&quot;: {
+                                    &quot;$ref&quot;: &quot;#/$defs/EnumEindresultaat&quot;
+                                },
+                                &quot;matchingsdatum&quot;: {
+                                    &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+                                },
+                                &quot;startdatum_matchtingperiode&quot;: {
+                                    &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+                                },
+                                &quot;datum_opgepakt&quot;: {
+                                    &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+                                },
+                                &quot;einddatum_matchingperiode&quot;: {
+                                    &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+                                },
+                                &quot;vroegsignalen&quot;: {
+                                    &quot;type&quot;: &quot;array&quot;,
+                                    &quot;items&quot;: {
+                                        &quot;type&quot;: &quot;object&quot;,
+                                        &quot;description&quot;: &quot;Referentie naar het vroegsignaal dat hoort bij de vroegsignaalzaak. &quot;,
+                                        &quot;properties&quot;: {
+                                            &quot;ID&quot;: {
+                                                &quot;type&quot;: &quot;string&quot;
+                                            }
+                                        },
+                                        &quot;required&quot;: [
+                                            &quot;ID&quot;
+                                        ],
+                                        &quot;additionalProperties&quot;: false
+                                    },
+                                    &quot;minItems&quot;: 1,
+                                    &quot;uniqueItems&quot;: true
+                                },
+                                &quot;contactpogingen&quot;: {
+                                    &quot;type&quot;: &quot;array&quot;,
+                                    &quot;items&quot;: {
+                                        &quot;type&quot;: &quot;object&quot;,
+                                        &quot;description&quot;: &quot;Een Contactpoging is de actie die de gemeente onderneemt om in contact te treden met de inwoner naar aanleiding van een vroegsignaal. Een contactpoging maakt onderdeel uit van de vroegsignaalzaak en kan verschillende vormen aannemen, zoals een telefoongesprek, huisbezoek, brief of digitaal bericht. Van elke contactpoging wordt vastgelegd wanneer deze is gedaan, op welke wijze, met welk doel en wat het resultaat was (bijvoorbeeld: geen gehoor, gesprek gevoerd, brief retour ontvangen).\n&quot;,
+                                        &quot;properties&quot;: {
+                                            &quot;soort&quot;: {
+                                                &quot;$ref&quot;: &quot;#/$defs/EnumContactsoort&quot;
+                                            },
+                                            &quot;bereikt&quot;: {
+                                                &quot;description&quot;: &quot;Er is succesvol contact met de client gemaakt.&quot;,
+                                                &quot;type&quot;: &quot;boolean&quot;
+                                            },
+                                            &quot;datum&quot;: {
+                                                &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+                                            },
+                                            &quot;dagdeel&quot;: {
+                                                &quot;description&quot;: &quot;Ochtend, middag of avond&quot;,
+                                                &quot;$ref&quot;: &quot;#/$defs/EnumDagdeel&quot;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                &quot;required&quot;: [
+                    &quot;teller&quot;,
+                    &quot;gemeentecode&quot;,
+                    &quot;aanleverende_organisatie&quot;
+                ],
+                &quot;additionalProperties&quot;: false
+            },
+            &quot;minItems&quot;: 1,
+            &quot;uniqueItems&quot;: true
+        }
+    },
+    &quot;required&quot;: [
+        &quot;codeGegevensleverancier&quot;,
+        &quot;startdatumLevering&quot;,
+        &quot;aanleverdatumEnTijd&quot;,
+        &quot;einddatumLevering&quot;
+    ],
+    &quot;additionalProperties&quot;: false,
+    &quot;$defs&quot;: {
+        &quot;datum&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;format&quot;: &quot;date&quot;,
+            &quot;description&quot;: &quot;Een datum in het formaat YYYY-MM-DD.&quot;
+        },
+        &quot;email&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;format&quot;: &quot;email&quot;,
+            &quot;description&quot;: &quot;Een emailadres.&quot;
+        },
+        &quot;tijd&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;format&quot;: &quot;time&quot;,
+            &quot;description&quot;: &quot;De tijd in het formaat HH:MM:SS (ISO 8601).&quot;
+        },
+        &quot;datum-tijd&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;format&quot;: &quot;date-time&quot;,
+            &quot;description&quot;: &quot;Datum en tijd in het formaat YYYY-MM-DDTHH:MM:SSZ (ISO 8601).&quot;
+        },
+        &quot;bedrag&quot;: {
+            &quot;type&quot;: &quot;integer&quot;,
+            &quot;description&quot;: &quot;Een geldbedrag in hele euros nauwkweurig.&quot;
+        },
+        &quot;EnumDagdeel&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Ochtend&quot;,
+                &quot;Middag&quot;,
+                &quot;Avond&quot;
+            ]
+        },
+        &quot;EnumContactsoort&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
+            &quot;enum&quot;: [
+                &quot;Mail&quot;,
+                &quot;Brief&quot;,
+                &quot;SMS/Whatsapp&quot;,
+                &quot;Telefoon&quot;,
+                &quot;Huisbezoek&quot;,
+                &quot;Kaartje&quot;,
+                &quot;Overige&quot;
+            ]
+        },
+        &quot;EnumSignaalpartner&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met de soorten te onderscheiden Signaalpartners.&quot;,
+            &quot;enum&quot;: [
+                &quot;Energie&quot;,
+                &quot;Huur&quot;,
+                &quot;Hypotheek&quot;,
+                &quot;CAK Zorgverzekeringen&quot;,
+                &quot;Zorg&quot;,
+                &quot;Water&quot;,
+                &quot;DUO&quot;,
+                &quot;Belastingdienst&quot;,
+                &quot;CAK Eigen bijdrage&quot;,
+                &quot;Overige&quot;,
+                &quot;Dienst Toeslagen&quot;
+            ]
+        },
+        &quot;EnumSignaalstatus&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Nog niet opgepakt&quot;,
+                &quot;Onterecht signaal&quot;,
+                &quot;Overleden&quot;,
+                &quot;Woont niet in gemeente&quot;,
+                &quot;Herhaalde melding&quot;,
+                &quot;Niet opgepakt&quot;,
+                &quot;Opgepakt&quot;,
+                &quot;Woont op een ander adres binnen gemeente&quot;
+            ]
+        },
+        &quot;EnumEindresultaat&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
+            &quot;enum&quot;: [
+                &quot;Niet opgepakt: inwoner wil geen contact&quot;,
+                &quot;Niet opgepakt: geen capaciteit&quot;,
+                &quot;Niet opgepakt&quot;,
+                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
+                &quot;Geen contact (meer) kunnen krijgen&quot;,
+                &quot;Inwoner wil geen hulp&quot;,
+                &quot;Inwoner probeert het zelf op te lossen&quot;,
+                &quot;Inwoner heeft betaald/betalingsregeling getroffen voor oppakken melding&quot;,
+                &quot;Inwoner heeft zelf betaald/betalingsregeling getroffen na oppakken melding&quot;,
+                &quot;(Budget)advies en/of quick fix&quot;,
+                &quot;Verwijzing financieel&quot;,
+                &quot;Voorzien van informatie&quot;,
+                &quot;Niet opgepakt: BRP-uitsluiting&quot;,
+                &quot;Verwijzing niet-financieel&quot;,
+                &quot;Inwoner heeft al een ander lopend traject&quot;
+            ]
+        }
+    }
+}
+</code></pre></div>
+<h2 id="voorbeelden">Voorbeelden</h2>
+<h3 id="enkelvoudig-voorbeeld">Enkelvoudig voorbeeld</h3>
+<p>Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.1/enkelvoudigVoorbeeld.json">downloaden</a>.</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;startdatumLevering&quot;: &quot;2025-01-01&quot;,
+  &quot;einddatumLevering&quot;: &quot;2025-01-31&quot;,
+  &quot;aanleverdatumEnTijd&quot;: &quot;2025-07-07T14:23:51.683423&quot;,
+  &quot;codeGegevensleverancier&quot;: &quot;ABC-123&quot;,
+  &quot;vroegsignalen&quot;: [
+    {
+      &quot;ID&quot;: &quot;VS001&quot;,
+      &quot;crisissignaal&quot;: false,
+      &quot;warmeOverdracht&quot;: true,
+      &quot;bedrag&quot;: 340,
+      &quot;ontstaansdatum&quot;: &quot;2025-01-10&quot;,
+      &quot;signaaldatum&quot;: &quot;2025-01-12&quot;,
+      &quot;status&quot;: &quot;Opgepakt&quot;,
+      &quot;signaalpartner&quot;: {
+        &quot;type&quot;: &quot;Energie&quot;,
+        &quot;Organisatienaam&quot;: &quot;Energiebedrijf X&quot;
+      },
+      &quot;client&quot;: {
+        &quot;Burgerservicenummer&quot;: &quot;123456789&quot;,
+        &quot;Voorletters&quot;: &quot;A.B.&quot;,
+        &quot;Achternaam&quot;: &quot;Jansen&quot;,
+        &quot;Geboortedatum&quot;: &quot;1980-07-15&quot;,
+        &quot;Straatnaam&quot;: &quot;Lindelaan&quot;,
+        &quot;Postcode&quot;: &quot;1234AB&quot;,
+        &quot;Huisnummer&quot;: &quot;10&quot;,
+        &quot;Huisnummertoevoeging&quot;: &quot;A&quot;,
+        &quot;Plaatsnaam&quot;: &quot;Groningen&quot;
+      }
+    }
+  ],
+  &quot;vroegsignaalzaken&quot;: [
+    {
+      &quot;resultaat&quot;: &quot;Inwoner wil geen hulp&quot;,
+      &quot;matchingsdatum&quot;: &quot;2025-01-13&quot;,
+      &quot;startdatum_matchtingperiode&quot;: &quot;2025-01-13&quot;,
+      &quot;datum_opgepakt&quot;: &quot;2025-01-15&quot;,
+      &quot;einddatum_matchingperiode&quot;: &quot;2025-01-20&quot;,
+      &quot;gemeentecode&quot;: &quot;GM0010&quot;,
+      &quot;vroegsignalen&quot;: [
+        {
+          &quot;ID&quot;: &quot;VS001&quot;
+        }
+      ],
+      &quot;contactpogingen&quot;: [
+        {
+          &quot;soort&quot;: &quot;Telefoon&quot;,
+          &quot;bereikt&quot;: false,
+          &quot;datum&quot;: &quot;2025-01-14&quot;,
+          &quot;dagdeel&quot;: &quot;Middag&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
