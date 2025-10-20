@@ -2,8 +2,8 @@ site_name: "Data Delen Armoede en Schulden (DDAS): Vroegsignalering"
 site_description: De uitwisselspecificatie voor de Data Delen over Armoede en Schulden (DDAS)
 site_author: Arjen Brienen
 site_dir: site/vroegsignalering
-site_url: https://ddas-api.nl
-repo_url: https://github.com/VNG-Realisatie/ddas
+site_url: https://brienen.github.io/ddas-vroegsignalering/
+repo_url: https://github.com/brienen/ddas-vroegsignalering
 repo_name: GitHub
 theme:
   language: nl # (1)!
