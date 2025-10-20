@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.1/json_schema_Uitwisselmodel.json",
+    "$id": "https://raw.githubusercontent.com/VNG-Realisatie/ddas/main//json_schema_Uitwisselmodel.json",
     "title": "Uitwisselmodel",
     "type": "object",
     "description": "Het uitwisselmodel is een model dat de gegevens bevat die uitgewisseld worden tussen de verschillende partijen.",
@@ -105,9 +105,6 @@
                                     "properties": {
                                         "type": {
                                             "$ref": "#/$defs/EnumSignaalpartner"
-                                        },
-                                        "Organisatienaam": {
-                                            "type": "string"
                                         }
                                     }
                                 },
@@ -150,9 +147,9 @@
                                 }
                             },
                             "required": [
-                                "signaalpartner",
                                 "client",
-                                "ID"
+                                "ID",
+                                "signaalpartner"
                             ],
                             "additionalProperties": false
                         }
@@ -224,9 +221,9 @@
                     }
                 },
                 "required": [
-                    "aanleverende_organisatie",
+                    "teller",
                     "gemeentecode",
-                    "teller"
+                    "aanleverende_organisatie"
                 ],
                 "additionalProperties": false
             },
@@ -235,10 +232,10 @@
         }
     },
     "required": [
-        "startdatumLevering",
         "codeGegevensleverancier",
-        "einddatumLevering",
-        "aanleverdatumEnTijd"
+        "startdatumLevering",
+        "aanleverdatumEnTijd",
+        "einddatumLevering"
     ],
     "additionalProperties": false,
     "$defs": {
@@ -274,6 +271,19 @@
                 "Avond"
             ]
         },
+        "EnumContactsoort": {
+            "type": "string",
+            "description": "Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.",
+            "enum": [
+                "Mail",
+                "Brief",
+                "SMS/Whatsapp",
+                "Telefoon",
+                "Huisbezoek",
+                "Kaartje",
+                "Overige"
+            ]
+        },
         "EnumSignaalpartner": {
             "type": "string",
             "description": "Enumeratie met de soorten te onderscheiden Signaalpartners.",
@@ -289,19 +299,6 @@
                 "CAK Eigen bijdrage",
                 "Overige",
                 "Dienst Toeslagen"
-            ]
-        },
-        "EnumContactsoort": {
-            "type": "string",
-            "description": "Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.",
-            "enum": [
-                "Mail",
-                "Brief",
-                "SMS/Whatsapp",
-                "Telefoon",
-                "Huisbezoek",
-                "Kaartje",
-                "Overige"
             ]
         },
         "EnumSignaalstatus": {

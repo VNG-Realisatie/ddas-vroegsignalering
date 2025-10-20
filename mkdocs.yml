@@ -13,8 +13,8 @@ extra:
     provider: mike
 
 nav:
-  - Home: inleiding.md
-  - Uitwisselspecificatie uitgelegd: uitleg_Model Vroegsignalering.md
+  - Home: index.md
+  # - Uitwisselspecificatie uitgelegd: uitleg_Model Vroegsignalering.md
   - Uitwisselspecificatie: uitwisselspecificatie.md
   - Informatiemodel:
     - Hoofdlijnen: "Hoofdlijnen_Model Vroegsignalering.md"

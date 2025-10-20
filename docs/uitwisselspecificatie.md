@@ -20,10 +20,10 @@ Alle bestanden dienen te worden aangeleverd in [UTF-8-formaat](https://www.forum
 
 ## Uitwisselspecificatie
 
-Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.2/json_schema_Uitwisselmodel.json) beschikbaar.
+Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.1/json_schema_Uitwisselmodel.json) beschikbaar.
 
 ```
-{!../vroegsignalering/v0.2/json_schema_Uitwisselmodel.json!}
+{!../v0.1/json_schema_Uitwisselmodel.json!}
 
 ```
 
@@ -31,9 +31,9 @@ Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook
 
 ### Enkelvoudig voorbeeld
 
-Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.2/enkelvoudigVoorbeeld.json).
+Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.1/enkelvoudigVoorbeeld.json).
 
 ```
-{!../vroegsignalering/v0.2/enkelvoudigVoorbeeld.json!}
+{!../v0.1/enkelvoudigVoorbeeld.json!}
 
 ```
