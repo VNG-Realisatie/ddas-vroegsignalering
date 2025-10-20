@@ -1,0 +1,8 @@
+.DS_Store
+crunch_uml.db
+.venv
+.task
+__pycache__
+.vscode
+site
+
