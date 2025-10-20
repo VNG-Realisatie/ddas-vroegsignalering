@@ -12,13 +12,9 @@
         <meta name="author" content="Arjen Brienen">
       
       
-        <link rel="canonical" href="https://ddas-api.nl/latest/Hoofdlijnen_Model%20Vroegsignalering/">
+        <link rel="canonical" href="https://ddas-api.nl/uitleg_Model%20Vroegsignalering/">
       
       
-        <link rel="prev" href="../uitwisselspecificatie/">
-      
-      
-        <link rel="next" href="../definities/Detail_Model%20Vroegsignalering/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>Hoofdlijnen - Data Delen Armoede en Schulden (DDAS): Vroegsignalering</title>
+        <title>Uitleg uitwisselspecificatie vroegsignalering - Data Delen Armoede en Schulden (DDAS): Vroegsignalering</title>
       
     
     
@@ -70,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#informatiemodel-op-hoofdlijnen" class="md-skip">
+        <a href="#uitleg-uitwisselspecificatie-vroegsignalering" class="md-skip">
           Ga naar inhoud
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hoofdlijnen
+              Uitleg uitwisselspecificatie vroegsignalering
             
           </span>
         </div>
@@ -264,19 +260,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -290,7 +284,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Informatiemodel
@@ -301,30 +295,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Hoofdlijnen
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Hoofdlijnen_Model%20Vroegsignalering/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -333,35 +307,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhoudsopgave
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hoofdindeling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hoofdindeling
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -455,23 +400,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhoudsopgave
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hoofdindeling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hoofdindeling
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -488,16 +416,8 @@
   
 
 
-<h1 id="informatiemodel-op-hoofdlijnen">Informatiemodel op hoofdlijnen</h1>
-<p>In dit hoofdstuk wordt geschetst hoe het informatiemodel Vroegsignalering eruitziet op hoofdlijnen, en wat de relaties zijn tussen de verschillende objecttypen. </p>
-<h2 id="hoofdindeling">Hoofdindeling</h2>
-<p>De kern van het informatiemodel Vroegsignalering bestaat uit Vroegsignaal en uit Vroegsignaalzaak. Vroegsignalen worden door de Signaalpartners aangeboden. Vroegsignalen betreffen een bepaalde Client, waarvan tenminste de adresgegevensbeschikbaar zijn. Vervolgens worden ovr een bepaald interval alle vroegsignalen namens een gemeente opgepakt in een Vroegsignaalzaak. Binnen een Vroegsignaalzaak wordt er in een aantal contactpogingen contact gezocht met de Client.  </p>
-<p>De vroegsignalen hebben een bepaalde status die, die altijd start met: "Nog niet opgepakt" en eindigt met een van de andere statussen uit EnumSignaalstatus. Hetzelfde geldt voor vroegsignaalzaken, die beginnen ook altijd met "Nog niet opgepakt" en eindigen met een andere status.   </p>
-<p><a href="../images/EAID_AFFABC16_BCDB_44c6_8E2F_C3D8C49884A5.jpg"><img alt="Hoofdindeling" src="../images/EAID_AFFABC16_BCDB_44c6_8E2F_C3D8C49884A5.jpg" /></a></p>
-<p>Figuur 1 Hoofdindeling Vroegsignalering</p>
-<p>In Figuur 2 wordt het informatiemodel voor vroegsignalering in meer detail getoond.</p>
-<p><a href="../images/EAID_6D5829BF_AF12_4464_9EAD_E336DEFDF442.jpg"><img alt="Hoofdindeling" src="../images/EAID_6D5829BF_AF12_4464_9EAD_E336DEFDF442.jpg" /></a></p>
-<p>Figuur 2 Vroegsignalering in details</p>
+<h1 id="uitleg-uitwisselspecificatie-vroegsignalering">Uitleg uitwisselspecificatie vroegsignalering</h1>
+<p>Deze moet nog helemaal worden ingevuld.</p>
 
 
 
