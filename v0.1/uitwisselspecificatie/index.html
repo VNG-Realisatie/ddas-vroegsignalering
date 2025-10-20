@@ -588,7 +588,7 @@
 <p>Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.1/json_schema_Uitwisselmodel.json">downloadversie</a> beschikbaar.</p>
 <div class="highlight"><pre><span></span><code>{
     &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
-    &quot;$id&quot;: &quot;https://raw.githubusercontent.com/VNG-Realisatie/ddas/main/v0.1/json_schema_Uitwisselmodel.json&quot;,
+    &quot;$id&quot;: &quot;https://raw.githubusercontent.com/VNG-Realisatie/ddas/main//json_schema_Uitwisselmodel.json&quot;,
     &quot;title&quot;: &quot;Uitwisselmodel&quot;,
     &quot;type&quot;: &quot;object&quot;,
     &quot;description&quot;: &quot;Het uitwisselmodel is een model dat de gegevens bevat die uitgewisseld worden tussen de verschillende partijen.&quot;,
@@ -735,9 +735,9 @@
                                 }
                             },
                             &quot;required&quot;: [
+                                &quot;client&quot;,
                                 &quot;ID&quot;,
-                                &quot;signaalpartner&quot;,
-                                &quot;client&quot;
+                                &quot;signaalpartner&quot;
                             ],
                             &quot;additionalProperties&quot;: false
                         }
@@ -820,9 +820,9 @@
         }
     },
     &quot;required&quot;: [
-        &quot;aanleverdatumEnTijd&quot;,
         &quot;codeGegevensleverancier&quot;,
         &quot;startdatumLevering&quot;,
+        &quot;aanleverdatumEnTijd&quot;,
         &quot;einddatumLevering&quot;
     ],
     &quot;additionalProperties&quot;: false,
@@ -872,19 +872,6 @@
                 &quot;Overige&quot;
             ]
         },
-        &quot;EnumSignaalstatus&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Nog niet opgepakt&quot;,
-                &quot;Onterecht signaal&quot;,
-                &quot;Overleden&quot;,
-                &quot;Woont niet in gemeente&quot;,
-                &quot;Herhaalde melding&quot;,
-                &quot;Niet opgepakt&quot;,
-                &quot;Opgepakt&quot;,
-                &quot;Woont op een ander adres binnen gemeente&quot;
-            ]
-        },
         &quot;EnumSignaalpartner&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;description&quot;: &quot;Enumeratie met de soorten te onderscheiden Signaalpartners.&quot;,
@@ -900,6 +887,19 @@
                 &quot;CAK Eigen bijdrage&quot;,
                 &quot;Overige&quot;,
                 &quot;Dienst Toeslagen&quot;
+            ]
+        },
+        &quot;EnumSignaalstatus&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Nog niet opgepakt&quot;,
+                &quot;Onterecht signaal&quot;,
+                &quot;Overleden&quot;,
+                &quot;Woont niet in gemeente&quot;,
+                &quot;Herhaalde melding&quot;,
+                &quot;Niet opgepakt&quot;,
+                &quot;Opgepakt&quot;,
+                &quot;Woont op een ander adres binnen gemeente&quot;
             ]
         },
         &quot;EnumEindresultaat&quot;: {
