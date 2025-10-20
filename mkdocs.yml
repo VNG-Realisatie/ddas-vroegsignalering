@@ -1,6 +1,7 @@
-site_name: Data Delen Armoede en Schulden (DDAS)
-site_description: De uitwisselspecificatie voor de Data Delen over Armoede en Schulden (DDAS) API
+site_name: "Data Delen Armoede en Schulden (DDAS): Vroegsignalering"
+site_description: De uitwisselspecificatie voor de Data Delen over Armoede en Schulden (DDAS)
 site_author: Arjen Brienen
+site_dir: site/vroegsignalering
 site_url: https://ddas-api.nl
 repo_url: https://github.com/VNG-Realisatie/ddas
 repo_name: GitHub
@@ -12,14 +13,14 @@ extra:
     provider: mike
 
 nav:
-  - Home: index.md
-  - Uitwisselspecificatie uitgelegd: uitleg_Model Schuldhulpverlening.md
+  - Home: inleiding.md
+  - Uitwisselspecificatie uitgelegd: uitleg_Model Vroegsignalering.md
   - Uitwisselspecificatie: uitwisselspecificatie.md
   - Informatiemodel:
-    - Hoofdlijnen: "Hoofdlijnen_Model Schuldhulpverlening.md"
-    - Detailspecificatie: "definities/Detail_Model Schuldhulpverlening.md"
-  - Achtergrond DDAS: Achtergrond.md
+    - Hoofdlijnen: "Hoofdlijnen_Model Vroegsignalering.md"
+    - Detailspecificatie: "definities/Detail_Model Vroegsignalering.md"
   - Vraag en antwoord: VraagEnAntwoord.md
+  - Achtergrond DDAS: Achtergrond.md
 
 markdown_extensions:
   - pymdownx.superfences
