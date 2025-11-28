@@ -4,7 +4,7 @@
 ### AanleverendeOrganisatie
 > **Definitie AanleverendeOrganisatie:** 
 >
-> Geen Definitie
+> Organisatie de data aanlevert aan het CBS
 
 ??? info "Kenmerken Model AanleverendeOrganisatie"
     | Eigenschap | Waarde |
@@ -160,10 +160,10 @@ Attributen van objecttype Vroegsignaalzaak
 | Attribute | Datatype | Description |
 | :--- | :--- | :--- |
 | resultaat | Enumeratie: "EnumEindresultaat" |  |
-| matchingsdatum | Date |  |
-| startdatum_matchtingperiode | Date |  |
-| datum_opgepakt | Date |  |
-| einddatum_matchingperiode | Date |  |
+| matchingsdatum | Date | De datum waarop de matching wordt uitgevoerd. |
+| startdatum_matchtingperiode | Date | De matchingperiode is het tijdvak waarover de matching plaatsvindt. Hier de startdatum van de matching, die binnen de matchingsperiode valt. |
+| datum_opgepakt | Date | De datum waarop de gemeente de zaak heeft opgepakt. |
+| einddatum_matchingperiode | Date | De matchingperiode is het tijdvak waarover de matching plaatsvindt. Hier de einddatum van de matching, die binnen de matchingsperiode valt. |
 
 
 
@@ -219,6 +219,7 @@ Het enumeratie EnumContactsoort kent de volgende waarden:
 * **Huisbezoek**: Een persoonlijke contactpoging aan huis, al dan niet aangekondigd, om direct met de inwoner in gesprek te gaan.
 * **Kaartje**: Een informatief of uitnodigend kaartje dat bij de inwoner thuis wordt achtergelaten, bijvoorbeeld bij een gemist huisbezoek.
 * **Overige**: Een andere vorm van contact dan de hier benoemde, bijvoorbeeld via een bemiddelaar, buurthulp of digitaal platform.
+* **Administratief**: Administratieve afhandeling zonder contact
 
 
 De enumeratie EnumContactsoort heeft de volgende kenmerken:
@@ -266,21 +267,21 @@ Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.
 
 Het enumeratie EnumEindresultaat kent de volgende waarden:
 
-* **Niet opgepakt: inwoner wil geen contact**: <Geen Definities>
-* **Niet opgepakt: geen capaciteit**: <Geen Definities>
-* **Niet opgepakt**: [overig]
-* **Inwoner al bekend bij schuldhulpverlening**: <Geen Definities>
-* **Geen contact (meer) kunnen krijgen**: <Geen Definities>
-* **Inwoner wil geen hulp**: <Geen Definities>
-* **Inwoner probeert het zelf op te lossen**: <Geen Definities>
-* **Inwoner heeft betaald/betalingsregeling getroffen voor oppakken melding**: <Geen Definities>
-* **Inwoner heeft zelf betaald/betalingsregeling getroffen na oppakken melding**: <Geen Definities>
-* **(Budget)advies en/of quick fix**: <Geen Definities>
-* **Verwijzing financieel**: [bijv. naar schuldhulpverlening, budgetcoach, bewindvoerder]
-* **Voorzien van informatie**: <Geen Definities>
-* **Niet opgepakt: BRP-uitsluiting**: <Geen Definities>
-* **Verwijzing niet-financieel**: [bijv. naar maatschappelijk werk, verslavingszorg, gezinszorg]
-* **Inwoner heeft al een ander lopend traject**: [bijv. bij externe netwerkpartner, bij ander onderdeel sociaal domein, is onder bewind]
+* **Niet opgepakt: herhaalde melding**: Een signaal dat niet wordt opgepakt, omdat er recent al een signaal is ontvangen en opgepakt over dezelfde betalingsachterstand van dezelfde vastelastenpartner. De betalingsachterstand is niet hoger geworden. Als de achterstand wel hoger is geworden, moet deze wel worden opgepakt.<br>Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.
+* **Niet opgepakt: onterecht signaal**: Een signaal dat niet wordt opgepakt, omdat:<br><ul><br>	<li>de gemelde achterstand lager is dan het drempelbedrag dat de gemeente hanteert, of;</li><br>	<li>het aantal dagen achterstand te hoog of te laag is.</li><br></ul><br>Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.
+* **Inwoner is overleden**: Inwoner is overleden, hierbij kan het nodig zijn om aan het achtergebleven huishouden/de erven een hulpaanbod te doen. Dit is bijvoorbeeld relevant als nabestaanden nog op het adres wonen en afsluiting van water of energie ongewenst is.<br>Al contact met nabestaanden? Registreer desondanks dit resultaat. Zo wordt de vastelastenpartner op de hoogte gebracht.
+* **Persoon is geen inwoner (meer) in de gemeente**: Wanneer de inwoner in een andere gemeente staat ingeschreven, geef de melding dan dit eindresultaat. De vastelastenpartner wordt hierdoor automatisch vanuit het systeem ge&#239;nformeerd dat de aangemelde klant geen inwoner (meer) is van de gemeente.<br>Deel het signaal – waar mogelijk – vanuit vroegsignalering met de gemeente waar de inwoner <b>w&#233;l</b> staat ingeschreven. Doe dit telefonisch en/of per (beveiligde) e-mail.<br><b>Al contact gehad met inwoner</b><br>Is de inwoner niet meer woonachtig in de gemeente, maar is er wel (telefonisch) contact geweest? Registreer dan alsnog dit als eindresultaat. Zo wordt de vastelastenpartner op de hoogte gebracht.<br><b>Verhuizing binnen de gemeente</b><br>Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan op. Het eindresultaat hangt dan af van de uitkomst van het contact.
+* **Niet opgepakt: andere reden**: Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeente kunnen de redenen voor zichzelf wel bijhouden.<br>Mogelijke redenen om een melding <b>niet</b> op te pakken:<br><ul><br>	<li>Inwoner verblijft onrechtmatig in Nederland volgens de BRP</li><br>	<li>Inwoner zit in detentie</li><br>	<li>De melding is bedoeld voor een rechtspersoon (bijv. een BV) in plaats van voor een ondernemer die een natuurlijk persoon is (eenmanszaak, VOF, CV of maatschap).</li><br>	<li>De melding is voor een inwoner die op een uitsluitingslijst van de gemeente, waarbij het onveilig is voor de vroegsignaleerder om contact te leggen. Bijvoorbeeld als sprake is van agressief gedrag of toegangsbeperking bij het gemeentehuis.</li><br>	<li>Als het vanwege een tekort aan personeel niet lukt om een melding op te pakken en contact te leggen met een inwoner.</li><br>	<li>Als een persoon niet meer op het adres woont en het is onbekend waar diegene wel woont</li><br></ul><br><b><br></b><b>Verhuizing binnen de gemeente</b><br>Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan in principe op. Als onbekend is waar ieHet eindresultaat hangt dan af van de uitkomst van het contact.
+* **Inwoner al bekend bij schuldhulpverlening**: Een inwoner is al bekend bij schuldhulpverlening (als particulier of als (ex-)ondernemer). Vanuit vroegsignalering is er contact geweest met de betrokken schuldhulpverlener. Deze neemt contact op met de schuldeiser en inwoner.
+* **Inwoner heeft al een ander lopend traject**: Uit eerder contact met de inwoner is bekend dat de inwoner al hulpverlening ontvangt, anders dan schuldhulpverlening. Dit kan zijn bij een externe netwerkpartner of bij een ander onderdeel van het sociaal domein.<br>Wanneer de betrokken hulpverlener het signaal overneemt en verdere opvolging doet, wordt de melding binnen vroegsignalering afgesloten met het resultaat: <i>‘inwoner heeft al een ander lopend traject’.</i><br><b>Voorwaarde: afstemming tussen vroegsignalering en betrokken hulpverlener </b><br>Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie de opvolging doet:<br><ul><br>	<li><b>Optie 1:</b> De betrokken hulpverlener neemt contact op met de inwoner en eventueel de schuldeiser.<br>De vroegsignalering blijft niet actief betrokken en ontvangt mogelijk alleen een terugkoppeling.<br>→ Eindresultaat: <i>Inwoner heeft al een ander lopend traject.</i></li><br>	<li><b>Optie 2:</b> De vroegsignalering neemt zelf contact op met de inwoner over de betalingsachterstand. De betrokken hulpverlener speelt hierin geen actieve rol.<br>→ Eindresultaat: afhankelijk van de uitkomst van het contact. In de notities kan worden vermeld dat de inwoner ook andere hulp ontvangt, maar het resultaat is <b>niet</b> <i>‘inwoner heeft al een ander lopend traject’.</i></li><br></ul><br><b><br></b><b>Let op:</b> Een bewindvoerder wordt niet beschouwd als betrokken hulpverlener, maar als een verlengde van de inwoner zelf.
+* **Definitief geen contact kunnen krijgen**: Als het voor het afsluiten van de melding niet is gelukt om in contact te komen met de inwoner. De inwoner reageert niet op de contactpoging(en).
+* **Geen reactie na eerder contact**: Er is in eerste instantie contact is met de inwoner. Vervolgens lukt het niet meer om contact te krijgen.<br>Bijvoorbeeld: de inwoner komt niet op de afspraak, is telefonisch onbereikbaar of reageert niet op e-mails of WhatsApp-berichten.
+* **Inwoner hoeft geen hulp vanuit vroegsignalering**: Er is contact geweest met de inwoner. Tijdens dit contactmoment geeft de inwoner aan geen hulp nodig te hebben en/of hier geen behoefte aan te hebben.<br>Dit kan verschillende redenen hebben, zoals:<br><ul><br>	<li>De inwoner geeft tijdens het contactmoment aan de betalingsachterstand zelf op te gaan lossen. Bijvoorbeeld door zelf een betalingsregeling te treffen en/of contact op te nemen met de schuldeiser.</li><br>	<li>De inwoner geeft aan niet te wachten op bemoeienis vanuit de gemeente en/of hulpverleningsorganisaties.</li><br>	<li>De inwoner heeft zelf naasten, een bewindvoerder en/of een hulpverleningsorganisatie die (kunnen) gaan helpen.</li><br></ul><br>Er kan tijdens dit contactmoment wat algemene informatie zijn verstrekt en/of tips gegeven, waar de inwoner zelf mee aan de slag gaat.
+* **Inwoner heeft zelf al betaald/betalingsregeling getroffen**: Wanneer de inwoner al een oplossing blijkt te hebben voor de betalingsachterstand op het moment dat ervan uit vroegsignalering contact is met de inwoner. Hij/zij heeft al betaald of een betalingsregeling getroffen.
+* **(Budget)advies en/of ‘quick fix’**: Er is contact (geweest) met de inwoner en er is zodanige hulp geboden dat de inwoner binnen 30 dagen na hulpacceptatie (zelf) de betalingsachterstanden op kan lossen.<br>Voorbeelden van ‘quick fixes’:<br><ul><br>	<li>Hulp bij het maken van betalingsregeling/ betalingsafspraken; </li><br>	<li>Een gesprek over de mogelijkheden om de betalingsachterstanden op te lossen; </li><br>	<li>Hulp bij het ordenen van de administratie; </li><br>	<li>Het voeren van een budgetadviesgesprek; </li><br>	<li>Het geven van informatie en advies over het zelfstandig bereiken van duurzaam financieel evenwicht (zonder gebruik te maken van schuldhulpverlening of andere vormen van financi&#235;le dienstverlening); </li><br>	<li>Hulp bij het aanvragen van toeslagen en andere inkomensondersteunende voorzieningen; </li><br>	<li>Berekening van de beslagvrije voet.</li><br></ul>
+* **Vervolghulp en/of verwijzing financieel**: Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is financieel: schuldhulpverlening, budgetcoaching of bewindvoering, etc.<br>De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.
+* **Verwijzing zonder contact**: Wanneer bij vroegsignalering een inwoner wordt aangemeld bij een andere instantie, zonder dat de inwoner hiervan op de hoogte is of hiervoor toestemming heeft gegeven. Dit gebeurt alleen in uiterste gevallen, wanneer zorg noodzakelijk lijkt. Een voorbeeld hiervan is een aanmelding bij bemoeizorg.
+* **Vervolghulp en/of verwijzing niet financieel**: Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is niet-financieel: maatschappelijk werk, verslavingszorg of gezinszorg etc.<br>De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.
 
 
 De enumeratie EnumEindresultaat heeft de volgende kenmerken:
@@ -305,14 +306,14 @@ Het enumeratie EnumSignaalpartner kent de volgende waarden:
 
 * **Energie**: Inzake de energierekening (elektriciteit, gas en/of warmte) vanaf 30 dagen
 * **Huur**: Inzake de huur vanaf 30 dagen.
-* **Hypotheek**: <Geen Definities>
+* **Hypotheek**: Inzake hypotheek
 * **CAK Zorgverzekeringen**: Als de zorgverzekering meer dan 6 maanden niet is betaald, wordt deze door CAK overgenomen.
 * **Zorg**: Inzake de zorgverzekeringspremie inclusief premie voor aanvullende verzekering, eigen risico en eigen bijdragen van 30 tot 100 dagen.
 * **Water**: Inzake de drinkwaterrekening vanaf 30 dagen
-* **DUO**: <Geen Definities>
+* **DUO**: Inzake schulden bij DUO
 * **Belastingdienst**: Mensen die na een aanmaning hun belasting niet hebben betaald of terugbetaald.
 * **CAK Eigen bijdrage**: Achterstand bij het betalen van de Eigen bijdrage in het kader van WLZ, en WMO. <font color="#0e0e0e">De doelgroep voldoet aan deze drie voorwaarden:</font><br><font color="#0e0e0e">1.Inwoners van de Gemeenten die het incassotraject hebben doorlopen (schriftelijke herinnering, aanmaning, minnelijk deurwaarders traject en telefonische poging tot persoonlijk contact). Het betreft hier achterstanden op gebied van eigen bijdrage Wmo of Wlz, ge&#239;ncasseerd door het CAK. Het gaat hierbij specifiek om de groep die terugkeert van een minnelijk deurwaarderstraject.</font><br><font color="#0e0e0e">2.Er is nog geen sprake van een gerechtelijke dwangmaatregel. De vroegsignalering gaat vooraf aan de inzet van een gerechtelijke procedure (doorgaans wordt die ingezet bij vorderingen &gt; € 100,= achterstand).</font><br><font color="#0e0e0e">3.Het lukt CAK niet om contact te krijgen of een betaalafspraak te maken met de klant.</font>
-* **Overige**: <Geen Definities>
+* **Overige**: Overige partijen
 * **Dienst Toeslagen**: Mensen die na een aanmaning te veel ontvangen toeslag niet hebben betaald of terugbetaald.
 
 
@@ -336,14 +337,12 @@ Geen Definitie
 
 Het enumeratie EnumSignaalstatus kent de volgende waarden:
 
-* **Nog niet opgepakt**: <Geen Definities>
-* **Onterecht signaal**: <Geen Definities>
-* **Overleden**: <Geen Definities>
-* **Woont niet in gemeente**: <Geen Definities>
-* **Herhaalde melding**: <Geen Definities>
-* **Niet opgepakt**: <Geen Definities>
-* **Opgepakt**: <Geen Definities>
-* **Woont op een ander adres binnen gemeente**: <Geen Definities>
+* **Nog niet opgepakt**: De gemeente heeft het signaal nog niet opgepakt.
+* **Niet opgepakt: onterecht signaal**: Een signaal dat niet wordt opgepakt, omdat:<br><ul><br>	<li>de gemelde achterstand lager is dan het drempelbedrag dat de gemeente hanteert, of;</li><br>	<li>het aantal dagen achterstand te hoog of te laag is.</li><br></ul><br>Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.
+* **Inwoner is overleden**: Inwoner is overleden, hierbij kan het nodig zijn om aan het achtergebleven huishouden/de erven een hulpaanbod te doen. Dit is bijvoorbeeld relevant als nabestaanden nog op het adres wonen en afsluiting van water of energie ongewenst is.
+* **Persoon is geen inwoner (meer) in de gemeente**: Wanneer de inwoner in een andere gemeente staat ingeschreven, geef de melding dan dit eindresultaat. De vastelastenpartner wordt hierdoor automatisch vanuit het systeem ge&#239;nformeerd dat de aangemelde klant geen inwoner (meer) is van de gemeente.<br>Deel het signaal – waar mogelijk – vanuit vroegsignalering met de gemeente waar de inwoner <b>w&#233;l</b> staat ingeschreven. Doe dit telefonisch en/of per (beveiligde) e-mail.<br><b>Al contact gehad met inwoner</b><br>Is de inwoner niet meer woonachtig in de gemeente, maar is er wel (telefonisch) contact geweest? Registreer dan alsnog dit als eindresultaat. Zo wordt de vastelastenpartner op de hoogte gebracht.<br><b>Verhuizing binnen de gemeente</b><br>Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan op. Het eindresultaat hangt dan af van de uitkomst van het contact.
+* **Niet opgepakt: herhaalde melding**: Een signaal dat niet wordt opgepakt, omdat er recent al een signaal is ontvangen en opgepakt over dezelfde betalingsachterstand van dezelfde vastelastenpartner. De betalingsachterstand is niet hoger geworden. Als de achterstand wel hoger is geworden, moet deze wel worden opgepakt.<br>Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.
+* **Niet opgepakt: andere reden**: Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeente kunnen de redenen voor zichzelf wel bijhouden.<br>Mogelijke redenen om een melding <b>niet</b> op te pakken:<br><ul><br>	<li>Inwoner verblijft onrechtmatig in Nederland volgens de BRP</li><br>	<li>Inwoner zit in detentie</li><br>	<li>De melding is bedoeld voor een rechtspersoon (bijv. een BV) in plaats van voor een ondernemer die een natuurlijk persoon is (eenmanszaak, VOF, CV of maatschap).</li><br>	<li>De melding is voor een inwoner die op een uitsluitingslijst van de gemeente, waarbij het onveilig is voor de vroegsignaleerder om contact te leggen. Bijvoorbeeld als sprake is van agressief gedrag of toegangsbeperking bij het gemeentehuis.</li><br>	<li>Als het vanwege een tekort aan personeel niet lukt om een melding op te pakken en contact te leggen met een inwoner.</li><br>	<li>Als een persoon niet meer op het adres woont en het is onbekend waar diegene wel woont</li><br></ul><br><b><br></b><b>Verhuizing binnen de gemeente</b><br>Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan in principe op. Als onbekend is waar ieHet eindresultaat hangt dan af van de uitkomst van het contact.
 
 
 De enumeratie EnumSignaalstatus heeft de volgende kenmerken:
