@@ -970,10 +970,8 @@
 <h3 id="signaalpartner">Signaalpartner</h3>
 <blockquote>
 <p><strong>Definitie Signaalpartner:</strong> </p>
-<blockquote>
 <p>Een signaalpartner is een organisatie die op grond van artikel 2.2.1 van de Wet gemeentelijke schuldhulpverlening (Wgs) bevoegd is om signalen van betalingsachterstanden door te geven aan de gemeente met het doel vroegtijdige hulpverlening bij schulden mogelijk te maken. Signaalpartners zijn dienstverleners met een maatschappelijk belang, zoals zorgverzekeraars, energieleveranciers, drinkwaterbedrijven en woningverhuurders.
-Een signaalpartner verstrekt een vroegsignaal aan de gemeente wanneer bij een klant of huurder sprake is van een betalingsachterstand die voldoet aan de wettelijke en/of contractuele criteria voor signalering.</p>
-</blockquote>
+ Een signaalpartner verstrekt een vroegsignaal aan de gemeente wanneer bij een klant of huurder sprake is van een betalingsachterstand die voldoet aan de wettelijke en/of contractuele criteria voor signalering.</p>
 </blockquote>
 <details class="info">
 <summary>Kenmerken Model Signaalpartner</summary>
@@ -1036,10 +1034,8 @@ Een signaalpartner verstrekt een vroegsignaal aan de gemeente wanneer bij een kl
 <h3 id="vroegsignaal">Vroegsignaal</h3>
 <blockquote>
 <p><strong>Definitie Vroegsignaal:</strong> </p>
-<blockquote>
 <p>Een Vroegsignaal is een bericht dat door een signaalpartner (zoals een zorgverzekeraar, energieleverancier of verhuurder) aan de gemeente wordt verstrekt, met als doel de gemeente te informeren over een mogelijk beginnende schuldsituatie van een inwoner. Het vroegsignaal vormt het startpunt van het gemeentelijk proces van vroegsignalering van schulden.
-De juridische grondslag voor het ontvangen en verwerken van vroegsignalen is vastgelegd in artikel 2.2.1 van de Wet gemeentelijke schuldhulpverlening (Wgs). Deze wet verplicht gemeenten om vroegtijdig signalen van betalingsachterstanden te ontvangen en op basis daarvan inwoners passende hulp aan te bieden.</p>
-</blockquote>
+ De juridische grondslag voor het ontvangen en verwerken van vroegsignalen is vastgelegd in artikel 2.2.1 van de Wet gemeentelijke schuldhulpverlening (Wgs). Deze wet verplicht gemeenten om vroegtijdig signalen van betalingsachterstanden te ontvangen en op basis daarvan inwoners passende hulp aan te bieden.</p>
 </blockquote>
 <details class="info">
 <summary>Kenmerken Model Vroegsignaal</summary>
@@ -1317,7 +1313,10 @@ De juridische grondslag voor het ontvangen en verwerken van vroegsignalen is vas
 </table>
 <h2 id="enumeraties-model-vroegsignalering">Enumeraties Model Vroegsignalering</h2>
 <h3 id="enumcontactsoort">EnumContactsoort</h3>
+<blockquote>
+<p><strong>Definitie EnumContactsoort:</strong> </p>
 <p>Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.</p>
+</blockquote>
 <p>Het enumeratie EnumContactsoort kent de volgende waarden:</p>
 <ul>
 <li><strong>Mail</strong>: Contact via e-mail, vaak gebruikt voor laagdrempelige informatievoorziening of opvolging.</li>
@@ -1372,7 +1371,10 @@ De juridische grondslag voor het ontvangen en verwerken van vroegsignalen is vas
 </table>
 </details>
 <h3 id="enumdagdeel">EnumDagdeel</h3>
+<blockquote>
+<p><strong>Definitie EnumDagdeel:</strong> </p>
 <p>Geen Definitie</p>
+</blockquote>
 <p>Het enumeratie EnumDagdeel kent de volgende waarden:</p>
 <ul>
 <li><strong>Ochtend</strong>: Tot 12:00 uur</li>
@@ -1422,14 +1424,19 @@ De juridische grondslag voor het ontvangen en verwerken van vroegsignalen is vas
 </table>
 </details>
 <h3 id="enumeindresultaat">EnumEindresultaat</h3>
+<blockquote>
+<p><strong>Definitie EnumEindresultaat:</strong> </p>
 <p>Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.</p>
+</blockquote>
 <p>Het enumeratie EnumEindresultaat kent de volgende waarden:</p>
 <ul>
-<li><strong>Niet opgepakt: herhaalde melding</strong>: &gt; Een signaal dat niet wordt opgepakt, omdat er recent al een signaal is ontvangen en opgepakt over dezelfde betalingsachterstand van dezelfde vastelastenpartner. De betalingsachterstand is niet hoger geworden. Als de achterstand wel hoger is geworden, moet deze wel worden opgepakt.<blockquote>
-<p>Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.</p>
+<li><strong>Niet opgepakt: herhaalde melding</strong>: <blockquote>
+<p>Een signaal dat niet wordt opgepakt, omdat er recent al een signaal is ontvangen en opgepakt over dezelfde betalingsachterstand van dezelfde vastelastenpartner. De betalingsachterstand is niet hoger geworden. Als de achterstand wel hoger is geworden, moet deze wel worden opgepakt.
+Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.</p>
 </blockquote>
 </li>
-<li><strong>Niet opgepakt: onterecht signaal</strong>: &gt; Een signaal dat niet wordt opgepakt, omdat:<blockquote>
+<li><strong>Niet opgepakt: onterecht signaal</strong>: <blockquote>
+<p>Een signaal dat niet wordt opgepakt, omdat:</p>
 <ul>
 <li>de gemelde achterstand lager is dan het drempelbedrag dat de gemeente hanteert, of;</li>
 <li>het aantal dagen achterstand te hoog of te laag is.</li>
@@ -1437,20 +1444,23 @@ De juridische grondslag voor het ontvangen en verwerken van vroegsignalen is vas
 <p>Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.</p>
 </blockquote>
 </li>
-<li><strong>Inwoner is overleden</strong>: &gt; Inwoner is overleden, hierbij kan het nodig zijn om aan het achtergebleven huishouden/de erven een hulpaanbod te doen. Dit is bijvoorbeeld relevant als nabestaanden nog op het adres wonen en afsluiting van water of energie ongewenst is.<blockquote>
-<p>Al contact met nabestaanden? Registreer desondanks dit resultaat. Zo wordt de vastelastenpartner op de hoogte gebracht.</p>
+<li><strong>Inwoner is overleden</strong>: <blockquote>
+<p>Inwoner is overleden, hierbij kan het nodig zijn om aan het achtergebleven huishouden/de erven een hulpaanbod te doen. Dit is bijvoorbeeld relevant als nabestaanden nog op het adres wonen en afsluiting van water of energie ongewenst is.
+Al contact met nabestaanden? Registreer desondanks dit resultaat. Zo wordt de vastelastenpartner op de hoogte gebracht.</p>
 </blockquote>
 </li>
-<li><strong>Persoon is geen inwoner (meer) in de gemeente</strong>: &gt; Wanneer de inwoner in een andere gemeente staat ingeschreven, geef de melding dan dit eindresultaat. De vastelastenpartner wordt hierdoor automatisch vanuit het systeem geïnformeerd dat de aangemelde klant geen inwoner (meer) is van de gemeente.<blockquote>
-<p>Deel het signaal – waar mogelijk – vanuit vroegsignalering met de gemeente waar de inwoner <strong>wél</strong> staat ingeschreven. Doe dit telefonisch en/of per (beveiligde) e-mail.
+<li><strong>Persoon is geen inwoner (meer) in de gemeente</strong>: <blockquote>
+<p>Wanneer de inwoner in een andere gemeente staat ingeschreven, geef de melding dan dit eindresultaat. De vastelastenpartner wordt hierdoor automatisch vanuit het systeem geïnformeerd dat de aangemelde klant geen inwoner (meer) is van de gemeente.
+Deel het signaal – waar mogelijk – vanuit vroegsignalering met de gemeente waar de inwoner <strong>wél</strong> staat ingeschreven. Doe dit telefonisch en/of per (beveiligde) e-mail.
 <strong>Al contact gehad met inwoner</strong>
 Is de inwoner niet meer woonachtig in de gemeente, maar is er wel (telefonisch) contact geweest? Registreer dan alsnog dit als eindresultaat. Zo wordt de vastelastenpartner op de hoogte gebracht.
 <strong>Verhuizing binnen de gemeente</strong>
 Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan op. Het eindresultaat hangt dan af van de uitkomst van het contact.</p>
 </blockquote>
 </li>
-<li><strong>Niet opgepakt: andere reden</strong>: &gt; Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeente kunnen de redenen voor zichzelf wel bijhouden.<blockquote>
-<p>Mogelijke redenen om een melding <strong>niet</strong> op te pakken:</p>
+<li><strong>Niet opgepakt: andere reden</strong>: <blockquote>
+<p>Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeente kunnen de redenen voor zichzelf wel bijhouden.
+Mogelijke redenen om een melding <strong>niet</strong> op te pakken:</p>
 <ul>
 <li>Inwoner verblijft onrechtmatig in Nederland volgens de BRP</li>
 <li>Inwoner zit in detentie</li>
@@ -1464,8 +1474,9 @@ Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel 
 </blockquote>
 </li>
 <li><strong>Inwoner al bekend bij schuldhulpverlening</strong>: Een inwoner is al bekend bij schuldhulpverlening (als particulier of als (ex-)ondernemer). Vanuit vroegsignalering is er contact geweest met de betrokken schuldhulpverlener. Deze neemt contact op met de schuldeiser en inwoner.</li>
-<li><strong>Inwoner heeft al een ander lopend traject</strong>: &gt; Uit eerder contact met de inwoner is bekend dat de inwoner al hulpverlening ontvangt, anders dan schuldhulpverlening. Dit kan zijn bij een externe netwerkpartner of bij een ander onderdeel van het sociaal domein.<blockquote>
-<p>Wanneer de betrokken hulpverlener het signaal overneemt en verdere opvolging doet, wordt de melding binnen vroegsignalering afgesloten met het resultaat: <em>‘inwoner heeft al een ander lopend traject’.</em>
+<li><strong>Inwoner heeft al een ander lopend traject</strong>: <blockquote>
+<p>Uit eerder contact met de inwoner is bekend dat de inwoner al hulpverlening ontvangt, anders dan schuldhulpverlening. Dit kan zijn bij een externe netwerkpartner of bij een ander onderdeel van het sociaal domein.
+Wanneer de betrokken hulpverlener het signaal overneemt en verdere opvolging doet, wordt de melding binnen vroegsignalering afgesloten met het resultaat: <em>‘inwoner heeft al een ander lopend traject’.</em>
 <strong>Voorwaarde: afstemming tussen vroegsignalering en betrokken hulpverlener</strong>
 Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie de opvolging doet:</p>
 <ul>
@@ -1479,12 +1490,14 @@ Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie 
 </blockquote>
 </li>
 <li><strong>Definitief geen contact kunnen krijgen</strong>: Als het voor het afsluiten van de melding niet is gelukt om in contact te komen met de inwoner. De inwoner reageert niet op de contactpoging(en).</li>
-<li><strong>Geen reactie na eerder contact</strong>: &gt; Er is in eerste instantie contact is met de inwoner. Vervolgens lukt het niet meer om contact te krijgen.<blockquote>
-<p>Bijvoorbeeld: de inwoner komt niet op de afspraak, is telefonisch onbereikbaar of reageert niet op e-mails of WhatsApp-berichten.</p>
+<li><strong>Geen reactie na eerder contact</strong>: <blockquote>
+<p>Er is in eerste instantie contact is met de inwoner. Vervolgens lukt het niet meer om contact te krijgen.
+Bijvoorbeeld: de inwoner komt niet op de afspraak, is telefonisch onbereikbaar of reageert niet op e-mails of WhatsApp-berichten.</p>
 </blockquote>
 </li>
-<li><strong>Inwoner hoeft geen hulp vanuit vroegsignalering</strong>: &gt; Er is contact geweest met de inwoner. Tijdens dit contactmoment geeft de inwoner aan geen hulp nodig te hebben en/of hier geen behoefte aan te hebben.<blockquote>
-<p>Dit kan verschillende redenen hebben, zoals:</p>
+<li><strong>Inwoner hoeft geen hulp vanuit vroegsignalering</strong>: <blockquote>
+<p>Er is contact geweest met de inwoner. Tijdens dit contactmoment geeft de inwoner aan geen hulp nodig te hebben en/of hier geen behoefte aan te hebben.
+Dit kan verschillende redenen hebben, zoals:</p>
 <ul>
 <li>De inwoner geeft tijdens het contactmoment aan de betalingsachterstand zelf op te gaan lossen. Bijvoorbeeld door zelf een betalingsregeling te treffen en/of contact op te nemen met de schuldeiser.</li>
 <li>De inwoner geeft aan niet te wachten op bemoeienis vanuit de gemeente en/of hulpverleningsorganisaties.</li>
@@ -1494,8 +1507,9 @@ Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie 
 </blockquote>
 </li>
 <li><strong>Inwoner heeft zelf al betaald/betalingsregeling getroffen</strong>: Wanneer de inwoner al een oplossing blijkt te hebben voor de betalingsachterstand op het moment dat ervan uit vroegsignalering contact is met de inwoner. Hij/zij heeft al betaald of een betalingsregeling getroffen.</li>
-<li><strong>(Budget)advies en/of ‘quick fix’</strong>: &gt; Er is contact (geweest) met de inwoner en er is zodanige hulp geboden dat de inwoner binnen 30 dagen na hulpacceptatie (zelf) de betalingsachterstanden op kan lossen.<blockquote>
-<p>Voorbeelden van ‘quick fixes’:</p>
+<li><strong>(Budget)advies en/of ‘quick fix’</strong>: <blockquote>
+<p>Er is contact (geweest) met de inwoner en er is zodanige hulp geboden dat de inwoner binnen 30 dagen na hulpacceptatie (zelf) de betalingsachterstanden op kan lossen.
+Voorbeelden van ‘quick fixes’:</p>
 <ul>
 <li>Hulp bij het maken van betalingsregeling/ betalingsafspraken;</li>
 <li>Een gesprek over de mogelijkheden om de betalingsachterstanden op te lossen;</li>
@@ -1507,13 +1521,15 @@ Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie 
 </ul>
 </blockquote>
 </li>
-<li><strong>Vervolghulp en/of verwijzing financieel</strong>: &gt; Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is financieel: schuldhulpverlening, budgetcoaching of bewindvoering, etc.<blockquote>
-<p>De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.</p>
+<li><strong>Vervolghulp en/of verwijzing financieel</strong>: <blockquote>
+<p>Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is financieel: schuldhulpverlening, budgetcoaching of bewindvoering, etc.
+De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.</p>
 </blockquote>
 </li>
 <li><strong>Verwijzing zonder contact</strong>: Wanneer bij vroegsignalering een inwoner wordt aangemeld bij een andere instantie, zonder dat de inwoner hiervan op de hoogte is of hiervoor toestemming heeft gegeven. Dit gebeurt alleen in uiterste gevallen, wanneer zorg noodzakelijk lijkt. Een voorbeeld hiervan is een aanmelding bij bemoeizorg.</li>
-<li><strong>Vervolghulp en/of verwijzing niet financieel</strong>: &gt; Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is niet-financieel: maatschappelijk werk, verslavingszorg of gezinszorg etc.<blockquote>
-<p>De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.</p>
+<li><strong>Vervolghulp en/of verwijzing niet financieel</strong>: <blockquote>
+<p>Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is niet-financieel: maatschappelijk werk, verslavingszorg of gezinszorg etc.
+De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.</p>
 </blockquote>
 </li>
 </ul>
@@ -1560,7 +1576,10 @@ Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie 
 </table>
 </details>
 <h3 id="enumsignaalpartner">EnumSignaalpartner</h3>
+<blockquote>
+<p><strong>Definitie EnumSignaalpartner:</strong> </p>
 <p>Enumeratie met de soorten te onderscheiden Signaalpartners.</p>
+</blockquote>
 <p>Het enumeratie EnumSignaalpartner kent de volgende waarden:</p>
 <ul>
 <li><strong>Energie</strong>: Inzake de energierekening (elektriciteit, gas en/of warmte) vanaf 30 dagen</li>
@@ -1571,8 +1590,9 @@ Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie 
 <li><strong>Water</strong>: Inzake de drinkwaterrekening vanaf 30 dagen</li>
 <li><strong>DUO</strong>: Inzake schulden bij DUO</li>
 <li><strong>Belastingdienst</strong>: Mensen die na een aanmaning hun belasting niet hebben betaald of terugbetaald.</li>
-<li><strong>CAK Eigen bijdrage</strong>: &gt; Achterstand bij het betalen van de Eigen bijdrage in het kader van WLZ, en WMO. De doelgroep voldoet aan deze drie voorwaarden:<blockquote>
-<p>1.Inwoners van de Gemeenten die het incassotraject hebben doorlopen (schriftelijke herinnering, aanmaning, minnelijk deurwaarders traject en telefonische poging tot persoonlijk contact). Het betreft hier achterstanden op gebied van eigen bijdrage Wmo of Wlz, geïncasseerd door het CAK. Het gaat hierbij specifiek om de groep die terugkeert van een minnelijk deurwaarderstraject.
+<li><strong>CAK Eigen bijdrage</strong>: <blockquote>
+<p>Achterstand bij het betalen van de Eigen bijdrage in het kader van WLZ, en WMO. De doelgroep voldoet aan deze drie voorwaarden:
+1.Inwoners van de Gemeenten die het incassotraject hebben doorlopen (schriftelijke herinnering, aanmaning, minnelijk deurwaarders traject en telefonische poging tot persoonlijk contact). Het betreft hier achterstanden op gebied van eigen bijdrage Wmo of Wlz, geïncasseerd door het CAK. Het gaat hierbij specifiek om de groep die terugkeert van een minnelijk deurwaarderstraject.
 2.Er is nog geen sprake van een gerechtelijke dwangmaatregel. De vroegsignalering gaat vooraf aan de inzet van een gerechtelijke procedure (doorgaans wordt die ingezet bij vorderingen &gt; € 100,= achterstand).
 3.Het lukt CAK niet om contact te krijgen of een betaalafspraak te maken met de klant.</p>
 </blockquote>
@@ -1623,11 +1643,15 @@ Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie 
 </table>
 </details>
 <h3 id="enumsignaalstatus">EnumSignaalstatus</h3>
+<blockquote>
+<p><strong>Definitie EnumSignaalstatus:</strong> </p>
 <p>Geen Definitie</p>
+</blockquote>
 <p>Het enumeratie EnumSignaalstatus kent de volgende waarden:</p>
 <ul>
 <li><strong>Nog niet opgepakt</strong>: De gemeente heeft het signaal nog niet opgepakt.</li>
-<li><strong>Niet opgepakt: onterecht signaal</strong>: &gt; Een signaal dat niet wordt opgepakt, omdat:<blockquote>
+<li><strong>Niet opgepakt: onterecht signaal</strong>: <blockquote>
+<p>Een signaal dat niet wordt opgepakt, omdat:</p>
 <ul>
 <li>de gemelde achterstand lager is dan het drempelbedrag dat de gemeente hanteert, of;</li>
 <li>het aantal dagen achterstand te hoog of te laag is.</li>
@@ -1636,20 +1660,23 @@ Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie 
 </blockquote>
 </li>
 <li><strong>Inwoner is overleden</strong>: Inwoner is overleden, hierbij kan het nodig zijn om aan het achtergebleven huishouden/de erven een hulpaanbod te doen. Dit is bijvoorbeeld relevant als nabestaanden nog op het adres wonen en afsluiting van water of energie ongewenst is.</li>
-<li><strong>Persoon is geen inwoner (meer) in de gemeente</strong>: &gt; Wanneer de inwoner in een andere gemeente staat ingeschreven, geef de melding dan dit eindresultaat. De vastelastenpartner wordt hierdoor automatisch vanuit het systeem geïnformeerd dat de aangemelde klant geen inwoner (meer) is van de gemeente.<blockquote>
-<p>Deel het signaal – waar mogelijk – vanuit vroegsignalering met de gemeente waar de inwoner <strong>wél</strong> staat ingeschreven. Doe dit telefonisch en/of per (beveiligde) e-mail.
+<li><strong>Persoon is geen inwoner (meer) in de gemeente</strong>: <blockquote>
+<p>Wanneer de inwoner in een andere gemeente staat ingeschreven, geef de melding dan dit eindresultaat. De vastelastenpartner wordt hierdoor automatisch vanuit het systeem geïnformeerd dat de aangemelde klant geen inwoner (meer) is van de gemeente.
+Deel het signaal – waar mogelijk – vanuit vroegsignalering met de gemeente waar de inwoner <strong>wél</strong> staat ingeschreven. Doe dit telefonisch en/of per (beveiligde) e-mail.
 <strong>Al contact gehad met inwoner</strong>
 Is de inwoner niet meer woonachtig in de gemeente, maar is er wel (telefonisch) contact geweest? Registreer dan alsnog dit als eindresultaat. Zo wordt de vastelastenpartner op de hoogte gebracht.
 <strong>Verhuizing binnen de gemeente</strong>
 Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan op. Het eindresultaat hangt dan af van de uitkomst van het contact.</p>
 </blockquote>
 </li>
-<li><strong>Niet opgepakt: herhaalde melding</strong>: &gt; Een signaal dat niet wordt opgepakt, omdat er recent al een signaal is ontvangen en opgepakt over dezelfde betalingsachterstand van dezelfde vastelastenpartner. De betalingsachterstand is niet hoger geworden. Als de achterstand wel hoger is geworden, moet deze wel worden opgepakt.<blockquote>
-<p>Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.</p>
+<li><strong>Niet opgepakt: herhaalde melding</strong>: <blockquote>
+<p>Een signaal dat niet wordt opgepakt, omdat er recent al een signaal is ontvangen en opgepakt over dezelfde betalingsachterstand van dezelfde vastelastenpartner. De betalingsachterstand is niet hoger geworden. Als de achterstand wel hoger is geworden, moet deze wel worden opgepakt.
+Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.</p>
 </blockquote>
 </li>
-<li><strong>Niet opgepakt: andere reden</strong>: &gt; Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeente kunnen de redenen voor zichzelf wel bijhouden.<blockquote>
-<p>Mogelijke redenen om een melding <strong>niet</strong> op te pakken:</p>
+<li><strong>Niet opgepakt: andere reden</strong>: <blockquote>
+<p>Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeente kunnen de redenen voor zichzelf wel bijhouden.
+Mogelijke redenen om een melding <strong>niet</strong> op te pakken:</p>
 <ul>
 <li>Inwoner verblijft onrechtmatig in Nederland volgens de BRP</li>
 <li>Inwoner zit in detentie</li>
