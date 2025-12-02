@@ -4,7 +4,7 @@
 ### AanleverendeOrganisatie
 > **Definitie AanleverendeOrganisatie:** 
 >
-> Organisatie de data aanlevert aan het CBS
+> Organisatie de data aanlevert aan het CBS. Het kan hier gaan om de gemeente zelf, of een partij die namens de gemeente uitvoering geeft aan de afhandeling van vroegsignalen.
 
 ??? info "Kenmerken Model AanleverendeOrganisatie"
     | Eigenschap | Waarde |
@@ -30,7 +30,7 @@ Attributen van objecttype AanleverendeOrganisatie
 ### Contactpersoon
 > **Definitie Contactpersoon:** 
 >
-> Contactpersoon van een organisatie
+> Contactpersoon bij de aanleverende organisatie.
 
 ??? info "Kenmerken Model Contactpersoon"
     | Eigenschap | Waarde |
@@ -336,7 +336,7 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 >
 > Er kan tijdens dit contactmoment wat algemene informatie zijn verstrekt en/of tips gegeven, waar de inwoner zelf mee aan de slag gaat.
 * **Inwoner heeft zelf al betaald/betalingsregeling getroffen**: Wanneer de inwoner al een oplossing blijkt te hebben voor de betalingsachterstand op het moment dat ervan uit vroegsignalering contact is met de inwoner. Hij/zij heeft al betaald of een betalingsregeling getroffen.
-* **(Budget)advies en/of ‘quick fix’**: 
+* **(Budget)advies en/of quick fix**: 
 > Er is contact (geweest) met de inwoner en er is zodanige hulp geboden dat de inwoner binnen 30 dagen na hulpacceptatie (zelf) de betalingsachterstanden op kan lossen.
 > Voorbeelden van ‘quick fixes’:
 >

@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/VNG-Realisatie/ddas/main//json_schema_Uitwisselmodel.json",
+    "$id": "https://raw.githubusercontent.com/VNG-Realisatie/ddas/main/v0.9/json_schema_Uitwisselmodel.json",
     "title": "Uitwisselmodel",
     "type": "object",
     "description": "Het uitwisselmodel is een model dat de gegevens bevat die uitgewisseld worden tussen de verschillende partijen.",
@@ -37,7 +37,7 @@
                     },
                     "aanleverende_organisatie": {
                         "type": "object",
-                        "description": "Organisatie de data aanlevert aan het CBS",
+                        "description": "Organisatie de data aanlevert aan het CBS. Het kan hier gaan om de gemeente zelf, of een partij die namens de gemeente uitvoering geeft aan de afhandeling van vroegsignalen. ",
                         "properties": {
                             "naam": {
                                 "type": "string"
@@ -49,7 +49,7 @@
                                 "type": "array",
                                 "items": {
                                     "type": "object",
-                                    "description": "Contactpersoon van een organisatie",
+                                    "description": "Contactpersoon bij de aanleverende organisatie.",
                                     "properties": {
                                         "naam": {
                                             "type": "string"
@@ -148,9 +148,9 @@
                                 }
                             },
                             "required": [
-                                "ID",
                                 "client",
-                                "signaalpartner"
+                                "signaalpartner",
+                                "ID"
                             ],
                             "additionalProperties": false
                         }
@@ -226,8 +226,8 @@
                     }
                 },
                 "required": [
-                    "gemeentecode",
                     "aanleverende_organisatie",
+                    "gemeentecode",
                     "teller"
                 ],
                 "additionalProperties": false
@@ -237,10 +237,10 @@
         }
     },
     "required": [
+        "aanleverdatumEnTijd",
         "einddatumLevering",
-        "codeGegevensleverancier",
         "startdatumLevering",
-        "aanleverdatumEnTijd"
+        "codeGegevensleverancier"
     ],
     "additionalProperties": false,
     "$defs": {
@@ -267,6 +267,23 @@
         "bedrag": {
             "type": "integer",
             "description": "Een geldbedrag in hele euros nauwkweurig."
+        },
+        "EnumSignaalpartner": {
+            "type": "string",
+            "description": "Enumeratie met de soorten te onderscheiden Signaalpartners.",
+            "enum": [
+                "Energie",
+                "Huur",
+                "Hypotheek",
+                "CAK Zorgverzekeringen",
+                "Zorg",
+                "Water",
+                "DUO",
+                "Belastingdienst",
+                "CAK Eigen bijdrage",
+                "Overige",
+                "Dienst Toeslagen"
+            ]
         },
         "EnumContactsoort": {
             "type": "string",
@@ -297,27 +314,10 @@
                 "Geen reactie na eerder contact",
                 "Inwoner hoeft geen hulp vanuit vroegsignalering",
                 "Inwoner heeft zelf al betaald/betalingsregeling getroffen",
-                "(Budget)advies en/of \u2018quick fix\u2019",
+                "(Budget)advies en/of quick fix",
                 "Vervolghulp en/of verwijzing financieel",
                 "Verwijzing zonder contact",
                 "Vervolghulp en/of verwijzing niet financieel"
-            ]
-        },
-        "EnumSignaalpartner": {
-            "type": "string",
-            "description": "Enumeratie met de soorten te onderscheiden Signaalpartners.",
-            "enum": [
-                "Energie",
-                "Huur",
-                "Hypotheek",
-                "CAK Zorgverzekeringen",
-                "Zorg",
-                "Water",
-                "DUO",
-                "Belastingdienst",
-                "CAK Eigen bijdrage",
-                "Overige",
-                "Dienst Toeslagen"
             ]
         },
         "EnumDagdeel": {

@@ -1,0 +1,78 @@
+{
+  "codeGegevensleverancier": "SOFT-123",
+  "startdatumLevering": "2025-01-01",
+  "einddatumLevering": "2025-01-31",
+  "aanleverdatumEnTijd": "2025-02-05T10:30:00Z",
+  "leveringen": [
+    {
+      "teller": 1,
+      "gemeentecode": "0518",
+      "aanleverende_organisatie": {
+        "naam": "Gemeente Voorbeeld",
+        "kvk-nummer": "12345678",
+        "contactpersoonen": [
+          {
+            "naam": "J. de Vries",
+            "telefoonnummer": "010-1234567",
+            "email": "j.devries@gemeentevoorbeeld.nl",
+            "functietitel": "Beleidsmedewerker schuldhulpverlening"
+          }
+        ]
+      },
+      "vroegsignalen": [
+        {
+          "ID": "VS-2025-0001",
+          "crisissignaal": false,
+          "warmeOverdracht": false,
+          "bedrag": 450,
+          "ontstaansdatum": "2024-12-10",
+          "signaaldatum": "2025-01-05",
+          "status": "Nog niet opgepakt",
+          "signaalpartner": {
+            "type": "Energie"
+          },
+          "client": {
+            "Burgerservicenummer": "123456789",
+            "Voorletters": "A.",
+            "Voorvoegsel": "van",
+            "Achternaam": "Dijk",
+            "Geboortedatum": "1985-06-15",
+            "Straatnaam": "Voorbeeldstraat",
+            "Postcode": "1234AB",
+            "Huisnummer": "10",
+            "Huisnummertoevoeging": "A",
+            "Plaatsnaam": "Voorbeeldstad"
+          }
+        }
+      ],
+      "vroegsignaalzaken": [
+        {
+          "resultaat": "Inwoner hoeft geen hulp vanuit vroegsignalering",
+          "matchingsdatum": "2025-01-06",
+          "startdatum_matchtingperiode": "2024-12-01",
+          "datum_opgepakt": "2025-01-10",
+          "einddatum_matchingperiode": "2025-01-31",
+          "vroegsignalen": [
+            {
+              "ID": "VS-2025-0001"
+            }
+          ],
+          "contactpogingen": [
+            {
+              "soort": "Telefoon",
+              "bereikt": false,
+              "datum": "2025-01-10",
+              "dagdeel": "Ochtend"
+            },
+            {
+              "soort": "Huisbezoek",
+              "bereikt": true,
+              "datum": "2025-01-15",
+              "dagdeel": "Middag"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

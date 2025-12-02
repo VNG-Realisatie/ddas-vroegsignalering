@@ -12,7 +12,7 @@ Belangrijk onderdeel van DDAS is het mogelijk maken van datadelen van gemeenten 
 
 Een informatiemodel is een gestructureerde representatie van gegevens en hun onderlinge relaties binnen een bepaald domein. Het helpt bij het standaardiseren van gegevens door uniforme definities, formats en regels vast te leggen voor hoe informatie wordt opgeslagen, uitgewisseld en geïnterpreteerd. Dit bevordert consistentie, duidelijkheid en interoperabiliteit tussen verschillende systemen en afdelingen, waardoor efficiëntie en datakwaliteit verbeteren.
 
-Om te komen tot goed gestandaardiseerde definities over schuldhulpverlening is een informatiemodel Schuldhulpverlening opgesteld, deze is in dit document nader uitgewerkt.
+Om te komen tot goed gestandaardiseerde definities over schuldhulpverlening is een informatiemodel Vroegsignalering opgesteld, deze is in dit document nader uitgewerkt.
 
 Een uitwisselmodel is een gestructureerde set van afspraken en standaarden voor de manier waarop gegevens tussen organisaties wordt uitgewisseld. Dit model is afgeleid van een informatiemodel, dat de basis vormt door de gegevensstructuren en -relaties binnen een domein te definiëren. Het uitwisselmodel specificeert welke gegevenselementen uit het informatiemodel relevant zijn voor uitwisseling en in welk formaat deze moeten worden aangeleverd. Hierdoor wordt de consistentie en compatibiliteit van gegevensoverdracht tussen organisaties gewaarborgd, wat de efficiëntie en betrouwbaarheid van de data-aanlevering verbetert. In het uitwisselmodel hoeven niet alle gegevens uit het informatiemodel worden meegenomen.
 
@@ -20,7 +20,7 @@ In dit document worden zowel het informatiemodel als het uitwisselmodel beschrev
 
 ## NVVK-Referentieproces
 
-Als uitgangspunt voor het informatiemodel schuldhulpverlening is het proces dat door de NVVK is beschreven genomen. Schuldhulpverleners binnen Nederland werken conform dit proces.
+Als uitgangspunt voor het programma DDAS is het proces dat door de NVVK is beschreven genomen. Schuldhulpverleners binnen Nederland werken conform dit proces.
 
 [![NVVK-referentieproces](images/image6.jpeg)](images/image6.jpeg)
 

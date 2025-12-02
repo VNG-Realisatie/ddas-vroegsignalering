@@ -1,0 +1,222 @@
+{
+  "codeGegevensleverancier": "SOFT-123",
+  "startdatumLevering": "2025-01-01",
+  "einddatumLevering": "2025-01-31",
+  "aanleverdatumEnTijd": "2025-02-05T10:30:00Z",
+  "leveringen": [
+    {
+      "teller": 1,
+      "gemeentecode": "0518",
+      "aanleverende_organisatie": {
+        "naam": "Gemeente Voorbeeldstad",
+        "kvk-nummer": "12345678",
+        "contactpersoonen": [
+          {
+            "naam": "J. de Vries",
+            "telefoonnummer": "010-1234567",
+            "email": "j.devries@gemeentevoorbeeld.nl",
+            "functietitel": "Schuldhulpverlener"
+          }
+        ]
+      },
+      "vroegsignalen": [
+        {
+          "ID": "VS-2025-0001",
+          "crisissignaal": false,
+          "warmeOverdracht": false,
+          "bedrag": 450,
+          "ontstaansdatum": "2024-12-10",
+          "signaaldatum": "2025-01-05",
+          "status": "Nog niet opgepakt",
+          "signaalpartner": {
+            "type": "Energie"
+          },
+          "client": {
+            "Burgerservicenummer": "123456789",
+            "Voorletters": "A.",
+            "Voorvoegsel": "van",
+            "Achternaam": "Dijk",
+            "Geboortedatum": "1985-06-15",
+            "Straatnaam": "Voorbeeldstraat",
+            "Postcode": "1234AB",
+            "Huisnummer": "10",
+            "Huisnummertoevoeging": "A",
+            "Plaatsnaam": "Voorbeeldstad"
+          }
+        },
+        {
+          "ID": "VS-2025-0002",
+          "crisissignaal": true,
+          "warmeOverdracht": false,
+          "bedrag": 1200,
+          "ontstaansdatum": "2024-12-28",
+          "signaaldatum": "2025-01-10",
+          "status": "Niet opgepakt: herhaalde melding",
+          "signaalpartner": {
+            "type": "Water"
+          },
+          "client": {
+            "Burgerservicenummer": "987654321",
+            "Voorletters": "M.",
+            "Achternaam": "Kramer",
+            "Geboortedatum": "1993-04-22",
+            "Straatnaam": "Waterweg",
+            "Postcode": "5678CD",
+            "Huisnummer": "22",
+            "Plaatsnaam": "Voorbeelddorp"
+          }
+        }
+      ],
+      "vroegsignaalzaken": [
+        {
+          "resultaat": "Vervolghulp en/of verwijzing financieel",
+          "matchingsdatum": "2025-01-12",
+          "startdatum_matchtingperiode": "2024-12-15",
+          "datum_opgepakt": "2025-01-13",
+          "einddatum_matchingperiode": "2025-01-31",
+          "vroegsignalen": [
+            { "ID": "VS-2025-0002" }
+          ],
+          "contactpogingen": [
+            {
+              "soort": "Telefoon",
+              "bereikt": false,
+              "datum": "2025-01-11",
+              "dagdeel": "Ochtend"
+            },
+            {
+              "soort": "Huisbezoek",
+              "bereikt": true,
+              "datum": "2025-01-13",
+              "dagdeel": "Middag"
+            }
+          ]
+        },
+        {
+          "resultaat": "Inwoner hoeft geen hulp vanuit vroegsignalering",
+          "matchingsdatum": "2025-01-07",
+          "startdatum_matchtingperiode": "2024-12-01",
+          "datum_opgepakt": "2025-01-10",
+          "einddatum_matchingperiode": "2025-01-31",
+          "vroegsignalen": [
+            { "ID": "VS-2025-0001" }
+          ],
+          "contactpogingen": [
+            {
+              "soort": "Brief",
+              "bereikt": false,
+              "datum": "2025-01-06",
+              "dagdeel": "Middag"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teller": 2,
+      "gemeentecode": "0307",
+      "aanleverende_organisatie": {
+        "naam": "Gemeente Tweedehoven",
+        "kvk-nummer": "87654321",
+        "contactpersoonen": [
+          {
+            "naam": "P. Janssen",
+            "telefoonnummer": "020-9876543",
+            "email": "p.janssen@tweedehoven.nl",
+            "functietitel": "Consulent vroegsignalering"
+          }
+        ]
+      },
+      "vroegsignalen": [
+        {
+          "ID": "VS-2025-0101",
+          "crisissignaal": false,
+          "warmeOverdracht": true,
+          "bedrag": 300,
+          "ontstaansdatum": "2025-01-05",
+          "signaaldatum": "2025-01-08",
+          "status": "Nog niet opgepakt",
+          "signaalpartner": {
+            "type": "CAK Zorgverzekeringen"
+          },
+          "client": {
+            "Burgerservicenummer": "112233445",
+            "Voorletters": "S.",
+            "Achternaam": "Jansen",
+            "Geboortedatum": "1990-12-03",
+            "Straatnaam": "Parklaan",
+            "Postcode": "1122EE",
+            "Huisnummer": "8",
+            "Plaatsnaam": "Tweedehoven"
+          }
+        },
+        {
+          "ID": "VS-2025-0102",
+          "crisissignaal": false,
+          "warmeOverdracht": false,
+          "bedrag": 750,
+          "ontstaansdatum": "2024-11-20",
+          "signaaldatum": "2025-01-12",
+          "status": "Niet opgepakt: andere reden",
+          "signaalpartner": {
+            "type": "Huur"
+          },
+          "client": {
+            "Burgerservicenummer": "556677889",
+            "Voorletters": "K.",
+            "Achternaam": "Meijer",
+            "Geboortedatum": "1978-09-17",
+            "Straatnaam": "Bosweg",
+            "Postcode": "2233FF",
+            "Huisnummer": "14",
+            "Plaatsnaam": "Tweedehoven"
+          }
+        }
+      ],
+      "vroegsignaalzaken": [
+        {
+          "resultaat": "Inwoner heeft zelf al betaald/betalingsregeling getroffen",
+          "matchingsdatum": "2025-01-10",
+          "startdatum_matchtingperiode": "2024-12-10",
+          "datum_opgepakt": "2025-01-11",
+          "einddatum_matchingperiode": "2025-01-31",
+          "vroegsignalen": [
+            { "ID": "VS-2025-0101" }
+          ],
+          "contactpogingen": [
+            {
+              "soort": "Telefoon",
+              "bereikt": true,
+              "datum": "2025-01-11",
+              "dagdeel": "Ochtend"
+            }
+          ]
+        },
+        {
+          "resultaat": "Definitief geen contact kunnen krijgen",
+          "matchingsdatum": "2025-01-18",
+          "startdatum_matchtingperiode": "2024-12-20",
+          "datum_opgepakt": "2025-01-19",
+          "einddatum_matchingperiode": "2025-02-01",
+          "vroegsignalen": [
+            { "ID": "VS-2025-0102" }
+          ],
+          "contactpogingen": [
+            {
+              "soort": "Mail",
+              "bereikt": false,
+              "datum": "2025-01-15",
+              "dagdeel": "Ochtend"
+            },
+            {
+              "soort": "Telefoon",
+              "bereikt": false,
+              "datum": "2025-01-16",
+              "dagdeel": "Avond"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
