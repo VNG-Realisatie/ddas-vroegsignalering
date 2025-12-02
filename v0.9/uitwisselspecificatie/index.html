@@ -338,6 +338,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#meervoudig-voorbeeld" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meervoudig voorbeeld
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -547,6 +556,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#meervoudig-voorbeeld" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meervoudig voorbeeld
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -588,7 +606,7 @@
 <p>Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.9/json_schema_Uitwisselmodel.json">downloadversie</a> beschikbaar.</p>
 <div class="highlight"><pre><span></span><code>{
     &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
-    &quot;$id&quot;: &quot;https://raw.githubusercontent.com/VNG-Realisatie/ddas/main//json_schema_Uitwisselmodel.json&quot;,
+    &quot;$id&quot;: &quot;https://raw.githubusercontent.com/VNG-Realisatie/ddas/main/v0.9/json_schema_Uitwisselmodel.json&quot;,
     &quot;title&quot;: &quot;Uitwisselmodel&quot;,
     &quot;type&quot;: &quot;object&quot;,
     &quot;description&quot;: &quot;Het uitwisselmodel is een model dat de gegevens bevat die uitgewisseld worden tussen de verschillende partijen.&quot;,
@@ -625,7 +643,7 @@
                     },
                     &quot;aanleverende_organisatie&quot;: {
                         &quot;type&quot;: &quot;object&quot;,
-                        &quot;description&quot;: &quot;Organisatie de data aanlevert aan het CBS&quot;,
+                        &quot;description&quot;: &quot;Organisatie de data aanlevert aan het CBS. Het kan hier gaan om de gemeente zelf, of een partij die namens de gemeente uitvoering geeft aan de afhandeling van vroegsignalen. &quot;,
                         &quot;properties&quot;: {
                             &quot;naam&quot;: {
                                 &quot;type&quot;: &quot;string&quot;
@@ -637,7 +655,7 @@
                                 &quot;type&quot;: &quot;array&quot;,
                                 &quot;items&quot;: {
                                     &quot;type&quot;: &quot;object&quot;,
-                                    &quot;description&quot;: &quot;Contactpersoon van een organisatie&quot;,
+                                    &quot;description&quot;: &quot;Contactpersoon bij de aanleverende organisatie.&quot;,
                                     &quot;properties&quot;: {
                                         &quot;naam&quot;: {
                                             &quot;type&quot;: &quot;string&quot;
@@ -814,8 +832,8 @@
                     }
                 },
                 &quot;required&quot;: [
-                    &quot;gemeentecode&quot;,
                     &quot;aanleverende_organisatie&quot;,
+                    &quot;gemeentecode&quot;,
                     &quot;teller&quot;
                 ],
                 &quot;additionalProperties&quot;: false
@@ -825,10 +843,10 @@
         }
     },
     &quot;required&quot;: [
-        &quot;einddatumLevering&quot;,
         &quot;codeGegevensleverancier&quot;,
         &quot;startdatumLevering&quot;,
-        &quot;aanleverdatumEnTijd&quot;
+        &quot;aanleverdatumEnTijd&quot;,
+        &quot;einddatumLevering&quot;
     ],
     &quot;additionalProperties&quot;: false,
     &quot;$defs&quot;: {
@@ -856,39 +874,15 @@
             &quot;type&quot;: &quot;integer&quot;,
             &quot;description&quot;: &quot;Een geldbedrag in hele euros nauwkweurig.&quot;
         },
-        &quot;EnumContactsoort&quot;: {
+        &quot;EnumSignaalstatus&quot;: {
             &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
             &quot;enum&quot;: [
-                &quot;Mail&quot;,
-                &quot;Brief&quot;,
-                &quot;SMS/Whatsapp&quot;,
-                &quot;Telefoon&quot;,
-                &quot;Huisbezoek&quot;,
-                &quot;Kaartje&quot;,
-                &quot;Overige&quot;,
-                &quot;Administratief&quot;
-            ]
-        },
-        &quot;EnumEindresultaat&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
-            &quot;enum&quot;: [
-                &quot;Niet opgepakt: herhaalde melding&quot;,
+                &quot;Nog niet opgepakt&quot;,
                 &quot;Niet opgepakt: onterecht signaal&quot;,
                 &quot;Inwoner is overleden&quot;,
                 &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
-                &quot;Niet opgepakt: andere reden&quot;,
-                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
-                &quot;Inwoner heeft al een ander lopend traject&quot;,
-                &quot;Definitief geen contact kunnen krijgen&quot;,
-                &quot;Geen reactie na eerder contact&quot;,
-                &quot;Inwoner hoeft geen hulp vanuit vroegsignalering&quot;,
-                &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
-                &quot;(Budget)advies en/of \u2018quick fix\u2019&quot;,
-                &quot;Vervolghulp en/of verwijzing financieel&quot;,
-                &quot;Verwijzing zonder contact&quot;,
-                &quot;Vervolghulp en/of verwijzing niet financieel&quot;
+                &quot;Niet opgepakt: herhaalde melding&quot;,
+                &quot;Niet opgepakt: andere reden&quot;
             ]
         },
         &quot;EnumSignaalpartner&quot;: {
@@ -908,6 +902,20 @@
                 &quot;Dienst Toeslagen&quot;
             ]
         },
+        &quot;EnumContactsoort&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
+            &quot;enum&quot;: [
+                &quot;Mail&quot;,
+                &quot;Brief&quot;,
+                &quot;SMS/Whatsapp&quot;,
+                &quot;Telefoon&quot;,
+                &quot;Huisbezoek&quot;,
+                &quot;Kaartje&quot;,
+                &quot;Overige&quot;,
+                &quot;Administratief&quot;
+            ]
+        },
         &quot;EnumDagdeel&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;enum&quot;: [
@@ -916,15 +924,25 @@
                 &quot;Avond&quot;
             ]
         },
-        &quot;EnumSignaalstatus&quot;: {
+        &quot;EnumEindresultaat&quot;: {
             &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
             &quot;enum&quot;: [
-                &quot;Nog niet opgepakt&quot;,
+                &quot;Niet opgepakt: herhaalde melding&quot;,
                 &quot;Niet opgepakt: onterecht signaal&quot;,
                 &quot;Inwoner is overleden&quot;,
                 &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
-                &quot;Niet opgepakt: herhaalde melding&quot;,
-                &quot;Niet opgepakt: andere reden&quot;
+                &quot;Niet opgepakt: andere reden&quot;,
+                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
+                &quot;Inwoner heeft al een ander lopend traject&quot;,
+                &quot;Definitief geen contact kunnen krijgen&quot;,
+                &quot;Geen reactie na eerder contact&quot;,
+                &quot;Inwoner hoeft geen hulp vanuit vroegsignalering&quot;,
+                &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
+                &quot;(Budget)advies en/of quick fix&quot;,
+                &quot;Vervolghulp en/of verwijzing financieel&quot;,
+                &quot;Verwijzing zonder contact&quot;,
+                &quot;Vervolghulp en/of verwijzing niet financieel&quot;
             ]
         }
     }
@@ -933,7 +951,309 @@
 <h2 id="voorbeelden">Voorbeelden</h2>
 <h3 id="enkelvoudig-voorbeeld">Enkelvoudig voorbeeld</h3>
 <p>Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.9/enkelvoudigVoorbeeld.json">downloaden</a>.</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code>{
+  &quot;codeGegevensleverancier&quot;: &quot;SOFT-123&quot;,
+  &quot;startdatumLevering&quot;: &quot;2025-01-01&quot;,
+  &quot;einddatumLevering&quot;: &quot;2025-01-31&quot;,
+  &quot;aanleverdatumEnTijd&quot;: &quot;2025-02-05T10:30:00Z&quot;,
+  &quot;leveringen&quot;: [
+    {
+      &quot;teller&quot;: 1,
+      &quot;gemeentecode&quot;: &quot;0518&quot;,
+      &quot;aanleverende_organisatie&quot;: {
+        &quot;naam&quot;: &quot;Gemeente Voorbeeld&quot;,
+        &quot;kvk-nummer&quot;: &quot;12345678&quot;,
+        &quot;contactpersoonen&quot;: [
+          {
+            &quot;naam&quot;: &quot;J. de Vries&quot;,
+            &quot;telefoonnummer&quot;: &quot;010-1234567&quot;,
+            &quot;email&quot;: &quot;j.devries@gemeentevoorbeeld.nl&quot;,
+            &quot;functietitel&quot;: &quot;Beleidsmedewerker schuldhulpverlening&quot;
+          }
+        ]
+      },
+      &quot;vroegsignalen&quot;: [
+        {
+          &quot;ID&quot;: &quot;VS-2025-0001&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 450,
+          &quot;ontstaansdatum&quot;: &quot;2024-12-10&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-01-05&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: {
+            &quot;type&quot;: &quot;Energie&quot;
+          },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;123456789&quot;,
+            &quot;Voorletters&quot;: &quot;A.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;van&quot;,
+            &quot;Achternaam&quot;: &quot;Dijk&quot;,
+            &quot;Geboortedatum&quot;: &quot;1985-06-15&quot;,
+            &quot;Straatnaam&quot;: &quot;Voorbeeldstraat&quot;,
+            &quot;Postcode&quot;: &quot;1234AB&quot;,
+            &quot;Huisnummer&quot;: &quot;10&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;A&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Voorbeeldstad&quot;
+          }
+        }
+      ],
+      &quot;vroegsignaalzaken&quot;: [
+        {
+          &quot;resultaat&quot;: &quot;Inwoner hoeft geen hulp vanuit vroegsignalering&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-01-06&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2024-12-01&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-01-10&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-01-31&quot;,
+          &quot;vroegsignalen&quot;: [
+            {
+              &quot;ID&quot;: &quot;VS-2025-0001&quot;
+            }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-01-10&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Huisbezoek&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-01-15&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+</code></pre></div>
+<h3 id="meervoudig-voorbeeld">Meervoudig voorbeeld</h3>
+<p>Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.9/meervoudigVoorbeeld.json">downloaden</a>.</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;codeGegevensleverancier&quot;: &quot;SOFT-123&quot;,
+  &quot;startdatumLevering&quot;: &quot;2025-01-01&quot;,
+  &quot;einddatumLevering&quot;: &quot;2025-01-31&quot;,
+  &quot;aanleverdatumEnTijd&quot;: &quot;2025-02-05T10:30:00Z&quot;,
+  &quot;leveringen&quot;: [
+    {
+      &quot;teller&quot;: 1,
+      &quot;gemeentecode&quot;: &quot;0518&quot;,
+      &quot;aanleverende_organisatie&quot;: {
+        &quot;naam&quot;: &quot;Gemeente Voorbeeldstad&quot;,
+        &quot;kvk-nummer&quot;: &quot;12345678&quot;,
+        &quot;contactpersoonen&quot;: [
+          {
+            &quot;naam&quot;: &quot;J. de Vries&quot;,
+            &quot;telefoonnummer&quot;: &quot;010-1234567&quot;,
+            &quot;email&quot;: &quot;j.devries@gemeentevoorbeeld.nl&quot;,
+            &quot;functietitel&quot;: &quot;Schuldhulpverlener&quot;
+          }
+        ]
+      },
+      &quot;vroegsignalen&quot;: [
+        {
+          &quot;ID&quot;: &quot;VS-2025-0001&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 450,
+          &quot;ontstaansdatum&quot;: &quot;2024-12-10&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-01-05&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: {
+            &quot;type&quot;: &quot;Energie&quot;
+          },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;123456789&quot;,
+            &quot;Voorletters&quot;: &quot;A.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;van&quot;,
+            &quot;Achternaam&quot;: &quot;Dijk&quot;,
+            &quot;Geboortedatum&quot;: &quot;1985-06-15&quot;,
+            &quot;Straatnaam&quot;: &quot;Voorbeeldstraat&quot;,
+            &quot;Postcode&quot;: &quot;1234AB&quot;,
+            &quot;Huisnummer&quot;: &quot;10&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;A&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Voorbeeldstad&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-2025-0002&quot;,
+          &quot;crisissignaal&quot;: true,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 1200,
+          &quot;ontstaansdatum&quot;: &quot;2024-12-28&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-01-10&quot;,
+          &quot;status&quot;: &quot;Niet opgepakt: herhaalde melding&quot;,
+          &quot;signaalpartner&quot;: {
+            &quot;type&quot;: &quot;Water&quot;
+          },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;987654321&quot;,
+            &quot;Voorletters&quot;: &quot;M.&quot;,
+            &quot;Achternaam&quot;: &quot;Kramer&quot;,
+            &quot;Geboortedatum&quot;: &quot;1993-04-22&quot;,
+            &quot;Straatnaam&quot;: &quot;Waterweg&quot;,
+            &quot;Postcode&quot;: &quot;5678CD&quot;,
+            &quot;Huisnummer&quot;: &quot;22&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Voorbeelddorp&quot;
+          }
+        }
+      ],
+      &quot;vroegsignaalzaken&quot;: [
+        {
+          &quot;resultaat&quot;: &quot;Vervolghulp en/of verwijzing financieel&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-01-12&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2024-12-15&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-01-13&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-01-31&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-2025-0002&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-01-11&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Huisbezoek&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-01-13&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Inwoner hoeft geen hulp vanuit vroegsignalering&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-01-07&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2024-12-01&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-01-10&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-01-31&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-2025-0001&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Brief&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-01-06&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            }
+          ]
+        }
+      ]
+    },
+    {
+      &quot;teller&quot;: 2,
+      &quot;gemeentecode&quot;: &quot;0307&quot;,
+      &quot;aanleverende_organisatie&quot;: {
+        &quot;naam&quot;: &quot;Gemeente Tweedehoven&quot;,
+        &quot;kvk-nummer&quot;: &quot;87654321&quot;,
+        &quot;contactpersoonen&quot;: [
+          {
+            &quot;naam&quot;: &quot;P. Janssen&quot;,
+            &quot;telefoonnummer&quot;: &quot;020-9876543&quot;,
+            &quot;email&quot;: &quot;p.janssen@tweedehoven.nl&quot;,
+            &quot;functietitel&quot;: &quot;Consulent vroegsignalering&quot;
+          }
+        ]
+      },
+      &quot;vroegsignalen&quot;: [
+        {
+          &quot;ID&quot;: &quot;VS-2025-0101&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: true,
+          &quot;bedrag&quot;: 300,
+          &quot;ontstaansdatum&quot;: &quot;2025-01-05&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-01-08&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: {
+            &quot;type&quot;: &quot;CAK Zorgverzekeringen&quot;
+          },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;112233445&quot;,
+            &quot;Voorletters&quot;: &quot;S.&quot;,
+            &quot;Achternaam&quot;: &quot;Jansen&quot;,
+            &quot;Geboortedatum&quot;: &quot;1990-12-03&quot;,
+            &quot;Straatnaam&quot;: &quot;Parklaan&quot;,
+            &quot;Postcode&quot;: &quot;1122EE&quot;,
+            &quot;Huisnummer&quot;: &quot;8&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Tweedehoven&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-2025-0102&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 750,
+          &quot;ontstaansdatum&quot;: &quot;2024-11-20&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-01-12&quot;,
+          &quot;status&quot;: &quot;Niet opgepakt: andere reden&quot;,
+          &quot;signaalpartner&quot;: {
+            &quot;type&quot;: &quot;Huur&quot;
+          },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;556677889&quot;,
+            &quot;Voorletters&quot;: &quot;K.&quot;,
+            &quot;Achternaam&quot;: &quot;Meijer&quot;,
+            &quot;Geboortedatum&quot;: &quot;1978-09-17&quot;,
+            &quot;Straatnaam&quot;: &quot;Bosweg&quot;,
+            &quot;Postcode&quot;: &quot;2233FF&quot;,
+            &quot;Huisnummer&quot;: &quot;14&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Tweedehoven&quot;
+          }
+        }
+      ],
+      &quot;vroegsignaalzaken&quot;: [
+        {
+          &quot;resultaat&quot;: &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-01-10&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2024-12-10&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-01-11&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-01-31&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-2025-0101&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-01-11&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Definitief geen contact kunnen krijgen&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-01-18&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2024-12-20&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-01-19&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-02-01&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-2025-0102&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Mail&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-01-15&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-01-16&quot;,
+              &quot;dagdeel&quot;: &quot;Avond&quot;
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
 </code></pre></div>
 
 

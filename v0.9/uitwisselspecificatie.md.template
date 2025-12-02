@@ -37,3 +37,12 @@ Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voo
 {!../###VERSION###/enkelvoudigVoorbeeld.json!}
 
 ```
+
+### Meervoudig voorbeeld
+
+Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/###VERSION###/meervoudigVoorbeeld.json).
+
+```
+{!../###VERSION###/meervoudigVoorbeeld.json!}
+
+```
