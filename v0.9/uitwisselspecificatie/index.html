@@ -754,9 +754,9 @@
                                 }
                             },
                             &quot;required&quot;: [
-                                &quot;ID&quot;,
                                 &quot;client&quot;,
-                                &quot;signaalpartner&quot;
+                                &quot;signaalpartner&quot;,
+                                &quot;ID&quot;
                             ],
                             &quot;additionalProperties&quot;: false
                         }
@@ -843,10 +843,10 @@
         }
     },
     &quot;required&quot;: [
-        &quot;codeGegevensleverancier&quot;,
-        &quot;startdatumLevering&quot;,
         &quot;aanleverdatumEnTijd&quot;,
-        &quot;einddatumLevering&quot;
+        &quot;einddatumLevering&quot;,
+        &quot;startdatumLevering&quot;,
+        &quot;codeGegevensleverancier&quot;
     ],
     &quot;additionalProperties&quot;: false,
     &quot;$defs&quot;: {
@@ -873,17 +873,6 @@
         &quot;bedrag&quot;: {
             &quot;type&quot;: &quot;integer&quot;,
             &quot;description&quot;: &quot;Een geldbedrag in hele euros nauwkweurig.&quot;
-        },
-        &quot;EnumSignaalstatus&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Nog niet opgepakt&quot;,
-                &quot;Niet opgepakt: onterecht signaal&quot;,
-                &quot;Inwoner is overleden&quot;,
-                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
-                &quot;Niet opgepakt: herhaalde melding&quot;,
-                &quot;Niet opgepakt: andere reden&quot;
-            ]
         },
         &quot;EnumSignaalpartner&quot;: {
             &quot;type&quot;: &quot;string&quot;,
@@ -916,14 +905,6 @@
                 &quot;Administratief&quot;
             ]
         },
-        &quot;EnumDagdeel&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Ochtend&quot;,
-                &quot;Middag&quot;,
-                &quot;Avond&quot;
-            ]
-        },
         &quot;EnumEindresultaat&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
@@ -943,6 +924,25 @@
                 &quot;Vervolghulp en/of verwijzing financieel&quot;,
                 &quot;Verwijzing zonder contact&quot;,
                 &quot;Vervolghulp en/of verwijzing niet financieel&quot;
+            ]
+        },
+        &quot;EnumDagdeel&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Ochtend&quot;,
+                &quot;Middag&quot;,
+                &quot;Avond&quot;
+            ]
+        },
+        &quot;EnumSignaalstatus&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Nog niet opgepakt&quot;,
+                &quot;Niet opgepakt: onterecht signaal&quot;,
+                &quot;Inwoner is overleden&quot;,
+                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+                &quot;Niet opgepakt: herhaalde melding&quot;,
+                &quot;Niet opgepakt: andere reden&quot;
             ]
         }
     }
