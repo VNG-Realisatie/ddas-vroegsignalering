@@ -20,10 +20,10 @@ Alle bestanden dienen te worden aangeleverd in [UTF-8-formaat](https://www.forum
 
 ## Uitwisselspecificatie
 
-Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.9/json_schema_Uitwisselmodel.json) beschikbaar.
+Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v1.0/json_schema_Uitwisselmodel.json) beschikbaar.
 
 ```
-{!../v0.9/json_schema_Uitwisselmodel.json!}
+{!../v1.0/json_schema_Uitwisselmodel.json!}
 
 ```
 
@@ -31,18 +31,18 @@ Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook
 
 ### Enkelvoudig voorbeeld
 
-Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.9/enkelvoudigVoorbeeld.json).
+Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v1.0/enkelvoudigVoorbeeld.json).
 
 ```
-{!../v0.9/enkelvoudigVoorbeeld.json!}
+{!../v1.0/enkelvoudigVoorbeeld.json!}
 
 ```
 
 ### Meervoudig voorbeeld
 
-Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v0.9/meervoudigVoorbeeld.json).
+Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v1.0/meervoudigVoorbeeld.json).
 
 ```
-{!../v0.9/meervoudigVoorbeeld.json!}
+{!../v1.0/meervoudigVoorbeeld.json!}
 
 ```

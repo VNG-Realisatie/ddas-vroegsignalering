@@ -4,9 +4,9 @@ In dit hoofdstuk wordt geschetst hoe het informatiemodel Vroegsignalering eruitz
 
 ## Hoofdindeling
 
-De kern van het informatiemodel Vroegsignalering bestaat uit Vroegsignaal en uit Vroegsignaalzaak. Vroegsignalen worden door de Signaalpartners aangeboden. Vroegsignalen betreffen een bepaalde Client, waarvan tenminste de adresgegevensbeschikbaar zijn. Vervolgens worden ovr een bepaald interval alle vroegsignalen namens een gemeente opgepakt in een Vroegsignaalzaak. Binnen een Vroegsignaalzaak wordt er in een aantal contactpogingen contact gezocht met de Client.  
+De kern van het informatiemodel Vroegsignalering bestaat uit Vroegsignaal en uit Vroegsignaalzaak. Vroegsignalen worden door de Signaalpartners aangeboden. Vroegsignalen betreffen een bepaalde Client, waarvan tenminste de adresgegevens beschikbaar zijn. Vervolgens worden over een bepaald interval alle vroegsignalen namens een gemeente opgepakt in een Vroegsignaalzaak. Binnen een Vroegsignaalzaak wordt er in een aantal contactpogingen contact gezocht met de Client.  
 
-De vroegsignalen hebben een bepaalde status die, die altijd start met: "Nog niet opgepakt" en eindigt met een van de andere statussen uit EnumSignaalstatus. Hetzelfde geldt voor vroegsignaalzaken, die beginnen ook altijd met "Nog niet opgepakt" en eindigen met een andere status.   
+De Vroegsignalen hebben een bepaalde status die, die altijd start met: "Nog niet opgepakt" en eindigt met een van de andere statussen uit EnumSignaalstatus. Hetzelfde geldt voor Vroegsignaalzaken, die beginnen ook altijd met "Nog niet opgepakt" en eindigen met een  status uit EnumEindresultaat.   
 
 [![Hoofdindeling](../images/EAID_AFFABC16_BCDB_44c6_8E2F_C3D8C49884A5.jpg)](../images/EAID_AFFABC16_BCDB_44c6_8E2F_C3D8C49884A5.jpg)
 

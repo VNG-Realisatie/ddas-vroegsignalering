@@ -218,14 +218,14 @@ Attributen van objecttype Client
 
 Het enumeratie EnumContactsoort kent de volgende waarden:
 
-* **Mail**: Contact via e-mail, vaak gebruikt voor laagdrempelige informatievoorziening of opvolging.
+* **Mail**: Contact via e-mail, Contact via e-mail, zowel individueel en bulkmatig verzonden berichten.
 * **Brief**: Een fysieke brief, vaak met uitleg over de achterstand en het hulpaanbod, verzonden per post.
 * **SMS/Whatsapp**: Een tekstbericht verstuurd via sms, WhatsApp of andere digitale berichtendienst.
-* **Telefoon**: Telefonisch contact, waarbij direct met de inwoner wordt gesproken of een voicemail wordt ingesproken.
+* **Telefoon**: Telefonische contactpoging, waarbij direct met de inwoner wordt gesproken of een voicemail wordt ingesproken.
 * **Huisbezoek**: Een persoonlijke contactpoging aan huis, al dan niet aangekondigd, om direct met de inwoner in gesprek te gaan.
 * **Kaartje**: Een informatief of uitnodigend kaartje dat bij de inwoner thuis wordt achtergelaten, bijvoorbeeld bij een gemist huisbezoek.
-* **Overige**: Een andere vorm van contact dan de hier benoemde, bijvoorbeeld via een bemiddelaar, buurthulp of digitaal platform.
-* **Administratief**: Administratieve afhandeling zonder contact
+* **Administratief**: Administratieve afhandeling zonder contact.
+* **Afspraak op locatie**: Het contact heeft op locatie van de uitvoerder plaatsgevonden, bijv. op het gemeentekantoor, het kantoor van het sociaal team of op het kantoor van een welzijnsorganisatie.
 
 
 De enumeratie EnumContactsoort heeft de volgende kenmerken:
@@ -283,8 +283,9 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 * **Niet opgepakt: onterecht signaal**: 
 > Een signaal dat niet wordt opgepakt, omdat:
 >
-> * de gemelde achterstand lager is dan het drempelbedrag dat de gemeente hanteert, of;
-> * het aantal dagen achterstand te hoog of te laag is.
+> * de gemelde achterstand lager is dan het drempelbedrag dat de gemeente hanteert;
+> * het aantal dagen achterstand te hoog of te laag is;
+> * de melding is bedoeld voor een rechtspersoon (bijv. een BV) in plaats van voor een ondernemer die een natuurlijk persoon is (eenmanszaak, VOF, CV of maatschap).
 >
 > Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.
 * **Inwoner is overleden**: 
@@ -302,7 +303,6 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 >
 > * Inwoner verblijft onrechtmatig in Nederland volgens de BRP
 > * Inwoner zit in detentie
-> * De melding is bedoeld voor een rechtspersoon (bijv. een BV) in plaats van voor een ondernemer die een natuurlijk persoon is (eenmanszaak, VOF, CV of maatschap).
 > * De melding is voor een inwoner die op een uitsluitingslijst van de gemeente, waarbij het onveilig is voor de vroegsignaleerder om contact te leggen. Bijvoorbeeld als sprake is van agressief gedrag of toegangsbeperking bij het gemeentehuis.
 > * Als het vanwege een tekort aan personeel niet lukt om een melding op te pakken en contact te leggen met een inwoner.
 > * Als een persoon niet meer op het adres woont en het is onbekend waar diegene wel woont
@@ -326,19 +326,20 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 * **Geen reactie na eerder contact**: 
 > Er is in eerste instantie contact is met de inwoner. Vervolgens lukt het niet meer om contact te krijgen.
 > Bijvoorbeeld: de inwoner komt niet op de afspraak, is telefonisch onbereikbaar of reageert niet op e-mails of WhatsApp-berichten.
-* **Inwoner hoeft geen hulp vanuit vroegsignalering**: 
-> Er is contact geweest met de inwoner. Tijdens dit contactmoment geeft de inwoner aan geen hulp nodig te hebben en/of hier geen behoefte aan te hebben.
-> Dit kan verschillende redenen hebben, zoals:
+* **Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering**: 
+> Er is contact geweest met de inwoner. Tijdens dit contactmoment geeft de inwoner aan de betalingsachterstand zelf op te lossen en/of geen behoefte te hebben aan hulp vanuit vroegsignalering.
+> Er kunnen verschillende redenen zijn waarom de inwoner geen hulp nodig heeft:
 >
-> * De inwoner geeft tijdens het contactmoment aan de betalingsachterstand zelf op te gaan lossen. Bijvoorbeeld door zelf een betalingsregeling te treffen en/of contact op te nemen met de schuldeiser.
-> * De inwoner geeft aan niet te wachten op bemoeienis vanuit de gemeente en/of hulpverleningsorganisaties.
-> * De inwoner heeft zelf naasten, een bewindvoerder en/of een hulpverleningsorganisatie die (kunnen) gaan helpen.
+> * De inwoner geeft tijdens het contactmoment aan de betalingsachterstand zelf te regelen. Bijvoorbeeld door zelf een betalingsregeling te treffen en/of contact op te nemen met de schuldeiser.
+> * De inwoner wil geen bemoeienis vanuit de gemeente en/of hulpverleningsorganisaties.
+> * De inwoner heeft zelf naasten, een bewindvoerder en/of een hulpverleningsorganisatie die (kunnen) helpen.
 >
-> Er kan tijdens dit contactmoment wat algemene informatie zijn verstrekt en/of tips gegeven, waar de inwoner zelf mee aan de slag gaat.
+> Tijdens het contactmoment kunnen (algemene) informatie en tips zijn gegeven, zonder in te gaan op de persoonlijke situatie.
+> Er wordt meestal geen opvolging gegeven aan dit contactmoment.
 * **Inwoner heeft zelf al betaald/betalingsregeling getroffen**: Wanneer de inwoner al een oplossing blijkt te hebben voor de betalingsachterstand op het moment dat ervan uit vroegsignalering contact is met de inwoner. Hij/zij heeft al betaald of een betalingsregeling getroffen.
 * **(Budget)advies en/of quick fix**: 
-> Er is contact (geweest) met de inwoner en er is zodanige hulp geboden dat de inwoner binnen 30 dagen na hulpacceptatie (zelf) de betalingsachterstanden op kan lossen.
-> Voorbeelden van ‘quick fixes’:
+> Er is contact (geweest) met de inwoner en er is zodanige informatie, advies en/of hulp geboden dat de inwoner binnen 30 dagen na hulpacceptatie (zelf) de betalingsachterstanden op kan lossen.
+> Voorbeelden:
 >
 > * Hulp bij het maken van betalingsregeling/ betalingsafspraken;
 > * Een gesprek over de mogelijkheden om de betalingsachterstanden op te lossen;
@@ -350,7 +351,7 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 * **Vervolghulp en/of verwijzing financieel**: 
 > Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is financieel: schuldhulpverlening, budgetcoaching of bewindvoering, etc.
 > De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.
-* **Verwijzing zonder contact**: Wanneer bij vroegsignalering een inwoner wordt aangemeld bij een andere instantie, zonder dat de inwoner hiervan op de hoogte is of hiervoor toestemming heeft gegeven. Dit gebeurt alleen in uiterste gevallen, wanneer zorg noodzakelijk lijkt. Een voorbeeld hiervan is een aanmelding bij bemoeizorg.
+* **Verwijzing zonder toestemming**: Wanneer bij vroegsignalering een inwoner wordt aangemeld bij een andere instantie, zonder dat de inwoner hiervan op de hoogte is of hiervoor toestemming heeft gegeven. Dit gebeurt alleen in uiterste gevallen, wanneer zorg noodzakelijk lijkt. Een voorbeeld hiervan is een aanmelding bij bemoeizorg.
 * **Vervolghulp en/of verwijzing niet financieel**: 
 > Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is niet-financieel: maatschappelijk werk, verslavingszorg of gezinszorg etc.
 > De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.
@@ -422,8 +423,9 @@ Het enumeratie EnumSignaalstatus kent de volgende waarden:
 * **Niet opgepakt: onterecht signaal**: 
 > Een signaal dat niet wordt opgepakt, omdat:
 >
-> * de gemelde achterstand lager is dan het drempelbedrag dat de gemeente hanteert, of;
-> * het aantal dagen achterstand te hoog of te laag is.
+> * de gemelde achterstand lager is dan het drempelbedrag dat de gemeente hanteert;
+> * het aantal dagen achterstand te hoog of te laag is;
+> * de melding is bedoeld voor een rechtspersoon (bijv. een BV) in plaats van voor een ondernemer die een natuurlijk persoon is (eenmanszaak, VOF, CV of maatschap).
 >
 > Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.
 * **Inwoner is overleden**: Inwoner is overleden, hierbij kan het nodig zijn om aan het achtergebleven huishouden/de erven een hulpaanbod te doen. Dit is bijvoorbeeld relevant als nabestaanden nog op het adres wonen en afsluiting van water of energie ongewenst is.
@@ -442,7 +444,6 @@ Het enumeratie EnumSignaalstatus kent de volgende waarden:
 >
 > * Inwoner verblijft onrechtmatig in Nederland volgens de BRP
 > * Inwoner zit in detentie
-> * De melding is bedoeld voor een rechtspersoon (bijv. een BV) in plaats van voor een ondernemer die een natuurlijk persoon is (eenmanszaak, VOF, CV of maatschap).
 > * De melding is voor een inwoner die op een uitsluitingslijst van de gemeente, waarbij het onveilig is voor de vroegsignaleerder om contact te leggen. Bijvoorbeeld als sprake is van agressief gedrag of toegangsbeperking bij het gemeentehuis.
 > * Als het vanwege een tekort aan personeel niet lukt om een melding op te pakken en contact te leggen met een inwoner.
 > * Als een persoon niet meer op het adres woont en het is onbekend waar diegene wel woont
