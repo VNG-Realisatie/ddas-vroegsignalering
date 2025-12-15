@@ -19,8 +19,8 @@ Aan het eind van de specficatie staan de gebruikte datatypes en waardenlijsten (
 Alle bestanden dienen te worden aangeleverd in [UTF-8-formaat](https://www.forumstandaardisatie.nl/open-standaarden/utf-8). 
 
 ## Uitwisselspecificatie
-
-Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v1.0/json_schema_Uitwisselmodel.json) beschikbaar.
+(
+Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/json_schema_Uitwisselmodel.json) beschikbaar.
 
 ```
 {!../v1.0/json_schema_Uitwisselmodel.json!}
@@ -31,7 +31,7 @@ Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook
 
 ### Enkelvoudig voorbeeld
 
-Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v1.0/enkelvoudigVoorbeeld.json).
+Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/enkelvoudigVoorbeeld.json).
 
 ```
 {!../v1.0/enkelvoudigVoorbeeld.json!}
@@ -40,7 +40,7 @@ Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voo
 
 ### Meervoudig voorbeeld
 
-Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/Vroegsignalering/vroegsignalering/v1.0/meervoudigVoorbeeld.json).
+Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/meervoudigVoorbeeld.json).
 
 ```
 {!../v1.0/meervoudigVoorbeeld.json!}
