@@ -19,7 +19,7 @@ Aan het eind van de specficatie staan de gebruikte datatypes en waardenlijsten (
 Alle bestanden dienen te worden aangeleverd in [UTF-8-formaat](https://www.forumstandaardisatie.nl/open-standaarden/utf-8). 
 
 ## Uitwisselspecificatie
-(
+
 Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/###VERSION###/json_schema_Uitwisselmodel.json) beschikbaar.
 
 ```
