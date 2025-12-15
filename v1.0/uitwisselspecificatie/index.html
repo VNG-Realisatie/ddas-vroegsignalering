@@ -754,9 +754,9 @@
                                 }
                             },
                             &quot;required&quot;: [
-                                &quot;ID&quot;,
                                 &quot;signaalpartner&quot;,
-                                &quot;client&quot;
+                                &quot;client&quot;,
+                                &quot;ID&quot;
                             ],
                             &quot;additionalProperties&quot;: false
                         }
@@ -833,8 +833,8 @@
                 },
                 &quot;required&quot;: [
                     &quot;gemeentecode&quot;,
-                    &quot;aanleverende_organisatie&quot;,
-                    &quot;teller&quot;
+                    &quot;teller&quot;,
+                    &quot;aanleverende_organisatie&quot;
                 ],
                 &quot;additionalProperties&quot;: false
             },
@@ -843,9 +843,9 @@
         }
     },
     &quot;required&quot;: [
+        &quot;einddatumLevering&quot;,
         &quot;codeGegevensleverancier&quot;,
         &quot;startdatumLevering&quot;,
-        &quot;einddatumLevering&quot;,
         &quot;aanleverdatumEnTijd&quot;
     ],
     &quot;additionalProperties&quot;: false,
@@ -874,23 +874,6 @@
             &quot;type&quot;: &quot;integer&quot;,
             &quot;description&quot;: &quot;Een geldbedrag in hele euros nauwkeurig.&quot;
         },
-        &quot;EnumSignaalpartner&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Enumeratie met de soorten te onderscheiden Signaalpartners.&quot;,
-            &quot;enum&quot;: [
-                &quot;Energie&quot;,
-                &quot;Huur&quot;,
-                &quot;Hypotheek&quot;,
-                &quot;CAK Zorgverzekeringen&quot;,
-                &quot;Zorg&quot;,
-                &quot;Water&quot;,
-                &quot;DUO&quot;,
-                &quot;Belastingdienst&quot;,
-                &quot;CAK Eigen bijdrage&quot;,
-                &quot;Overige&quot;,
-                &quot;Dienst Toeslagen&quot;
-            ]
-        },
         &quot;EnumContactsoort&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
@@ -903,25 +886,6 @@
                 &quot;Kaartje&quot;,
                 &quot;Administratief&quot;,
                 &quot;Afspraak op locatie&quot;
-            ]
-        },
-        &quot;EnumSignaalstatus&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Nog niet opgepakt&quot;,
-                &quot;Niet opgepakt: onterecht signaal&quot;,
-                &quot;Inwoner is overleden&quot;,
-                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
-                &quot;Niet opgepakt: herhaalde melding&quot;,
-                &quot;Niet opgepakt: andere reden&quot;
-            ]
-        },
-        &quot;EnumDagdeel&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Ochtend&quot;,
-                &quot;Middag&quot;,
-                &quot;Avond&quot;
             ]
         },
         &quot;EnumEindresultaat&quot;: {
@@ -943,6 +907,42 @@
                 &quot;Vervolghulp en/of verwijzing financieel&quot;,
                 &quot;Verwijzing zonder toestemming&quot;,
                 &quot;Vervolghulp en/of verwijzing niet financieel&quot;
+            ]
+        },
+        &quot;EnumDagdeel&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Ochtend&quot;,
+                &quot;Middag&quot;,
+                &quot;Avond&quot;
+            ]
+        },
+        &quot;EnumSignaalpartner&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met de soorten te onderscheiden Signaalpartners.&quot;,
+            &quot;enum&quot;: [
+                &quot;Energie&quot;,
+                &quot;Huur&quot;,
+                &quot;Hypotheek&quot;,
+                &quot;CAK Zorgverzekeringen&quot;,
+                &quot;Zorg&quot;,
+                &quot;Water&quot;,
+                &quot;DUO&quot;,
+                &quot;Belastingdienst&quot;,
+                &quot;CAK Eigen bijdrage&quot;,
+                &quot;Overige&quot;,
+                &quot;Dienst Toeslagen&quot;
+            ]
+        },
+        &quot;EnumSignaalstatus&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Nog niet opgepakt&quot;,
+                &quot;Niet opgepakt: onterecht signaal&quot;,
+                &quot;Inwoner is overleden&quot;,
+                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+                &quot;Niet opgepakt: herhaalde melding&quot;,
+                &quot;Niet opgepakt: andere reden&quot;
             ]
         }
     }
