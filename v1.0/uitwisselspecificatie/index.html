@@ -347,6 +347,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#uitgebreid-voorbeeld" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uitgebreid voorbeeld
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -560,6 +569,15 @@
   <a href="#meervoudig-voorbeeld" class="md-nav__link">
     <span class="md-ellipsis">
       Meervoudig voorbeeld
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uitgebreid-voorbeeld" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uitgebreid voorbeeld
     </span>
   </a>
   
@@ -1031,7 +1049,7 @@
 }
 </code></pre></div>
 <h3 id="meervoudig-voorbeeld">Meervoudig voorbeeld</h3>
-<p>Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/meervoudigVoorbeeld.json">downloaden</a>.</p>
+<p>Onderstaand een voorbeeld van een meervoudig JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/meervoudigVoorbeeld.json">downloaden</a>.</p>
 <div class="highlight"><pre><span></span><code>{
   &quot;codeGegevensleverancier&quot;: &quot;SOFTLEVERANCIER-XYZ&quot;,
   &quot;startdatumLevering&quot;: &quot;2025-01-01&quot;,
@@ -1222,6 +1240,768 @@
               &quot;bereikt&quot;: false,
               &quot;datum&quot;: &quot;2025-01-27&quot;,
               &quot;dagdeel&quot;: &quot;Avond&quot;
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+</code></pre></div>
+<h3 id="uitgebreid-voorbeeld">Uitgebreid voorbeeld</h3>
+<p>Onderstaand een uitgebreid voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/uitgebreidVoorbeeld.json">downloaden</a>.</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;codeGegevensleverancier&quot;: &quot;SOFTLEV-2025-ABC&quot;,
+  &quot;startdatumLevering&quot;: &quot;2025-04-01&quot;,
+  &quot;einddatumLevering&quot;: &quot;2025-06-30&quot;,
+  &quot;aanleverdatumEnTijd&quot;: &quot;2025-07-08T09:30:00Z&quot;,
+  &quot;leveringen&quot;: [
+    {
+      &quot;teller&quot;: 1,
+      &quot;gemeentecode&quot;: &quot;0599&quot;,
+      &quot;aanleverende_organisatie&quot;: {
+        &quot;naam&quot;: &quot;Gemeente Rotterdam&quot;,
+        &quot;kvk-nummer&quot;: &quot;24483298&quot;,
+        &quot;contactpersoonen&quot;: [
+          {
+            &quot;naam&quot;: &quot;Linda de Groot&quot;,
+            &quot;telefoonnummer&quot;: &quot;0612345678&quot;,
+            &quot;email&quot;: &quot;l.degroot@rotterdam.nl&quot;,
+            &quot;functietitel&quot;: &quot;Teamleider Vroegsignalering&quot;
+          },
+          {
+            &quot;naam&quot;: &quot;Ahmed Yilmaz&quot;,
+            &quot;telefoonnummer&quot;: &quot;0623456789&quot;,
+            &quot;email&quot;: &quot;a.yilmaz@rotterdam.nl&quot;,
+            &quot;functietitel&quot;: &quot;Dataanalist Schuldhulpverlening&quot;
+          }
+        ]
+      },
+      &quot;vroegsignalen&quot;: [
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0001&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 275,
+          &quot;ontstaansdatum&quot;: &quot;2025-03-10&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-04-05&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Energie&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;999012345&quot;,
+            &quot;Voorletters&quot;: &quot;J.P.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;van der&quot;,
+            &quot;Achternaam&quot;: &quot;Berg&quot;,
+            &quot;Geboortedatum&quot;: &quot;1978-02-14&quot;,
+            &quot;Straatnaam&quot;: &quot;Coolsingel&quot;,
+            &quot;Postcode&quot;: &quot;3011AD&quot;,
+            &quot;Huisnummer&quot;: &quot;40&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0002&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 620,
+          &quot;ontstaansdatum&quot;: &quot;2025-02-28&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-04-05&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Huur&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;999012345&quot;,
+            &quot;Voorletters&quot;: &quot;J.P.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;van der&quot;,
+            &quot;Achternaam&quot;: &quot;Berg&quot;,
+            &quot;Geboortedatum&quot;: &quot;1978-02-14&quot;,
+            &quot;Straatnaam&quot;: &quot;Coolsingel&quot;,
+            &quot;Postcode&quot;: &quot;3011AD&quot;,
+            &quot;Huisnummer&quot;: &quot;40&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0003&quot;,
+          &quot;crisissignaal&quot;: true,
+          &quot;warmeOverdracht&quot;: true,
+          &quot;bedrag&quot;: 1450,
+          &quot;ontstaansdatum&quot;: &quot;2025-01-15&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-04-12&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;CAK Zorgverzekeringen&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;998877665&quot;,
+            &quot;Voorletters&quot;: &quot;F.M.&quot;,
+            &quot;Achternaam&quot;: &quot;Osman&quot;,
+            &quot;Geboortedatum&quot;: &quot;1992-08-03&quot;,
+            &quot;Straatnaam&quot;: &quot;Blaak&quot;,
+            &quot;Postcode&quot;: &quot;3011TA&quot;,
+            &quot;Huisnummer&quot;: &quot;7&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;B&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0004&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 180,
+          &quot;ontstaansdatum&quot;: &quot;2025-03-22&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-04-18&quot;,
+          &quot;status&quot;: &quot;Niet opgepakt: herhaalde melding&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Water&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;887766554&quot;,
+            &quot;Voorletters&quot;: &quot;R.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;de&quot;,
+            &quot;Achternaam&quot;: &quot;Boer&quot;,
+            &quot;Geboortedatum&quot;: &quot;1965-11-30&quot;,
+            &quot;Straatnaam&quot;: &quot;Westersingel&quot;,
+            &quot;Postcode&quot;: &quot;3015LC&quot;,
+            &quot;Huisnummer&quot;: &quot;22&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0005&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 90,
+          &quot;ontstaansdatum&quot;: &quot;2025-04-01&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-04-25&quot;,
+          &quot;status&quot;: &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;DUO&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;776655443&quot;,
+            &quot;Voorletters&quot;: &quot;T.S.&quot;,
+            &quot;Achternaam&quot;: &quot;Nguyen&quot;,
+            &quot;Geboortedatum&quot;: &quot;2000-05-19&quot;,
+            &quot;Straatnaam&quot;: &quot;Lijnbaan&quot;,
+            &quot;Postcode&quot;: &quot;3012EH&quot;,
+            &quot;Huisnummer&quot;: &quot;15&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;3h&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0006&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 340,
+          &quot;ontstaansdatum&quot;: &quot;2025-04-10&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-05-02&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Belastingdienst&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;665544332&quot;,
+            &quot;Voorletters&quot;: &quot;M.A.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;van&quot;,
+            &quot;Achternaam&quot;: &quot;Dijk&quot;,
+            &quot;Geboortedatum&quot;: &quot;1988-01-07&quot;,
+            &quot;Straatnaam&quot;: &quot;Kruiskade&quot;,
+            &quot;Postcode&quot;: &quot;3012EG&quot;,
+            &quot;Huisnummer&quot;: &quot;50&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0007&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: true,
+          &quot;bedrag&quot;: 510,
+          &quot;ontstaansdatum&quot;: &quot;2025-04-15&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-05-10&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Dienst Toeslagen&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;554433221&quot;,
+            &quot;Voorletters&quot;: &quot;E.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;ter&quot;,
+            &quot;Achternaam&quot;: &quot;Horst&quot;,
+            &quot;Geboortedatum&quot;: &quot;1973-07-22&quot;,
+            &quot;Straatnaam&quot;: &quot;Schiedamsedijk&quot;,
+            &quot;Postcode&quot;: &quot;3011ED&quot;,
+            &quot;Huisnummer&quot;: &quot;8&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;A&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0008&quot;,
+          &quot;crisissignaal&quot;: true,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 2100,
+          &quot;ontstaansdatum&quot;: &quot;2025-03-01&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-05-15&quot;,
+          &quot;status&quot;: &quot;Inwoner is overleden&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Hypotheek&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;443322110&quot;,
+            &quot;Voorletters&quot;: &quot;W.F.&quot;,
+            &quot;Achternaam&quot;: &quot;Pietersen&quot;,
+            &quot;Geboortedatum&quot;: &quot;1950-12-01&quot;,
+            &quot;Straatnaam&quot;: &quot;Mathenesserlaan&quot;,
+            &quot;Postcode&quot;: &quot;3014HA&quot;,
+            &quot;Huisnummer&quot;: &quot;100&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0009&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 75,
+          &quot;ontstaansdatum&quot;: &quot;2025-05-01&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-05-20&quot;,
+          &quot;status&quot;: &quot;Niet opgepakt: andere reden&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;CAK Eigen bijdrage&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;332211009&quot;,
+            &quot;Voorletters&quot;: &quot;G.H.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;in &#39;t&quot;,
+            &quot;Achternaam&quot;: &quot;Veld&quot;,
+            &quot;Geboortedatum&quot;: &quot;1960-04-18&quot;,
+            &quot;Straatnaam&quot;: &quot;Heemraadssingel&quot;,
+            &quot;Postcode&quot;: &quot;3021DD&quot;,
+            &quot;Huisnummer&quot;: &quot;33&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;2&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0010&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 420,
+          &quot;ontstaansdatum&quot;: &quot;2025-05-10&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-06-01&quot;,
+          &quot;status&quot;: &quot;Niet opgepakt: onterecht signaal&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Overige&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;221100998&quot;,
+            &quot;Voorletters&quot;: &quot;B.&quot;,
+            &quot;Achternaam&quot;: &quot;Kaplan&quot;,
+            &quot;Geboortedatum&quot;: &quot;1995-09-14&quot;,
+            &quot;Straatnaam&quot;: &quot;Nieuwe Binnenweg&quot;,
+            &quot;Postcode&quot;: &quot;3015BE&quot;,
+            &quot;Huisnummer&quot;: &quot;120&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;C&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-RTD-2025-0011&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 560,
+          &quot;ontstaansdatum&quot;: &quot;2025-05-18&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-06-10&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Zorg&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;665544332&quot;,
+            &quot;Voorletters&quot;: &quot;M.A.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;van&quot;,
+            &quot;Achternaam&quot;: &quot;Dijk&quot;,
+            &quot;Geboortedatum&quot;: &quot;1988-01-07&quot;,
+            &quot;Straatnaam&quot;: &quot;Kruiskade&quot;,
+            &quot;Postcode&quot;: &quot;3012EG&quot;,
+            &quot;Huisnummer&quot;: &quot;50&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+          }
+        }
+      ],
+      &quot;vroegsignaalzaken&quot;: [
+        {
+          &quot;resultaat&quot;: &quot;Vervolghulp en/of verwijzing financieel&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-04-08&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-04-10&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0001&quot; },
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0002&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-04-11&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;SMS/Whatsapp&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-04-11&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Brief&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-04-14&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Huisbezoek&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-04-18&quot;,
+              &quot;dagdeel&quot;: &quot;Avond&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;(Budget)advies en/of quick fix&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-04-15&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-04-16&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0003&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-04-16&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Niet opgepakt: herhaalde melding&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-04-20&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0004&quot; }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-04-28&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0005&quot; }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-05-05&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-05-06&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0006&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Mail&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-05-06&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Afspraak op locatie&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-05-12&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Verwijzing zonder toestemming&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-05-12&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-05-13&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0007&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Kaartje&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-05-13&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-05-15&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Inwoner is overleden&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-05-18&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0008&quot; }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-05-22&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0009&quot; }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Definitief geen contact kunnen krijgen&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-06-02&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-06-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-06-30&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-06-03&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0006&quot; },
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0011&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-06-03&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Administratief&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-06-04&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;SMS/Whatsapp&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-06-06&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Huisbezoek&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-06-10&quot;,
+              &quot;dagdeel&quot;: &quot;Avond&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Brief&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-06-15&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Niet opgepakt: onterecht signaal&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-06-05&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-06-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-06-30&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-RTD-2025-0010&quot; }
+          ]
+        }
+      ]
+    },
+    {
+      &quot;teller&quot;: 2,
+      &quot;gemeentecode&quot;: &quot;0518&quot;,
+      &quot;aanleverende_organisatie&quot;: {
+        &quot;naam&quot;: &quot;Stichting Schuldhulp Regio Den Haag&quot;,
+        &quot;kvk-nummer&quot;: &quot;55667788&quot;,
+        &quot;contactpersoonen&quot;: [
+          {
+            &quot;naam&quot;: &quot;Petra Willems&quot;,
+            &quot;telefoonnummer&quot;: &quot;0701234567&quot;,
+            &quot;email&quot;: &quot;p.willems@schuldhulpdenhaag.nl&quot;,
+            &quot;functietitel&quot;: &quot;Manager Vroegsignalering&quot;
+          }
+        ]
+      },
+      &quot;vroegsignalen&quot;: [
+        {
+          &quot;ID&quot;: &quot;VS-DH-2025-0001&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 310,
+          &quot;ontstaansdatum&quot;: &quot;2025-03-20&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-04-10&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Energie&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;112233445&quot;,
+            &quot;Voorletters&quot;: &quot;C.L.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;den&quot;,
+            &quot;Achternaam&quot;: &quot;Hartog&quot;,
+            &quot;Geboortedatum&quot;: &quot;1984-06-25&quot;,
+            &quot;Straatnaam&quot;: &quot;Hofweg&quot;,
+            &quot;Postcode&quot;: &quot;2511AA&quot;,
+            &quot;Huisnummer&quot;: &quot;3&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Den Haag&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-DH-2025-0002&quot;,
+          &quot;crisissignaal&quot;: true,
+          &quot;warmeOverdracht&quot;: true,
+          &quot;bedrag&quot;: 1800,
+          &quot;ontstaansdatum&quot;: &quot;2025-02-10&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-04-15&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Huur&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;556677889&quot;,
+            &quot;Voorletters&quot;: &quot;K.&quot;,
+            &quot;Achternaam&quot;: &quot;Ibrahim&quot;,
+            &quot;Geboortedatum&quot;: &quot;1990-03-11&quot;,
+            &quot;Straatnaam&quot;: &quot;Loosduinsekade&quot;,
+            &quot;Postcode&quot;: &quot;2571AB&quot;,
+            &quot;Huisnummer&quot;: &quot;44&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;2&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Den Haag&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-DH-2025-0003&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 95,
+          &quot;ontstaansdatum&quot;: &quot;2025-04-20&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-05-08&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Water&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;778899001&quot;,
+            &quot;Voorletters&quot;: &quot;N.J.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;van&quot;,
+            &quot;Achternaam&quot;: &quot;Vliet&quot;,
+            &quot;Geboortedatum&quot;: &quot;1970-12-09&quot;,
+            &quot;Straatnaam&quot;: &quot;Prins Mauritslaan&quot;,
+            &quot;Postcode&quot;: &quot;2582LT&quot;,
+            &quot;Huisnummer&quot;: &quot;17&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;A&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Den Haag&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-DH-2025-0004&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 750,
+          &quot;ontstaansdatum&quot;: &quot;2025-05-01&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-05-22&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Dienst Toeslagen&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;112233445&quot;,
+            &quot;Voorletters&quot;: &quot;C.L.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;den&quot;,
+            &quot;Achternaam&quot;: &quot;Hartog&quot;,
+            &quot;Geboortedatum&quot;: &quot;1984-06-25&quot;,
+            &quot;Straatnaam&quot;: &quot;Hofweg&quot;,
+            &quot;Postcode&quot;: &quot;2511AA&quot;,
+            &quot;Huisnummer&quot;: &quot;3&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Den Haag&quot;
+          }
+        }
+      ],
+      &quot;vroegsignaalzaken&quot;: [
+        {
+          &quot;resultaat&quot;: &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-04-18&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-04-19&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-DH-2025-0001&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-04-19&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Vervolghulp en/of verwijzing niet financieel&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-04-18&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-04-20&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-DH-2025-0002&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Huisbezoek&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-04-20&quot;,
+              &quot;dagdeel&quot;: &quot;Avond&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Geen reactie na eerder contact&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-05-10&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-05-11&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-DH-2025-0003&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-05-11&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Mail&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-05-14&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-05-18&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Kaartje&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-05-22&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Inwoner heeft al een ander lopend traject&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-05-25&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-DH-2025-0001&quot; },
+            { &quot;ID&quot;: &quot;VS-DH-2025-0004&quot; }
+          ]
+        }
+      ]
+    },
+    {
+      &quot;teller&quot;: 3,
+      &quot;gemeentecode&quot;: &quot;0034&quot;,
+      &quot;aanleverende_organisatie&quot;: {
+        &quot;naam&quot;: &quot;Gemeente Almere&quot;,
+        &quot;kvk-nummer&quot;: &quot;32164027&quot;,
+        &quot;contactpersoonen&quot;: [
+          {
+            &quot;naam&quot;: &quot;Dennis Brouwer&quot;,
+            &quot;telefoonnummer&quot;: &quot;0365493000&quot;,
+            &quot;email&quot;: &quot;d.brouwer@almere.nl&quot;,
+            &quot;functietitel&quot;: &quot;Coördinator Vroegsignalering&quot;
+          },
+          {
+            &quot;naam&quot;: &quot;Fatima el Amrani&quot;,
+            &quot;telefoonnummer&quot;: &quot;0365493001&quot;,
+            &quot;email&quot;: &quot;f.elamrani@almere.nl&quot;,
+            &quot;functietitel&quot;: &quot;Beleidsadviseur Schuldhulpverlening&quot;
+          },
+          {
+            &quot;naam&quot;: &quot;Rob Hendriks&quot;,
+            &quot;telefoonnummer&quot;: &quot;0365493002&quot;,
+            &quot;email&quot;: &quot;r.hendriks@almere.nl&quot;,
+            &quot;functietitel&quot;: &quot;Applicatiebeheerder&quot;
+          }
+        ]
+      },
+      &quot;vroegsignalen&quot;: [
+        {
+          &quot;ID&quot;: &quot;VS-ALM-2025-0001&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 150,
+          &quot;ontstaansdatum&quot;: &quot;2025-04-05&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-04-28&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Zorg&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;990011223&quot;,
+            &quot;Voorletters&quot;: &quot;S.W.&quot;,
+            &quot;Achternaam&quot;: &quot;Mulder&quot;,
+            &quot;Geboortedatum&quot;: &quot;1998-10-15&quot;,
+            &quot;Straatnaam&quot;: &quot;Stadhuisplein&quot;,
+            &quot;Postcode&quot;: &quot;1315HR&quot;,
+            &quot;Huisnummer&quot;: &quot;1&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Almere&quot;
+          }
+        },
+        {
+          &quot;ID&quot;: &quot;VS-ALM-2025-0002&quot;,
+          &quot;crisissignaal&quot;: false,
+          &quot;warmeOverdracht&quot;: false,
+          &quot;bedrag&quot;: 480,
+          &quot;ontstaansdatum&quot;: &quot;2025-03-15&quot;,
+          &quot;signaaldatum&quot;: &quot;2025-05-05&quot;,
+          &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
+          &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Hypotheek&quot; },
+          &quot;client&quot;: {
+            &quot;Burgerservicenummer&quot;: &quot;880022334&quot;,
+            &quot;Voorletters&quot;: &quot;P.J.&quot;,
+            &quot;Voorvoegsel&quot;: &quot;van den&quot;,
+            &quot;Achternaam&quot;: &quot;Broek&quot;,
+            &quot;Geboortedatum&quot;: &quot;1975-03-28&quot;,
+            &quot;Straatnaam&quot;: &quot;Grote Markt&quot;,
+            &quot;Postcode&quot;: &quot;1315JC&quot;,
+            &quot;Huisnummer&quot;: &quot;88&quot;,
+            &quot;Huisnummertoevoeging&quot;: &quot;&quot;,
+            &quot;Plaatsnaam&quot;: &quot;Almere&quot;
+          }
+        }
+      ],
+      &quot;vroegsignaalzaken&quot;: [
+        {
+          &quot;resultaat&quot;: &quot;Niet opgepakt: andere reden&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-05-01&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-15&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-15&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-ALM-2025-0001&quot; }
+          ]
+        },
+        {
+          &quot;resultaat&quot;: &quot;Vervolghulp en/of verwijzing financieel&quot;,
+          &quot;matchingsdatum&quot;: &quot;2025-05-08&quot;,
+          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-15&quot;,
+          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-15&quot;,
+          &quot;datum_opgepakt&quot;: &quot;2025-05-09&quot;,
+          &quot;vroegsignalen&quot;: [
+            { &quot;ID&quot;: &quot;VS-ALM-2025-0002&quot; }
+          ],
+          &quot;contactpogingen&quot;: [
+            {
+              &quot;soort&quot;: &quot;Telefoon&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-05-09&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Brief&quot;,
+              &quot;bereikt&quot;: false,
+              &quot;datum&quot;: &quot;2025-05-12&quot;,
+              &quot;dagdeel&quot;: &quot;Ochtend&quot;
+            },
+            {
+              &quot;soort&quot;: &quot;Afspraak op locatie&quot;,
+              &quot;bereikt&quot;: true,
+              &quot;datum&quot;: &quot;2025-05-20&quot;,
+              &quot;dagdeel&quot;: &quot;Middag&quot;
             }
           ]
         }
