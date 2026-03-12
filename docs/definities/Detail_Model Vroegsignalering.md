@@ -76,10 +76,10 @@ Attributen van objecttype Contactpoging
 
 | Attribute | Datatype | Description |
 | :--- | :--- | :--- |
-| soort | Enumeratie: "EnumContactsoort" |  |
+| soort | EnumContactsoort |  |
 | bereikt | boolean | Er is succesvol contact met de client gemaakt. |
 | datum | Date |  |
-| dagdeel | Enumeratie: "EnumDagdeel" | Ochtend, middag of avond |
+| dagdeel | EnumDagdeel | Ochtend, middag of avond |
 
 
 
@@ -106,7 +106,7 @@ Attributen van objecttype Signaalpartner
 
 | Attribute | Datatype | Description |
 | :--- | :--- | :--- |
-| type | Enumeratie: "EnumSignaalpartner" |  |
+| type | EnumSignaalpartner |  |
 
 
 
@@ -138,7 +138,7 @@ Attributen van objecttype Vroegsignaal
 | bedrag | bedrag |  |
 | ontstaansdatum | Date |  |
 | signaaldatum | Date | Datum waarop de signaalpartner het signaal heeft verstuurd. |
-| status | Enumeratie: "EnumSignaalstatus" |  |
+| status | EnumSignaalstatus |  |
 
 
 
@@ -163,7 +163,7 @@ Attributen van objecttype Vroegsignaalzaak
 
 | Attribute | Datatype | Description |
 | :--- | :--- | :--- |
-| resultaat | Enumeratie: "EnumEindresultaat" |  |
+| resultaat | EnumEindresultaat |  |
 | matchingsdatum | Date | De datum waarop de matching wordt uitgevoerd. |
 | startdatum_matchtingperiode | Date | De matchingperiode is het tijdvak waarover de matching plaatsvindt. Hier de startdatum van de matching, die binnen de matchingsperiode valt. |
 | datum_opgepakt | Date | De datum waarop de gemeente de zaak heeft opgepakt. |
