@@ -33,6 +33,7 @@ nav:
 
 markdown_extensions:
   - pymdownx.superfences
+  - pymdownx.snippets
   - pymdownx.inlinehilite
   - pymdownx.tilde
   - pymdownx.critic
@@ -48,7 +49,6 @@ markdown_extensions:
       base_path: docs
   - admonition
   - footnotes
-  - md_in_html
 
 extra_css:
   - stylesheets/extra.css
