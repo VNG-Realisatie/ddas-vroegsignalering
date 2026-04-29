@@ -4,15 +4,26 @@
 
 De technische beschrijving van de API is in het volgende OAS3-bestand beschreven:
 
-- [Bekijk specificatie](https://VNG-Realisatie.github.io/ddas/api/v1.0/DDAS-VS.yaml)  
-- [Download YAML](https://raw.githubusercontent.com/VNG-Realisatie/ddas/main/v1.0/DDAS-SHV.yaml)  
+??? question "Bekijk specificatie"
+  ```
+  {!../v1.0/DDAS-SHV.yaml!}
+
+  ```
+
+- [Download YAML](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/DDAS-SHV.yaml)  
+
 
 ## Vroegsignaleringsgegevens
 
 De technische beschrijving van de API is in het volgende OAS3-bestand beschreven:  
 
-- [Bekijk specificatie](https://VNG-Realisatie.github.io/ddas/api/v1.0/DDAS-VS.yaml)  
-- [Download YAML](https://raw.githubusercontent.com/VNG-Realisatie/ddas/main/v1.0/DDAS-VS.yaml)  
+??? question "Bekijk specificatie"
+  ```
+  {!../v1.0/DDAS-VS.yaml!}
+
+  ```
+
+- [Download YAML](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/DDAS-VS.yaml)  
 
 
 
