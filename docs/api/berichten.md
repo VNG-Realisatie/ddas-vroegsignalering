@@ -4,16 +4,14 @@
 
 De technische beschrijving van de API is in het volgende OAS3-bestand beschreven:
 
-<details>
+<details markdown="1">
   <summary>Bekijk specificatie</summary>  
 
-
-  ```  
+  ```yaml  
 
   {!../v1.0/DDAS-SHV.yaml!}  
 
   ```  
-
 
 </details>  
 
@@ -24,16 +22,14 @@ De technische beschrijving van de API is in het volgende OAS3-bestand beschreven
 
 De technische beschrijving van de API is in het volgende OAS3-bestand beschreven:  
 
-<details>
+<details markdown="1">
   <summary>Bekijk specificatie</summary>  
 
-
-  ```  
+  ```yaml  
 
   {!../v1.0/DDAS-VS.yaml!}  
 
   ```  
-
 
 </details>  
 

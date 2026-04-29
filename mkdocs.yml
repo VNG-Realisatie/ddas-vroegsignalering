@@ -48,6 +48,7 @@ markdown_extensions:
       base_path: docs
   - admonition
   - footnotes
+  - md_in_html
 
 extra_css:
   - stylesheets/extra.css
