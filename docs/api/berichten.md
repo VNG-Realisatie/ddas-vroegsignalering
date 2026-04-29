@@ -7,10 +7,13 @@ De technische beschrijving van de API is in het volgende OAS3-bestand beschreven
 <details>
   <summary>Bekijk specificatie</summary>  
 
+
   ```  
+
   {!../v1.0/DDAS-SHV.yaml!}  
 
   ```  
+
 
 </details>  
 
@@ -24,10 +27,13 @@ De technische beschrijving van de API is in het volgende OAS3-bestand beschreven
 <details>
   <summary>Bekijk specificatie</summary>  
 
+
   ```  
+
   {!../v1.0/DDAS-VS.yaml!}  
 
   ```  
+
 
 </details>  
 
