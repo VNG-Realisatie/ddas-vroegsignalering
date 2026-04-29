@@ -7,7 +7,7 @@ De technische beschrijving van de API is in het volgende OAS3-bestand beschreven
 ??? note "Bekijk specificatie"
 
     ```yaml
-    --8<-- "includes/DDAS-SHV.yaml"
+    --8<-- "../includes/DDAS-SHV.yaml"
     ```
 
 - [Download YAML](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/main/v1.0/DDAS-SHV.yaml)  
@@ -20,7 +20,7 @@ De technische beschrijving van de API is in het volgende OAS3-bestand beschreven
 ??? note "Bekijk specificatie"
 
     ```yaml
-    --8<-- "includes/DDAS-VS.yaml"
+    --8<-- "../includes/DDAS-VS.yaml"
     ```
 
 - [Download YAML](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/main/v1.0/DDAS-VS.yaml)  
