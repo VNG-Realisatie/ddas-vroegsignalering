@@ -10,7 +10,7 @@ De technische beschrijving van de API is in het volgende OAS3-bestand beschreven
     --8<-- "includes/DDAS-SHV.yaml"
     ```
 
-- [Download OAS3 beschrijving](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/main/v1.0/DDAS-SHV.yaml)  
+- [Download OAS3 beschrijving in YAML-bestand](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/main/v1.0/DDAS-SHV.yaml)  
 
 
 ## Vroegsignaleringsgegevens
@@ -23,7 +23,7 @@ De technische beschrijving van de API is in het volgende OAS3-bestand beschreven
     --8<-- "includes/DDAS-VS.yaml"
     ```
 
-- [Download OAS3 beschrijving](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/main/v1.0/DDAS-VS.yaml)  
+- [Download OAS3 beschrijving in YAML-bestand](https://raw.githubusercontent.com/VNG-Realisatie/ddas/refs/heads/main/v1.0/DDAS-VS.yaml)  
 
 
 
