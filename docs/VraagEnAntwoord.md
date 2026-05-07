@@ -16,4 +16,5 @@ Hieronder vind je veelgestelde vragen met bijbehorende vragen over vroegsignaler
     
     De verantwoordelijke gemeente is één van de belangrijke startpunten voor de statistiek die door CBS wordt opgesteld. Dus sporen aan dit wel in de systemen op te nemen. Wel zijn we erg blij met aan te leveren gegevens, en kunnen we die gebruiken voor diverse andere statistieken. In dergelijke gevallen kan bij de trajecten in het veld gemeentecode de waarde “Onbekend” worden opgenomen.
 
- 
+??? question "Waarom is het belangrijk dat contactpersonen bij aanleverende_organisatie contactpersonen goed wordt ingevuld?"
+    Bij aanlevering van gegevens via API's worden de gegevens van contactpersonen gebruikt om het 'op-orde-rapport' naartoe te sturen. Hiermee kunnen organisaties controleren of er correcte gegevens aan CBS zijn aangeboden. Hiervoor gebruikt het CBS het emailadres.
