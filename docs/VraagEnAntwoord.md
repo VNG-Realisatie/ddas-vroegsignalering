@@ -18,3 +18,12 @@ Hieronder vind je veelgestelde vragen met bijbehorende vragen over vroegsignaler
 
 ??? question "Waarom is het belangrijk dat contactpersonen bij aanleverende_organisatie contactpersonen goed wordt ingevuld?"
     Bij aanlevering van gegevens via API's worden de gegevens van contactpersonen gebruikt om het 'op-orde-rapport' naartoe te sturen. Hiermee kunnen organisaties controleren of er correcte gegevens aan CBS zijn aangeboden. Hiervoor gebruikt het CBS het emailadres.
+
+??? question "Telefoonnummer hebben wij soms 2 telefoonnummers voor, hoe vul ik dit veld in?"
+    Je kunt in het veld meerdere telefoonnummers kwijt. Graag gesplitst met een '/'
+
+??? question "EnumSignaalstatus status "opgepakt" mist. Moeten wij deze invullen? Of gaan jullie ervan uit dat wanneer dit veld leeg is het signaal is opgepakt?"
+    Als een signaal onderdeel is van een zaak, dan zien we het als opgepakt	
+
+??? question "Wanneer geldt een dossier als 'opgepakt'? We hebben een aantal verschillende datums die we hiervoor kunnen hanteren, maar weten niet goed welke we hiervoor moeten gebruiken."
+    Gebruik hiervoor het moment van aanmaken van het dossier.
