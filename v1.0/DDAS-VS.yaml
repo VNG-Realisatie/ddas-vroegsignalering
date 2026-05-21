@@ -84,6 +84,30 @@ components:
     Uitwisselmodel:
       $ref: 'https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/json_schema_Uitwisselmodel.json'
 
+    Paginering:
+      type: object
+      properties:
+        pageSize:
+          description: Het aantal records/vroegsignalen per pagina
+          type: integer
+          minimum: 1
+          example: 25000
+        currentPage:
+          description: De huidige pagina
+          type: integer
+          minimum: 1
+          example: 1
+        totalPages:
+          description: Het totaal aantal beschikbare pagina's
+          type: integer
+          minimum: 1
+          example: 3
+        totalRecords:
+          description: Het totaal aantal te versturen records, bijvoorbeeld vroegsignalen
+          type: integer
+          minimum: 0
+          example: 72643
+
     GegevensRequest:
       type: object
       properties:
@@ -98,6 +122,12 @@ components:
         aanleverende_organisatie:
           type: string
           example: "GM0001"
+        page:
+          type: integer
+          example: 1
+        pageSize:
+          type: integer
+          example: 25000
       additionalProperties: false
 
     FscError:
@@ -142,15 +172,17 @@ paths:
       responses:
         '200':
           description: Succesvol antwoord met de gevraagde VS-gegevens
-          headers:
-            Digest:
-              $ref: '#/components/headers/Digest'
-            nlgov-adr-payload-sig:
-              $ref: '#/components/headers/nlgov-adr-payload-sig'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Uitwisselmodel'
+                type: object
+                required:
+                  - gegevens
+                properties:
+                  gegevens:
+                    $ref: '#/components/schemas/Uitwisselmodel'
+                  paginering:
+                    $ref: '#/components/schemas/Paginering'
 
         '400':
           description: Ongeldig verzoek (bijv. ongeldige filters of syntaxis)
