@@ -1409,11 +1409,18 @@
 <li>
 <p>Aanleverende_organisatie (string, default alle – alleen relevant als over meer dan 1 organisatie (gemeente/ schuldhulpverlener) gegevens aangeleverd worden)</p>
 </li>
+<li>
+<p>page (welke pagina gegevens opgevraagd wordt, als er meerdere pagina's aan gegevens zijn - zie ook <a href="../non-functionals/">niet-functionele eisen</a>, default de eerste pagina)</p>
+</li>
+<li>
+<p>pageSize (aantal records/ signalen dat in één responsebericht meegestuurd wordt, default leeg - schuldhulpverlener bepaalt dan het aantal)</p>
+</li>
 </ul>
 <p>Het bericht wordt met <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/">JAdES</a> ondertekend met de private sleutel van de verzender van het vraagbericht - in dit geval CBS. Zie het hoofdstuk <a href="../signing-encryptie/">Signing en Versleuteling</a> voor de specificaties van de ondertekening.</p>
 <h2 id="antwoordbericht-response">Antwoordbericht (response)</h2>
 <p>Dit is het antwoordbericht van de gegevensbeheerder (systeem dat de bron beheert) met de gewenste gegevens in JSON formaat.
 De payload is gebaseerd op het uitwisselformaat zoals dat is beschreven voor <a href="https://vng-realisatie.github.io/ddas/v1.0/uitwisselspecificatie/">schuldhulpgegevens</a> en <a href="https://vng-realisatie.github.io/ddas-vroegsignalering/v1.0/uitwisselspecificatie/">vroegsignaleringsgegevens</a>.</p>
+<p>Naast de vroegsignalen worden gegevens voor de paginering meegegeven. Deze zijn nodig als niet alle vroegsignalen in één responsebericht passen - zie de <a href="../non-functionals/">niet-functionele eisen</a> voor meer uitleg.</p>
 <p>Ook dit bericht wordt ondertekend met <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/">JAdES</a> met gebruik van de eigen private sleutel. Zie het hoofdstuk <a href="../signing-encryptie/">Signing en Versleuteling</a> voor de specificaties van de ondertekening.
 Versleutelen van de payload is niet nodig.</p>
 <p>Mogelijke responses:</p>
