@@ -13,8 +13,11 @@ De services moeten beschikbaar zijn op de momenten dat CBS de gegevens verzameld
 
 De berichtenuitwisseling is synchroon. De API moet daarom binnen de "time-out" tijd reageren op een request. Er is nog te weinig ervaring met het koppelvlak om een goed onderbouwde maximale response-tijd en daaraan gekoppeld een maximaal aantal records.
 Vooralsnog wordt uitgegaan van de volgende maximale aantallen records:  
-- Schuldhulptrajecten:  **25.000**
-- Vroegsignalen:  **50.000**
+
+| Items | Maximaal aantal per pagina |
+|-------|----------------------------|
+| Schuldhulptrajecten | **25.000** |
+| Vroegsignalen | **50.000** |  
 
 Als het maximaal aantal records overschreven dreigt te worden, moeten de gegevens over verschillende berichten verdeeld worden. In het response-bericht worden dan de velden in het object **paginering** gevuld worden.  
 Dit gebeurt volgens de volgende definities:

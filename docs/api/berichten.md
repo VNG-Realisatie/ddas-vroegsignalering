@@ -59,7 +59,7 @@ Het bericht wordt met [JAdES](https://geonovum.github.io/KP-APIs/API-strategie-m
 Dit is het antwoordbericht van de gegevensbeheerder (systeem dat de bron beheert) met de gewenste gegevens in JSON formaat.
 De payload is gebaseerd op het uitwisselformaat zoals dat is beschreven voor [schuldhulpgegevens](https://vng-realisatie.github.io/ddas/v1.0/uitwisselspecificatie/) en [vroegsignaleringsgegevens](https://vng-realisatie.github.io/ddas-vroegsignalering/v1.0/uitwisselspecificatie/).
 
-Naast de vroegsignalen worden gegevens voor de paginering meegegeven. Deze zijn nodig als niet alle vroegsignalen in één responsebericht passen - zie de [niet-functionele eisen](non-functionals.md#performance) voor meer uitleg.
+Naast de vroegsignalen worden gegevens voor de **paginering** meegegeven. Deze zijn nodig als niet alle vroegsignalen in één responsebericht passen - zie de [niet-functionele eisen](non-functionals.md#performance) voor meer uitleg.
 
 Ook dit bericht wordt ondertekend met [JAdES](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/) met gebruik van de eigen private sleutel. Zie het hoofdstuk [Signing en Versleuteling](signing-encryptie.md) voor de specificaties van de ondertekening.
 Versleutelen van de payload is niet nodig.
