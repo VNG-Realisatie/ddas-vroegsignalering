@@ -1401,10 +1401,10 @@
 <p>Parameters die meegestuurd kunnen worden (allemaal optioneel):</p>
 <ul>
 <li>
-<p>Startdatum (date, default leeg - schuldhulpverlener bepaalt dan startdatum)</p>
+<p>Startdatum (date, default leeg - schuldhulpverlener bepaalt dan startdatum*)</p>
 </li>
 <li>
-<p>Einddatum (date, default leeg - schuldhulpverlener bepaalt dan einddatum)</p>
+<p>Einddatum (date, default leeg - schuldhulpverlener bepaalt dan einddatum*)</p>
 </li>
 <li>
 <p>Aanleverende_organisatie (string, default alle – alleen relevant als over meer dan 1 organisatie (gemeente/ schuldhulpverlener) gegevens aangeleverd worden)</p>
@@ -1416,6 +1416,8 @@
 <p>pageSize (aantal records/ signalen dat in één responsebericht meegestuurd wordt, default leeg - schuldhulpverlener bepaalt dan het aantal)</p>
 </li>
 </ul>
+<p>*: als de schuldhulpverlener de start- en einddatum van de rapportageperiode bepaalt, worden de start- en einddatum van de afgelopen rapportageperiode gebruikt.<br />
+Voorbeeld: als CBS in juli een request voor gegevens verstuurt zonder start- en einddatum, dan worden de start- en einddatum waarover gegevens geleverd worden 1 januari en 30 juni.</p>
 <p>Het bericht wordt met <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/">JAdES</a> ondertekend met de private sleutel van de verzender van het vraagbericht - in dit geval CBS. Zie het hoofdstuk <a href="../signing-encryptie/">Signing en Versleuteling</a> voor de specificaties van de ondertekening.</p>
 <h2 id="antwoordbericht-response">Antwoordbericht (response)</h2>
 <p>Dit is het antwoordbericht van de gegevensbeheerder (systeem dat de bron beheert) met de gewenste gegevens in JSON formaat.
