@@ -41,15 +41,19 @@ Dit is het vraagbericht zoals dat door CBS via de "Outway" naar de "Inway" van d
 
 Parameters die meegestuurd kunnen worden (allemaal optioneel):
 
-- Startdatum (date, default leeg - schuldhulpverlener bepaalt dan startdatum)
+- Startdatum (date, default leeg - schuldhulpverlener bepaalt dan startdatum*)
 
-- Einddatum (date, default leeg - schuldhulpverlener bepaalt dan einddatum)
+- Einddatum (date, default leeg - schuldhulpverlener bepaalt dan einddatum*)
 
 - Aanleverende_organisatie (string, default alle – alleen relevant als over meer dan 1 organisatie (gemeente/ schuldhulpverlener) gegevens aangeleverd worden)
 
 - page (welke pagina gegevens opgevraagd wordt, als er meerdere pagina's aan gegevens zijn - zie ook [niet-functionele eisen](non-functionals.md#performance), default de eerste pagina)
 
 - pageSize (aantal records/ signalen dat in één responsebericht meegestuurd wordt, default leeg - schuldhulpverlener bepaalt dan het aantal)
+
+
+*: als de schuldhulpverlener de start- en einddatum van de rapportageperiode bepaalt, worden de start- en einddatum van de afgelopen rapportageperiode gebruikt.  
+Voorbeeld: als CBS in juli een request voor gegevens verstuurt zonder start- en einddatum, dan worden de start- en einddatum waarover gegevens geleverd worden 1 januari en 30 juni.
 
 Het bericht wordt met [JAdES](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/) ondertekend met de private sleutel van de verzender van het vraagbericht - in dit geval CBS. Zie het hoofdstuk [Signing en Versleuteling](signing-encryptie.md) voor de specificaties van de ondertekening.
 
