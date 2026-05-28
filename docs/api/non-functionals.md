@@ -12,30 +12,30 @@ De services moeten beschikbaar zijn op de momenten dat CBS de gegevens verzameld
 ## Performance
 
 De berichtenuitwisseling is synchroon. De API moet daarom binnen de "time-out" tijd reageren op een request. Er is nog te weinig ervaring met het koppelvlak om een goed onderbouwde maximale response-tijd en daaraan gekoppeld een maximaal aantal records.
-Vooralsnog wordt uitgegaan van de volgende maximale aantallen records:  
+Vooralsnog wordt uitgegaan van de volgende maximale aantallen records (vroegsignalen/schuldhulptrajecten):  
 
-| Items | Maximaal aantal per pagina |
+| Items | Maximaal aantal per bericht |
 |-------|----------------------------|
 | Schuldhulptrajecten | **25.000** |
 | Vroegsignalen | **50.000** |  
 
 Als het maximaal aantal records overschreven dreigt te worden, moeten de gegevens over verschillende berichten verdeeld worden. In het response-bericht worden dan de velden in het object **paginering** gevuld worden.  
-Dit gebeurt volgens de volgende definities:
+Dit gebeurt conform de volgende definities:
 
-| Veld | Betekenis | Waarde | Default |
-|------|-----------|--------|---------|
-| **pageSize** | Het aantal trajecten/vroegsignalen per pagina | integer (min: 1, max: 25.000 of 50.000) | totaal aantal trajecten/vroegsignalen |
-| **currentPage** | De huidige pagina | integer (min: 1) | 1 |
-| **totalPages** | Het totaal aantal beschikbare pagina's | integer (min: 1) | 1 |
-| **totalRecords** | Het totaal aantal te versturen trajecten/vroegsignalen | integer (min: 0) | totaal aantal trajecten/vroegsignalen |
+| Veld | Betekenis | Waarde |
+|------|-----------|--------|
+| **pageSize** | Het aantal records (schuldhulptrajecten/vroegsignalen) per pagina | integer [min: 1, max: 25.000 of 50.000 (zie hierboven)] |
+| **currentPage** | De huidige pagina | integer [min: 1] |
+| **totalPages** | Het totaal aantal beschikbare pagina's | integer [min: 1] |
+| **totalRecords** | Het totaal aantal te versturen records (schuldhulptrajecten/vroegsignalen) | integer [min: 0] |
 
-Alle velden zijn technisch optioneel in verband met terugwaartse compabiliteit, maar als er gebruik gemaakt wordt van paginering, **moeten** alle paginering-velden gevuld zijn.  
+Het paginering-object is optioneel (als alle gegevens in één bericht passen hoeft het object niet opgenomen te worden in het bericht), maar als er gebruik gemaakt wordt van paginering, **moeten** alle paginering-velden gevuld zijn.  
 In het request-bericht van CBS worden dan ook de volgende paginering velden meegestuurd:
 
 | Veld | Betekenis | Waarde | Opmerking |
-|------|-----------|--------|---------|
-| **page** | De opgevraagde pagina | integer (min: 1) | Als een niet bestaande pagina opgevraagd wordt, wordt een response-bericht teruggestuurd zonder gegevens, maar wel met paginering-gegevens. Als er geen page in het request-bericht zit, maar er wel gepagineerd moet worden, wordt de eerste pagina in het response-bericht gestuurd. |
-| **pageSize** | Het aantal trajecten/vroegsignalen dat in het response-bericht opgenomen mag worden | integer | Als PageSize in het request-bericht zit en er meer trajecten/vroegsignalen verstuurd moeten worden, **moet** er gebruik gemaakt worden van paginering |
+|------|-----------|--------|-----------|
+| **page** | De opgevraagde pagina | integer (min: 1) | Als een niet bestaande pagina opgevraagd wordt, wordt de eerste pagina in het response-bericht teruggestuurd, met paginering-gegevens. Als er geen page in het request-bericht zit, maar er wel gepagineerd moet worden, wordt de eerste pagina in het response-bericht gestuurd. |
+| **pageSize** | Het aantal records (schuldhulptrajecten/vroegsignalen) dat in het response-bericht opgenomen mag worden | integer | Als PageSize in het request-bericht zit en er meer records verstuurd moeten worden, **moet** er gebruik gemaakt worden van paginering |
 
 
 Om belasting van de productiesystemen te beperken mag een cache gebruikt worden, onder de volgende voorwaarden:

@@ -49,7 +49,7 @@ Parameters die meegestuurd kunnen worden (allemaal optioneel):
 
 - page (integer - welke pagina gegevens opgevraagd wordt, als er meerdere pagina's aan gegevens zijn; zie ook [niet-functionele eisen](non-functionals.md#performance), default de eerste pagina)
 
-- pageSize (integer - aantal records (vroegsignalen/schuldhulptrajecten) dat in één responsebericht meegestuurd wordt, default leeg: gegevensleverancier bepaalt dan het aantal)
+- pageSize (integer - aantal records (vroegsignalen/schuldhulptrajecten) dat in één responsebericht meegestuurd wordt, default leeg: gegevensleverancier bepaalt dan het aantal met een maximum zoals bepaald in de [niet-functionele eisen](non-functionals.md#performance))
 
 
 ><sup>*</sup>: als de schuldhulpverlener de start- en einddatum van de rapportageperiode bepaalt, worden de start- en einddatum van de afgelopen rapportageperiode gebruikt. NB: de definitie van de rapportageperiode (start- en einddatum en welke gegevens meegenomen moeten worden) wordt in een aparte beschrijving vastgesteld.   
