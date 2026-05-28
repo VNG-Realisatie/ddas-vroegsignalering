@@ -34,8 +34,8 @@ In het request-bericht van CBS worden dan ook de volgende paginering velden meeg
 
 | Veld | Betekenis | Waarde | Opmerking |
 |------|-----------|--------|-----------|
-| **page** | De opgevraagde pagina | integer (min: 1) | Als een niet bestaande pagina opgevraagd wordt, wordt de eerste pagina in het response-bericht teruggestuurd, met paginering-gegevens. Als er geen page in het request-bericht zit, maar er wel gepagineerd moet worden, wordt de eerste pagina in het response-bericht gestuurd. |
-| **pageSize** | Het aantal records (schuldhulptrajecten/vroegsignalen) dat in het response-bericht opgenomen mag worden | integer | Als PageSize in het request-bericht zit en er meer records verstuurd moeten worden, **moet** er gebruik gemaakt worden van paginering |
+| **page** | De opgevraagde pagina | integer [min: 1] | Als een niet bestaande pagina opgevraagd wordt, wordt de eerste pagina in het response-bericht teruggestuurd, met paginering-gegevens. Als er geen page in het request-bericht zit, maar er wel gepagineerd moet worden, wordt de eerste pagina in het response-bericht gestuurd. |
+| **pageSize** | Het aantal records (schuldhulptrajecten/vroegsignalen) dat in het response-bericht opgenomen mag worden | integer [min: 1, max: zie hierboven] | Als PageSize in het request-bericht zit en er meer records verstuurd moeten worden, **moet** er gebruik gemaakt worden van paginering |
 
 
 Om belasting van de productiesystemen te beperken mag een cache gebruikt worden, onder de volgende voorwaarden:
