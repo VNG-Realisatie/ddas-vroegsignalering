@@ -50,9 +50,9 @@ Bij ontvangst moet de ontvanger het volgende doen om de ondertekening te control
 
 - Controleer:
 
-  - Geldigheid
+    - Geldigheid certificaat
 
-  - OCSP of CRL
+    - OCSP of CRL
 
 - Verifieer signature over HTTP body
 
