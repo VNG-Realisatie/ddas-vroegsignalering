@@ -1,8 +1,8 @@
 # Niet functionele eisen
 
-## OPMERKING!
+> **OPMERKING!**
 
-De niet-functionele eisen hieronder zijn op basis van het ontwerp vastgesteld, maar moeten zich nog in de praktijk bewijzen. Tijdens het gebruik van het koppelvlak zal bijgehouden worden hoe de oplossing werkt en of aanscherping van de niet-functionele eisen nodig is. Deze kunnen dan in een aparte afspraak vastgelegd worden, tot de koppelvlakspecificatie als geheel bijgewerkt wordt. Als er inderdaad aparte afspraken over de niet-functionele eisen vastgelegd zijn, gaan die voor de eisen die in deze koppelvlakspecificatie staan.  
+>De niet-functionele eisen hieronder zijn op basis van het ontwerp vastgesteld, maar moeten zich nog in de praktijk bewijzen. Tijdens het gebruik van het koppelvlak zal bijgehouden worden hoe de oplossing werkt en of aanscherping van de niet-functionele eisen nodig is. Deze kunnen dan in een aparte afspraak vastgelegd worden, tot de koppelvlakspecificatie als geheel bijgewerkt wordt. Als er inderdaad aparte afspraken over de niet-functionele eisen vastgelegd zijn, gaan die vóór de eisen die in deze koppelvlakspecificatie staan.  
 
 ## Beschikbaarheid
 
