@@ -912,12 +912,12 @@
 De services moeten beschikbaar zijn op de momenten dat CBS de gegevens verzameld. Hierover moeten nog afspraken gemaakt worden.</p>
 <h2 id="performance">Performance</h2>
 <p>De berichtenuitwisseling is synchroon. De API moet daarom binnen de "time-out" tijd reageren op een request. Er is nog te weinig ervaring met het koppelvlak om een goed onderbouwde maximale response-tijd en daaraan gekoppeld een maximaal aantal records.
-Vooralsnog wordt uitgegaan van de volgende maximale aantallen records:  </p>
+Vooralsnog wordt uitgegaan van de volgende maximale aantallen records (vroegsignalen/schuldhulptrajecten):  </p>
 <table>
 <thead>
 <tr>
 <th>Items</th>
-<th>Maximaal aantal per pagina</th>
+<th>Maximaal aantal per bericht</th>
 </tr>
 </thead>
 <tbody>
@@ -932,44 +932,39 @@ Vooralsnog wordt uitgegaan van de volgende maximale aantallen records:  </p>
 </tbody>
 </table>
 <p>Als het maximaal aantal records overschreven dreigt te worden, moeten de gegevens over verschillende berichten verdeeld worden. In het response-bericht worden dan de velden in het object <strong>paginering</strong> gevuld worden.<br />
-Dit gebeurt volgens de volgende definities:</p>
+Dit gebeurt conform de volgende definities:</p>
 <table>
 <thead>
 <tr>
 <th>Veld</th>
 <th>Betekenis</th>
 <th>Waarde</th>
-<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>pageSize</strong></td>
-<td>Het aantal trajecten/vroegsignalen per pagina</td>
-<td>integer (min: 1, max: 25.000 of 50.000)</td>
-<td>totaal aantal trajecten/vroegsignalen</td>
+<td>Het aantal records (schuldhulptrajecten/vroegsignalen) per pagina</td>
+<td>integer [min: 1, max: 25.000 of 50.000 (zie hierboven)]</td>
 </tr>
 <tr>
 <td><strong>currentPage</strong></td>
 <td>De huidige pagina</td>
-<td>integer (min: 1)</td>
-<td>1</td>
+<td>integer [min: 1]</td>
 </tr>
 <tr>
 <td><strong>totalPages</strong></td>
 <td>Het totaal aantal beschikbare pagina's</td>
-<td>integer (min: 1)</td>
-<td>1</td>
+<td>integer [min: 1]</td>
 </tr>
 <tr>
 <td><strong>totalRecords</strong></td>
-<td>Het totaal aantal te versturen trajecten/vroegsignalen</td>
-<td>integer (min: 0)</td>
-<td>totaal aantal trajecten/vroegsignalen</td>
+<td>Het totaal aantal te versturen records (schuldhulptrajecten/vroegsignalen)</td>
+<td>integer [min: 0]</td>
 </tr>
 </tbody>
 </table>
-<p>Alle velden zijn technisch optioneel in verband met terugwaartse compabiliteit, maar als er gebruik gemaakt wordt van paginering, <strong>moeten</strong> alle paginering-velden gevuld zijn.<br />
+<p>Het paginering-object is optioneel (als alle gegevens in één bericht passen hoeft het object niet opgenomen te worden in het bericht), maar als er gebruik gemaakt wordt van paginering, <strong>moeten</strong> alle paginering-velden gevuld zijn.<br />
 In het request-bericht van CBS worden dan ook de volgende paginering velden meegestuurd:</p>
 <table>
 <thead>
@@ -985,13 +980,13 @@ In het request-bericht van CBS worden dan ook de volgende paginering velden meeg
 <td><strong>page</strong></td>
 <td>De opgevraagde pagina</td>
 <td>integer (min: 1)</td>
-<td>Als een niet bestaande pagina opgevraagd wordt, wordt een response-bericht teruggestuurd zonder gegevens, maar wel met paginering-gegevens. Als er geen page in het request-bericht zit, maar er wel gepagineerd moet worden, wordt de eerste pagina in het response-bericht gestuurd.</td>
+<td>Als een niet bestaande pagina opgevraagd wordt, wordt de eerste pagina in het response-bericht teruggestuurd, met paginering-gegevens. Als er geen page in het request-bericht zit, maar er wel gepagineerd moet worden, wordt de eerste pagina in het response-bericht gestuurd.</td>
 </tr>
 <tr>
 <td><strong>pageSize</strong></td>
-<td>Het aantal trajecten/vroegsignalen dat in het response-bericht opgenomen mag worden</td>
+<td>Het aantal records (schuldhulptrajecten/vroegsignalen) dat in het response-bericht opgenomen mag worden</td>
 <td>integer</td>
-<td>Als PageSize in het request-bericht zit en er meer trajecten/vroegsignalen verstuurd moeten worden, <strong>moet</strong> er gebruik gemaakt worden van paginering</td>
+<td>Als PageSize in het request-bericht zit en er meer records verstuurd moeten worden, <strong>moet</strong> er gebruik gemaakt worden van paginering</td>
 </tr>
 </tbody>
 </table>
