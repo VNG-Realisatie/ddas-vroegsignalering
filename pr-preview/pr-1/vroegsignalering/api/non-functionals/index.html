@@ -959,13 +959,13 @@ In het request-bericht van CBS worden dan ook de volgende paginering velden meeg
 <tr>
 <td><strong>page</strong></td>
 <td>De opgevraagde pagina</td>
-<td>integer (min: 1)</td>
+<td>integer [min: 1]</td>
 <td>Als een niet bestaande pagina opgevraagd wordt, wordt de eerste pagina in het response-bericht teruggestuurd, met paginering-gegevens. Als er geen page in het request-bericht zit, maar er wel gepagineerd moet worden, wordt de eerste pagina in het response-bericht gestuurd.</td>
 </tr>
 <tr>
 <td><strong>pageSize</strong></td>
 <td>Het aantal records (schuldhulptrajecten/vroegsignalen) dat in het response-bericht opgenomen mag worden</td>
-<td>integer</td>
+<td>integer [min: 1, max: zie hierboven]</td>
 <td>Als PageSize in het request-bericht zit en er meer records verstuurd moeten worden, <strong>moet</strong> er gebruik gemaakt worden van paginering</td>
 </tr>
 </tbody>
