@@ -164,11 +164,11 @@ De volgende keuzes zijn gemaakt: 
 
   *Rationale*
 
-  - Er wordt uitgegaan van synchroon berichtenverkeer: een request levert een response en daarmee is de gegevensuitwisseling afgerond. Als niet alle gegevens in één responsebericht passen, wordt paginering gebruikt om de gegevens in meerdere berichten beschikbaar te stellen. Dit houdt het berichtenverkeer synchroon, maar berperkt de hoeveelheid beschikbaar te stellen gegevens niet.
+  - Als niet alle gegevens in één responsebericht passen, wordt paginering gebruikt om de gegevens in meerdere berichten beschikbaar te stellen. Dit houdt het berichtenverkeer synchroon, zonder tegen limieten aan te lopen.
 
   *Implicaties*
 
-  - In de berichtenspecificaties wordt een object "paginering" opgenomen waarmee het verdelen van gegevens over meerdere berichten mogelijk wordt.
+  - In de berichtenspecificaties wordt een object "paginering" opgenomen waarmee het verdelen van gegevens over meerdere berichten mogelijk wordt. NB: dit object is optioneel - als alle gegevens in één responsebericht passen hoeft er geen gebruik van paginering gemaakt te worden.
 
   - Als er meer gegevens geleverd moeten worden dan in één responsebericht passen (zie [niet-functionele eisen](non-functionals.md#performance) voor het maximaal aantal records per bericht), dan moet de gegevensleverancier gebruik maken van paginering en de gegevens beschikbaar stellen in verschillende berichten.
 
