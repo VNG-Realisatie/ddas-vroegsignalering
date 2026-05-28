@@ -1401,34 +1401,36 @@
 <p>Parameters die meegestuurd kunnen worden (allemaal optioneel):</p>
 <ul>
 <li>
-<p>Startdatum (date, default leeg - schuldhulpverlener bepaalt dan startdatum*)</p>
+<p>Startdatum (date - startdatum van rapportageperiode, default leeg: gegevensleverancier bepaalt dan startdatum<sup>*</sup>)</p>
 </li>
 <li>
-<p>Einddatum (date, default leeg - schuldhulpverlener bepaalt dan einddatum*)</p>
+<p>Einddatum (date - startdatum van rapportageperiode, default leeg: gegevensleverancier bepaalt dan einddatum<sup>*</sup>)</p>
 </li>
 <li>
-<p>Aanleverende_organisatie (string, default alle – alleen relevant als over meer dan 1 organisatie (gemeente/ schuldhulpverlener) gegevens aangeleverd worden)</p>
+<p>Aanleverende_organisatie (string - organisatie waarvan de gegevens geleverd worden, default alle; alleen relevant als over meer dan 1 organisatie (gemeente/ schuldhulpverlener) gegevens aangeleverd worden)</p>
 </li>
 <li>
-<p>page (welke pagina gegevens opgevraagd wordt, als er meerdere pagina's aan gegevens zijn - zie ook <a href="../non-functionals/#performance">niet-functionele eisen</a>, default de eerste pagina)</p>
+<p>page (integer - welke pagina gegevens opgevraagd wordt, als er meerdere pagina's aan gegevens zijn; zie ook <a href="../non-functionals/#performance">niet-functionele eisen</a>, default de eerste pagina)</p>
 </li>
 <li>
-<p>pageSize (aantal records/ signalen dat in één responsebericht meegestuurd wordt, default leeg - schuldhulpverlener bepaalt dan het aantal)</p>
+<p>pageSize (integer - aantal records (vroegsignalen/schuldhulptrajecten) dat in één responsebericht meegestuurd wordt, default leeg: gegevensleverancier bepaalt dan het aantal)</p>
 </li>
 </ul>
-<p>*: als de schuldhulpverlener de start- en einddatum van de rapportageperiode bepaalt, worden de start- en einddatum van de afgelopen rapportageperiode gebruikt.<br />
-Voorbeeld: als CBS in juli een request voor gegevens verstuurt zonder start- en einddatum, dan worden de start- en einddatum waarover gegevens geleverd worden 1 januari en 30 juni.</p>
+<blockquote>
+<p><sup>*</sup>: als de schuldhulpverlener de start- en einddatum van de rapportageperiode bepaalt, worden de start- en einddatum van de afgelopen rapportageperiode gebruikt. NB: de definitie van de rapportageperiode (start- en einddatum en welke gegevens meegenomen moeten worden) wordt in een aparte beschrijving vastgesteld. <br />
+Voorbeeld: als CBS in juli een request voor gegevens verstuurt zonder start- en einddatum en er halfjaarlijks gerapporteerd wordt, dan worden de start- en einddatum waarover gegevens geleverd worden 1 januari, resp. 30 juni. Als er per kwartaal gerapporteerd wordt, dan zijn in dit geval de start- en einddatum 1 maart, resp. 30 juni.</p>
+</blockquote>
 <p>Het bericht wordt met <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/">JAdES</a> ondertekend met de private sleutel van de verzender van het vraagbericht - in dit geval CBS. Zie het hoofdstuk <a href="../signing-encryptie/">Signing en Versleuteling</a> voor de specificaties van de ondertekening.</p>
 <h2 id="antwoordbericht-response">Antwoordbericht (response)</h2>
 <p>Dit is het antwoordbericht van de gegevensbeheerder (systeem dat de bron beheert) met de gewenste gegevens in JSON formaat.
 De payload is gebaseerd op het uitwisselformaat zoals dat is beschreven voor <a href="https://vng-realisatie.github.io/ddas/v1.0/uitwisselspecificatie/">schuldhulpgegevens</a> en <a href="https://vng-realisatie.github.io/ddas-vroegsignalering/v1.0/uitwisselspecificatie/">vroegsignaleringsgegevens</a>.</p>
-<p>Naast de vroegsignalen worden gegevens voor de <strong>paginering</strong> meegegeven. Deze zijn nodig als niet alle vroegsignalen in één responsebericht passen - zie de <a href="../non-functionals/#performance">niet-functionele eisen</a> voor meer uitleg.</p>
+<p>Naast de vroegsignalen worden gegevens voor de <strong>paginering</strong> meegegeven. Deze zijn nodig als niet alle gegevens in één responsebericht passen - zie de <a href="../non-functionals/#performance">niet-functionele eisen</a> voor meer uitleg. Als alle gegevens in één responsebericht passen, hoeven de paginering gegevens niet in het bericht opgenomen te worden.</p>
 <p>Ook dit bericht wordt ondertekend met <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/">JAdES</a> met gebruik van de eigen private sleutel. Zie het hoofdstuk <a href="../signing-encryptie/">Signing en Versleuteling</a> voor de specificaties van de ondertekening.
 Versleutelen van de payload is niet nodig.</p>
 <p>Mogelijke responses:</p>
 <ul>
 <li>
-<p>200: bericht goed verwerkt (met versleutelde en gesigneerde payload)</p>
+<p>200: bericht goed verwerkt (met gesigneerde payload)</p>
 </li>
 <li>
 <p>Foutberichten conform de FSC standaard:</p>
