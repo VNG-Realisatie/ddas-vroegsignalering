@@ -47,13 +47,13 @@ Parameters die meegestuurd kunnen worden (allemaal optioneel):
 
 - Aanleverende_organisatie (string - organisatie waarvan de gegevens geleverd worden, default alle; alleen relevant als over meer dan 1 organisatie (gemeente/ schuldhulpverlener) gegevens aangeleverd worden)
 
-- page (integer - welke pagina gegevens opgevraagd wordt, als er meerdere pagina's aan gegevens zijn; zie ook [niet-functionele eisen](non-functionals.md#performance), default de eerste pagina)
+- page (integer - de gewenste pagina, als er meerdere pagina's aan gegevens zijn; zie ook [niet-functionele eisen](non-functionals.md#performance), default de eerste pagina)
 
 - pageSize (integer - aantal records (vroegsignalen/schuldhulptrajecten) dat in één responsebericht meegestuurd wordt, default leeg: gegevensleverancier bepaalt dan het aantal met een maximum zoals bepaald in de [niet-functionele eisen](non-functionals.md#performance))
 
 
 ><sup>*</sup>: als de schuldhulpverlener de start- en einddatum van de rapportageperiode bepaalt, worden de start- en einddatum van de afgelopen rapportageperiode gebruikt. NB: de definitie van de rapportageperiode (start- en einddatum en welke gegevens meegenomen moeten worden) wordt in een aparte beschrijving vastgesteld.   
->Voorbeeld: als CBS in juli een request voor gegevens verstuurt zonder start- en einddatum en er halfjaarlijks gerapporteerd wordt, dan worden de start- en einddatum waarover gegevens geleverd worden 1 januari, resp. 30 juni. Als er per kwartaal gerapporteerd wordt, dan zijn in dit geval de start- en einddatum 1 maart, resp. 30 juni.
+>Voorbeeld: als CBS in juli een request voor gegevens verstuurt zonder start- en einddatum en er halfjaarlijks gerapporteerd wordt, dan worden de start- en einddatum waarover gegevens geleverd worden 1 januari, resp. 30 juni van het huidige jaar. Als er per kwartaal gerapporteerd wordt, dan zijn in dit geval de start- en einddatum 1 maart, resp. 30 juni van het huidige jaar.
 
 Het bericht wordt met [JAdES](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/) ondertekend met de private sleutel van de verzender van het vraagbericht - in dit geval CBS. Zie het hoofdstuk [Signing en Versleuteling](signing-encryptie.md) voor de specificaties van de ondertekening.
 
