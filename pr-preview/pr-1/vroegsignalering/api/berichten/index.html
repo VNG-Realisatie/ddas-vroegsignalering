@@ -964,7 +964,7 @@
 <p>Aanleverende_organisatie (string - organisatie waarvan de gegevens geleverd worden, default alle; alleen relevant als over meer dan 1 organisatie (gemeente/ schuldhulpverlener) gegevens aangeleverd worden)</p>
 </li>
 <li>
-<p>page (integer - welke pagina gegevens opgevraagd wordt, als er meerdere pagina's aan gegevens zijn; zie ook <a href="../non-functionals/#performance">niet-functionele eisen</a>, default de eerste pagina)</p>
+<p>page (integer - de gewenste pagina, als er meerdere pagina's aan gegevens zijn; zie ook <a href="../non-functionals/#performance">niet-functionele eisen</a>, default de eerste pagina)</p>
 </li>
 <li>
 <p>pageSize (integer - aantal records (vroegsignalen/schuldhulptrajecten) dat in één responsebericht meegestuurd wordt, default leeg: gegevensleverancier bepaalt dan het aantal met een maximum zoals bepaald in de <a href="../non-functionals/#performance">niet-functionele eisen</a>)</p>
@@ -972,7 +972,7 @@
 </ul>
 <blockquote>
 <p><sup>*</sup>: als de schuldhulpverlener de start- en einddatum van de rapportageperiode bepaalt, worden de start- en einddatum van de afgelopen rapportageperiode gebruikt. NB: de definitie van de rapportageperiode (start- en einddatum en welke gegevens meegenomen moeten worden) wordt in een aparte beschrijving vastgesteld. <br />
-Voorbeeld: als CBS in juli een request voor gegevens verstuurt zonder start- en einddatum en er halfjaarlijks gerapporteerd wordt, dan worden de start- en einddatum waarover gegevens geleverd worden 1 januari, resp. 30 juni. Als er per kwartaal gerapporteerd wordt, dan zijn in dit geval de start- en einddatum 1 maart, resp. 30 juni.</p>
+Voorbeeld: als CBS in juli een request voor gegevens verstuurt zonder start- en einddatum en er halfjaarlijks gerapporteerd wordt, dan worden de start- en einddatum waarover gegevens geleverd worden 1 januari, resp. 30 juni van het huidige jaar. Als er per kwartaal gerapporteerd wordt, dan zijn in dit geval de start- en einddatum 1 maart, resp. 30 juni van het huidige jaar.</p>
 </blockquote>
 <p>Het bericht wordt met <a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/">JAdES</a> ondertekend met de private sleutel van de verzender van het vraagbericht - in dit geval CBS. Zie het hoofdstuk <a href="../signing-encryptie/">Signing en Versleuteling</a> voor de specificaties van de ondertekening.</p>
 <h2 id="antwoordbericht-response">Antwoordbericht (response)</h2>
