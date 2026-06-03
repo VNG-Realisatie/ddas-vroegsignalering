@@ -12,13 +12,13 @@
         <meta name="author" content="Arjen Brienen">
       
       
-        <link rel="canonical" href="https://vngrealisatie.github.io/ddas-vroegsignalering/latest/VraagEnAntwoord/">
+        <link rel="canonical" href="https://vngrealisatie.github.io/ddas-vroegsignalering/latest/api/">
       
       
-        <link rel="prev" href="../api/non-functionals/">
+        <link rel="prev" href="../definities/Detail_Model%20Vroegsignalering/">
       
       
-        <link rel="next" href="../Achtergrond/">
+        <link rel="next" href="uitgangspunten/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Vraag en antwoord - Data Delen Armoede en Schulden (DDAS): Vroegsignalering</title>
+        <title>Inleiding - Data Delen Armoede en Schulden (DDAS): Vroegsignalering</title>
       
     
     
@@ -69,11 +69,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#vraag-en-antwoord" class="md-skip">
-          Ga naar inhoud
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vraag en antwoord
+              Inleiding
             
           </span>
         </div>
@@ -348,17 +343,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -372,7 +369,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Koppelvlakspecificatie API
@@ -383,10 +380,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -395,6 +399,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -407,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/uitgangspunten/" class="md-nav__link">
+      <a href="uitgangspunten/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -428,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/overzicht/" class="md-nav__link">
+      <a href="overzicht/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -449,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/transport/" class="md-nav__link">
+      <a href="transport/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -470,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/iam/" class="md-nav__link">
+      <a href="iam/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -491,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/signing-encryptie/" class="md-nav__link">
+      <a href="signing-encryptie/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -512,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/berichten/" class="md-nav__link">
+      <a href="berichten/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -533,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/non-functionals/" class="md-nav__link">
+      <a href="non-functionals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -558,19 +563,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../VraagEnAntwoord/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -579,7 +575,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -621,8 +616,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -640,41 +633,18 @@
   
 
 
-<h1 id="vraag-en-antwoord">Vraag en Antwoord</h1>
-<p>Hieronder vind je veelgestelde vragen met bijbehorende vragen over vroegsignalering in het kader van DDAS. </p>
-<details class="question">
-<summary>Moet het aan CBS aan te leveren JSON-bestand worden versleuteld?</summary>
-<p>Nee, het aan CBS aan te leveren JSON-bestand hoeft niet te worden versleuteld. In een van de eerdere versie van de DPIA stond een zinsnede met de term '(versleuteld)' die tot verwarring leidde. Deze is in de DPIA aangepast. </p>
-</details>
-<details class="question">
-<summary>Wat moet worden opgegeven bij 'code gegevensleverancier'?</summary>
-<p>Dit is een code die het CBS nodig heeft om onderscheid te kunnen maken tussen de softwareleveranciers die de gegevens aanbieden. Ook wordt op basis van deze code bepaald welke versie van de software is gebruikt. De correcte vulling van dit veld is als volgt: 'naam softwareleverancier' + 'versienummer-software'.</p>
-</details>
-<details class="question">
-<summary>Wat moet worden opgegeven bij 'geslachtsaanduiding' bij 'client'?</summary>
-<p>De geslachtsaanduiding hoort van het type 'geslacht' te zijn, en niet alleen een string. Dit staat nu niet goed in de uitwisselspecificatie. Bij geslachtsaanduiding moet dus een van de waarden uit 'geslacht' te staan: ['Man','Vrouw','Onbekend','Leeg']</p>
-</details>
-<details class="question">
-<summary>Wat te doen als de gemeentecode onbekend is van de gemeente onder wiens verantwoordelijkheid schuldhulp wordt uitgevoerd.</summary>
-<p>In uitzonderlijke gevallen is het mogelijk dat de gemeentecode onbekend is van de gemeente onder wiens verantwoordelijkheid schuldhulp wordt uitgevoerd. Bijvoorbeeld bij samenwerkingsorganisaties die deze gemeente niet administreren. </p>
-<p>De verantwoordelijke gemeente is één van de belangrijke startpunten voor de statistiek die door CBS wordt opgesteld. Dus sporen aan dit wel in de systemen op te nemen. Wel zijn we erg blij met aan te leveren gegevens, en kunnen we die gebruiken voor diverse andere statistieken. In dergelijke gevallen kan bij de trajecten in het veld gemeentecode de waarde “Onbekend” worden opgenomen.</p>
-</details>
-<details class="question">
-<summary>Waarom is het belangrijk dat contactpersonen bij aanleverende_organisatie contactpersonen goed wordt ingevuld?</summary>
-<p>Bij aanlevering van gegevens via API's worden de gegevens van contactpersonen gebruikt om het 'op-orde-rapport' naartoe te sturen. Hiermee kunnen organisaties controleren of er correcte gegevens aan CBS zijn aangeboden. Hiervoor gebruikt het CBS het emailadres.</p>
-</details>
-<details class="question">
-<summary>Telefoonnummer hebben wij soms 2 telefoonnummers voor, hoe vul ik dit veld in?</summary>
-<p>Je kunt in het veld meerdere telefoonnummers kwijt. Graag gesplitst met een '/'</p>
-</details>
-<details class="question">
-<summary>EnumSignaalstatus status "opgepakt" mist. Moeten wij deze invullen? Of gaan jullie ervan uit dat wanneer dit veld leeg is het signaal is opgepakt?</summary>
-<p>Als een signaal onderdeel is van een zaak, dan zien we het als opgepakt </p>
-</details>
-<details class="question">
-<summary>Wanneer geldt een dossier als 'opgepakt'? We hebben een aantal verschillende datums die we hiervoor kunnen hanteren, maar weten niet goed welke we hiervoor moeten gebruiken.</summary>
-<p>Gebruik hiervoor het moment van aanmaken van het dossier.</p>
-</details>
+  <h1>Inleiding</h1>
+
+<p>Dit deel van de documentatie bevat de koppelvlakspecificatie voor de API waarmee schuldhulporganisaties gegevens beschikbaar kunnen stellen aan het CBS.  </p>
+<p>De koppelvlakspecificatie bestaat uit de volgende onderdelen:<br />
+- <a href="uitgangspunten/">Uitgangspunten</a>: de kaders die gevolgd zijn en de 10 keuzes die gemaakt zijn;<br />
+- <a href="overzicht/">Overzicht</a>: overzicht van de oplossing met de relevante componenten;<br />
+- <a href="transport/">Transportlaag</a>: specificatie van de transportlaag - de inrichting van het koppelvlak, endpoints van de centrale directory en naamsconventie voor de services;<br />
+- <a href="iam/">Identificatie, Authenticatie en Autorisatie</a>: afspraken rond identificatie, authenticatie en autorisatie;<br />
+- <a href="signing-encryptie/">Signing en encryptie</a>: afspraken rond het ondertekenen en versleutelen van berichten;<br />
+- <a href="berichten/">Berichten</a>: de inhoud van de berichten met OAS3 beschrijving;<br />
+- <a href="non-functionals/">Niet-functionele eisen</a>: de niet-functionele eisen aan de services.  </p>
+<p><strong>LET OP</strong>: de koppelvlakspecificatie voor het beschikbaarstellen van vroegsignaleringsgegevens is hetzelfde als die voor het beschikbaarstellen van schuldhulpgegevens - alleen de <a href="transport/#naamsconventie">naamsconventie</a> en de <a href="berichten/">inhoud van de berichten</a> zijn verschillend. Let er daarom op dat u bij deze onderwerpen de juiste keuze maakt.</p>
 
 
 
