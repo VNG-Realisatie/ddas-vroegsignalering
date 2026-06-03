@@ -8,12 +8,12 @@ De kern van het informatiemodel Vroegsignalering bestaat uit Vroegsignaal en uit
 
 De Vroegsignalen hebben een bepaalde status die, die altijd start met: "Nog niet opgepakt" en eindigt met een van de andere statussen uit EnumSignaalstatus. Hetzelfde geldt voor Vroegsignaalzaken, die beginnen ook altijd met "Nog niet opgepakt" en eindigen met een  status uit EnumEindresultaat.   
 
-[![Hoofdindeling](../images/EAID_AFFABC16_BCDB_44c6_8E2F_C3D8C49884A5.jpg)](../images/EAID_AFFABC16_BCDB_44c6_8E2F_C3D8C49884A5.jpg)
+[![Hoofdindeling](images/EAID_AFFABC16_BCDB_44c6_8E2F_C3D8C49884A5.jpg)](images/EAID_AFFABC16_BCDB_44c6_8E2F_C3D8C49884A5.jpg)
 
 Figuur 1 Hoofdindeling Vroegsignalering
 
 In Figuur 2 wordt het informatiemodel voor vroegsignalering in meer detail getoond.
 
-[![Hoofdindeling](../images/EAID_6D5829BF_AF12_4464_9EAD_E336DEFDF442.jpg)](../images/EAID_6D5829BF_AF12_4464_9EAD_E336DEFDF442.jpg)
+[![Hoofdindeling](images/EAID_6D5829BF_AF12_4464_9EAD_E336DEFDF442.jpg)](images/EAID_6D5829BF_AF12_4464_9EAD_E336DEFDF442.jpg)
 
 Figuur 2 Vroegsignalering in details

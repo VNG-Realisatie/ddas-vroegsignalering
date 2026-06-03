@@ -31,6 +31,10 @@ nav:
   - Vraag en antwoord: VraagEnAntwoord.md
   - Achtergrond DDAS: Achtergrond.md
 
+not_in_nav: |
+  /404.md
+  /uitleg_Model Vroegsignalering.md
+
 markdown_extensions:
   - pymdownx.superfences
   - pymdownx.snippets:
