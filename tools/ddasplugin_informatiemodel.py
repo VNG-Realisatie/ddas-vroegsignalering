@@ -17,6 +17,7 @@ PARTNER_ID = "EAID_093B2482_D72E_4f88_931C_75C9DABED007"
 LEVERING_ID = "EAID_DAB09055_A5A6_4ff4_A158_21B20567B888"
 SCHULDEN_ID = "EAID_93E12A3E_71E3_431e_9871_BF6075EAAEF1"
 CONTACTPERSOON_ID = "EAID_B9287881_AD66_4396_A629_ED5FE9196316"
+GESLACHT_ENUM_ID = "EAID_5868306F_8B4E_4cd0_A47E_D171DAE493D5"
 
 
 class DDASPluginInformatiemodel(Plugin):
@@ -53,12 +54,8 @@ class DDASPluginInformatiemodel(Plugin):
         # Remove unneccary enumerations from inherited attributes
         logger.info("Removing unneccary enumerations from inherited attributes.")
         lst_enum = [enum for enum in kopie.enumerations]
-        gsl_teller = 0
         for enum in lst_enum:
-            if enum.name == "geslacht" and gsl_teller < 1:  # Geslacht needs to stay exacly once
-                gsl_teller += 1
-                kopie.enumerations.remove(enum)
-            if enum.name in [
+            if enum.name == "geslacht" or enum.name in [
                 "Geslachtsaanduiding",
                 "Burgerlijke staat",
                 "adelijkeTitel",
@@ -68,6 +65,13 @@ class DDASPluginInformatiemodel(Plugin):
                 "soortRechtsvorm",
             ]:
                 kopie.enumerations.remove(enum)
+
+        geslacht_enum = schema_from.get_enumeration(GESLACHT_ENUM_ID)
+        if geslacht_enum is None:
+            raise CrunchException(
+                f"Enumeratie 'geslacht' met EAID {GESLACHT_ENUM_ID} ontbreekt in het bronmodel."
+            )
+        kopie.enumerations.append(geslacht_enum.get_copy(kopie))
 
         logger.info(f"Adding copy to schema {schema_to.schema_id}.")
         schema_to.add(kopie, recursive=True)
@@ -109,18 +113,14 @@ class DDASPluginInformatiemodel(Plugin):
             lst_attr = [attr for attr in schema_to.get_class(person_id).attributes]
             person = schema_to.get_class(person_id)
             for attr in lst_attr:
-                if not str(attr.name).strip().lower() in [
-                    "geslachtsaanduiding",
-                    "burgerservicenummer",
-                ]:
-                    person.attributes.remove(attr)
-                    attr.clazz_id = None
+                person.attributes.remove(attr)
+                attr.clazz_id = None
 
             
             person.attributes.append(
                 Attribute(
                     id=util.getEAGuid(),
-                    name="Burgerservicenummer",
+                    name="burgerservicenummer",
                     schema_id=schema_to.schema_id,
                     primitive="AN9",
                     verplicht=False,
@@ -129,34 +129,18 @@ class DDASPluginInformatiemodel(Plugin):
             person.attributes.append(
                 Attribute(
                     id=util.getEAGuid(),
-                    name="Voorletters",
+                    name="geslachtsaanduiding",
                     schema_id=schema_to.schema_id,
-                    primitive="AN20",
                     verplicht=False,
+                    enumeration_id=GESLACHT_ENUM_ID,
+                    definitie="Een aanduiding die aangeeft dat de ingeschrevene een man of een vrouw is, of dat het geslacht (nog) onbekend is.",
+                    stereotype="enum",
                 )
             )
             person.attributes.append(
                 Attribute(
                     id=util.getEAGuid(),
-                    name="Voorvoegsel",
-                    schema_id=schema_to.schema_id,
-                    primitive="AN200",
-                    verplicht=False,
-                )
-            )
-            person.attributes.append(
-                Attribute(
-                    id=util.getEAGuid(),
-                    name="Achternaam",
-                    schema_id=schema_to.schema_id,
-                    primitive="AN200",
-                    verplicht=False,
-                )
-            )
-            person.attributes.append(
-                Attribute(
-                    id=util.getEAGuid(),
-                    name="Geboortedatum",
+                    name="geboortedatum",
                     schema_id=schema_to.schema_id,
                     verplicht=False,
                     primitive="Datum",
@@ -166,16 +150,7 @@ class DDASPluginInformatiemodel(Plugin):
             person.attributes.append(
                 Attribute(
                     id=util.getEAGuid(),
-                    name="Straatnaam",
-                    schema_id=schema_to.schema_id,
-                    primitive="AN200",
-                    verplicht=False,
-                )
-            )
-            person.attributes.append(
-                Attribute(
-                    id=util.getEAGuid(),
-                    name="Postcode",
+                    name="postcode",
                     schema_id=schema_to.schema_id,
                     primitive="AN6",
                     verplicht=False,
@@ -184,7 +159,7 @@ class DDASPluginInformatiemodel(Plugin):
             person.attributes.append(
                 Attribute(
                     id=util.getEAGuid(),
-                    name="Huisnummer",
+                    name="huisnummer",
                     schema_id=schema_to.schema_id,
                     primitive="AN5",
                     verplicht=False,
@@ -193,18 +168,9 @@ class DDASPluginInformatiemodel(Plugin):
             person.attributes.append(
                 Attribute(
                     id=util.getEAGuid(),
-                    name="Huisnummertoevoeging",
+                    name="huisnummertoevoeging",
                     schema_id=schema_to.schema_id,
                     primitive="AN4",
-                    verplicht=False,
-                )
-            )
-            person.attributes.append(
-                Attribute(
-                    id=util.getEAGuid(),
-                    name="Plaatsnaam",
-                    schema_id=schema_to.schema_id,
-                    primitive="AN200",
                     verplicht=False,
                 )
             )

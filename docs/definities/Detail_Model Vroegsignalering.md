@@ -190,16 +190,12 @@ Attributen van objecttype Client
 
 | Attribute | Datatype | Description |
 | :--- | :--- | :--- |
-| Burgerservicenummer | AN9 |  |
-| Voorletters | AN20 |  |
-| Voorvoegsel | AN200 |  |
-| Achternaam | AN200 |  |
-| Geboortedatum | Datum | De datum waarop de persoon is geboren. |
-| Straatnaam | AN200 |  |
-| Postcode | AN6 |  |
-| Huisnummer | AN5 |  |
-| Huisnummertoevoeging | AN4 |  |
-| Plaatsnaam | AN200 |  |
+| burgerservicenummer | AN9 |  |
+| geslachtsaanduiding | Enumeratie: "geslacht" | Een aanduiding die aangeeft dat de ingeschrevene een man of een vrouw is, of dat het geslacht (nog) onbekend is. |
+| geboortedatum | Datum | De datum waarop de persoon is geboren. |
+| postcode | AN6 |  |
+| huisnummer | AN5 |  |
+| huisnummertoevoeging | AN4 |  |
 
 
 
@@ -462,6 +458,34 @@ De enumeratie EnumSignaalstatus heeft de volgende kenmerken:
     | bron |  |
     | author | Arjen Brienen |
     | version | 1.0 |
+    
+
+
+### geslacht
+> **Definitie geslacht:** 
+>
+> Geen Definitie
+
+Het enumeratie geslacht kent de volgende waarden:
+
+* **Man**: 
+* **Vrouw**: 
+* **Onbekend**: 
+* **Leeg**: 
+
+
+De enumeratie geslacht heeft de volgende kenmerken:
+
+??? info "Kenmerken Model geslacht"
+    | Kenmerk | Waarde |
+    | :--- | :------ |
+    | name | geslacht |
+    | toelichting |  |
+    | synoniemen |  |
+    | uri |  |
+    | bron |  |
+    | author |  |
+    | version | 1.4 |
     
 
 
