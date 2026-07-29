@@ -831,10 +831,10 @@
 <h2 id="encoding">Encoding</h2>
 <p>Alle bestanden dienen te worden aangeleverd in <a href="https://www.forumstandaardisatie.nl/open-standaarden/utf-8">UTF-8-formaat</a>. </p>
 <h2 id="uitwisselspecificatie">Uitwisselspecificatie</h2>
-<p>Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.1/json_schema_Uitwisselmodel.json">downloadversie</a> beschikbaar.</p>
+<p>Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.1-draft/json_schema_Uitwisselmodel.json">downloadversie</a> beschikbaar.</p>
 <div class="highlight"><pre><span></span><code>{
     &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
-    &quot;$id&quot;: &quot;https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/main/v1.1/json_schema_Uitwisselmodel.json&quot;,
+    &quot;$id&quot;: &quot;https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/main/v1.1-draft/json_schema_Uitwisselmodel.json&quot;,
     &quot;title&quot;: &quot;Uitwisselmodel&quot;,
     &quot;type&quot;: &quot;object&quot;,
     &quot;description&quot;: &quot;Het uitwisselmodel is een model dat de gegevens bevat die uitgewisseld worden tussen de verschillende partijen.&quot;,
@@ -1000,9 +1000,9 @@
                                 }
                             },
                             &quot;required&quot;: [
+                                &quot;client&quot;,
                                 &quot;signaalpartner&quot;,
-                                &quot;ID&quot;,
-                                &quot;client&quot;
+                                &quot;ID&quot;
                             ],
                             &quot;additionalProperties&quot;: false
                         }
@@ -1081,8 +1081,8 @@
                 },
                 &quot;required&quot;: [
                     &quot;gemeentecode&quot;,
-                    &quot;aanleverende_organisatie&quot;,
-                    &quot;teller&quot;
+                    &quot;teller&quot;,
+                    &quot;aanleverende_organisatie&quot;
                 ],
                 &quot;additionalProperties&quot;: false
             },
@@ -1091,10 +1091,10 @@
         }
     },
     &quot;required&quot;: [
-        &quot;startdatumLevering&quot;,
         &quot;aanleverdatumEnTijd&quot;,
         &quot;einddatumLevering&quot;,
-        &quot;codeGegevensleverancier&quot;
+        &quot;codeGegevensleverancier&quot;,
+        &quot;startdatumLevering&quot;
     ],
     &quot;additionalProperties&quot;: false,
     &quot;$defs&quot;: {
@@ -1121,46 +1121,6 @@
         &quot;bedrag&quot;: {
             &quot;type&quot;: &quot;integer&quot;,
             &quot;description&quot;: &quot;Een geldbedrag in hele euros nauwkeurig.&quot;
-        },
-        &quot;EnumDagdeel&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Ochtend&quot;,
-                &quot;Middag&quot;,
-                &quot;Avond&quot;
-            ]
-        },
-        &quot;EnumSignaalstatus&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Nog niet opgepakt&quot;,
-                &quot;Niet opgepakt: onterecht signaal&quot;,
-                &quot;Inwoner is overleden&quot;,
-                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
-                &quot;Niet opgepakt: herhaalde melding&quot;,
-                &quot;Niet opgepakt: andere reden&quot;
-            ]
-        },
-        &quot;EnumEindresultaat&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
-            &quot;enum&quot;: [
-                &quot;Niet opgepakt: herhaalde melding&quot;,
-                &quot;Niet opgepakt: onterecht signaal&quot;,
-                &quot;Inwoner is overleden&quot;,
-                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
-                &quot;Niet opgepakt: andere reden&quot;,
-                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
-                &quot;Inwoner heeft al een ander lopend traject&quot;,
-                &quot;Definitief geen contact kunnen krijgen&quot;,
-                &quot;Geen reactie na eerder contact&quot;,
-                &quot;Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering&quot;,
-                &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
-                &quot;(Budget)advies en/of quick fix&quot;,
-                &quot;Vervolghulp en/of verwijzing financieel&quot;,
-                &quot;Verwijzing zonder toestemming&quot;,
-                &quot;Vervolghulp en/of verwijzing niet financieel&quot;
-            ]
         },
         &quot;EnumContactsoort&quot;: {
             &quot;type&quot;: &quot;string&quot;,
@@ -1193,6 +1153,27 @@
                 &quot;Dienst Toeslagen&quot;
             ]
         },
+        &quot;EnumEindresultaat&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
+            &quot;enum&quot;: [
+                &quot;Niet opgepakt: herhaalde melding&quot;,
+                &quot;Niet opgepakt: onterecht signaal&quot;,
+                &quot;Inwoner is overleden&quot;,
+                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+                &quot;Niet opgepakt: andere reden&quot;,
+                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
+                &quot;Inwoner heeft al een ander lopend traject&quot;,
+                &quot;Definitief geen contact kunnen krijgen&quot;,
+                &quot;Geen reactie na eerder contact&quot;,
+                &quot;Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering&quot;,
+                &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
+                &quot;(Budget)advies en/of quick fix&quot;,
+                &quot;Vervolghulp en/of verwijzing financieel&quot;,
+                &quot;Verwijzing zonder toestemming&quot;,
+                &quot;Vervolghulp en/of verwijzing niet financieel&quot;
+            ]
+        },
         &quot;geslacht&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;enum&quot;: [
@@ -1201,13 +1182,32 @@
                 &quot;Onbekend&quot;,
                 &quot;Leeg&quot;
             ]
+        },
+        &quot;EnumSignaalstatus&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Nog niet opgepakt&quot;,
+                &quot;Niet opgepakt: onterecht signaal&quot;,
+                &quot;Inwoner is overleden&quot;,
+                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+                &quot;Niet opgepakt: herhaalde melding&quot;,
+                &quot;Niet opgepakt: andere reden&quot;
+            ]
+        },
+        &quot;EnumDagdeel&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Ochtend&quot;,
+                &quot;Middag&quot;,
+                &quot;Avond&quot;
+            ]
         }
     }
 }
 </code></pre></div>
 <h2 id="voorbeelden">Voorbeelden</h2>
 <h3 id="enkelvoudig-voorbeeld">Enkelvoudig voorbeeld</h3>
-<p>Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.1/enkelvoudigVoorbeeld.json">downloaden</a>.</p>
+<p>Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.1-draft/enkelvoudigVoorbeeld.json">downloaden</a>.</p>
 <div class="highlight"><pre><span></span><code>{
   &quot;codeGegevensleverancier&quot;: &quot;SOFTLEVERANCIER-XYZ&quot;,
   &quot;startdatumLevering&quot;: &quot;2025-01-01&quot;,
@@ -1282,7 +1282,7 @@
 }
 </code></pre></div>
 <h3 id="meervoudig-voorbeeld">Meervoudig voorbeeld</h3>
-<p>Onderstaand een voorbeeld van een meervoudig JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.1/meervoudigVoorbeeld.json">downloaden</a>.</p>
+<p>Onderstaand een voorbeeld van een meervoudig JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.1-draft/meervoudigVoorbeeld.json">downloaden</a>.</p>
 <div class="highlight"><pre><span></span><code>{
   &quot;codeGegevensleverancier&quot;: &quot;SOFTLEVERANCIER-XYZ&quot;,
   &quot;startdatumLevering&quot;: &quot;2025-01-01&quot;,
@@ -1452,7 +1452,7 @@
 }
 </code></pre></div>
 <h3 id="uitgebreid-voorbeeld">Uitgebreid voorbeeld</h3>
-<p>Onderstaand een uitgebreid voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.1/uitgebreidVoorbeeld.json">downloaden</a>.</p>
+<p>Onderstaand een uitgebreid voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.1-draft/uitgebreidVoorbeeld.json">downloaden</a>.</p>
 <div class="highlight"><pre><span></span><code>{
   &quot;codeGegevensleverancier&quot;: &quot;SOFTLEV-2025-ABC&quot;,
   &quot;startdatumLevering&quot;: &quot;2025-04-01&quot;,
