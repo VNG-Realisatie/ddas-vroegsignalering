@@ -44,8 +44,8 @@ vars:
   CRUNCH_UML_DB: "./crunch_uml.db"
   DOCS: "./docs"
   DEFS: "./docs/definities"
-  PUBLISH: "false"
   JSON: "{{.VERSION_DIR}}/{{.JSON_SCHEMA}}"
+  JSON_SCHEMA_FILE: "{{.VERSION_DIR}}/json_schema_Uitwisselmodel.json"
 
 tasks:
   # ==========================================================================
@@ -61,6 +61,9 @@ tasks:
           ["mkdocs"]="https://www.mkdocs.org"
           ["mike"]="https://github.com/jimporter/mike"
           ["jq"]="https://stedolan.github.io/jq"
+          ["node"]="https://nodejs.org"
+          ["ajv"]="https://ajv.js.org"
+          ["python3"]="https://www.python.org"
         )
 
         # Controleer of tools geïnstalleerd zijn
@@ -95,8 +98,8 @@ tasks:
           echo "Error: VERSION cannot be empty."
           exit 1
         fi
-        if [[ ! "{{.VERSION}}" =~ ^v[0-9]+\.[0-9]+(\.[0-9]+)*$ ]]; then
-          echo "Error: Invalid VERSION format. Use v{number}.{number}, e.g., v1.0"
+        if [[ ! "{{.VERSION}}" =~ ^v[0-9]+\.[0-9]+(\.[0-9]+)*(-draft)?$ ]]; then
+          echo "Error: Invalid VERSION format. Use v{number}.{number} or v{number}.{number}-draft, e.g., v1.0"
           exit 1
         fi
         if [ ! -d "{{.VERSION_DIR}}" ]; then
@@ -145,6 +148,7 @@ tasks:
     cmds:
       - echo "Generate JSON Schema '{{.JSON}}' from schema '{{.UM_SCHEMA_VROEGSIGNALERING}}' using root class '{{.ROOT_CLASS_UM_VROEGSIGNALERING}}'..."
       - crunch_uml  -sch {{.UM_SCHEMA_VROEGSIGNALERING}} -d export -t json_schema --output_class_id {{.ROOT_CLASS_UM_VROEGSIGNALERING}} -js_url {{.VROEGSIGNALERING_JSON_SCHEMA_URL}} -f {{.JSON}}
+      - python3 tools/postprocess_json_schema.py "{{.JSON_SCHEMA_FILE}}"
     shell: bash
 
   generate:docs:
@@ -178,11 +182,15 @@ tasks:
   # ==========================================================================
   build:validate:
     desc: "Build the MkDocs documentation in strict mode to check for errors."
-    deps: [generate:docs]
+    deps: [generate:docs, generate:json-schema]
     cmds:
       - echo "Validating MkDocs documentation..."
-      - mkdocs build --strict --site-dir /tmp/ddas-vroegsignalering-site
+      - |
+        mkdocs_python="$(head -n 1 "$(command -v mkdocs)" | sed 's/^#!//')"
+        "$mkdocs_python" -W ignore::DeprecationWarning -W "ignore:pkg_resources is deprecated as an API:UserWarning" -m mkdocs build --strict --site-dir /tmp/ddas-vroegsignalering-site
       - echo "Documentation validation passed."
+      - node tools/validate_json_examples.js "{{.JSON_SCHEMA_FILE}}" "{{.VERSION_DIR}}"
+      - echo "JSON example validation passed."
     shell: bash
 
   build:site:
@@ -205,14 +213,34 @@ tasks:
   # Publish — Documentatie publiceren
   # ==========================================================================
   publish:local:
-    desc: "Build and deploy the documentation locally using MkDocs and Mike. After deployment, use 'mike serve' or 'mkdocs serve' to view the results."
+    desc: "Build and deploy the documentation locally; a -draft VERSION is kept separate from latest."
     deps: [generate:docs]
     cmds:
       - echo "Building and deploying MkDocs and Mike..."
       - mkdocs build --clean
-      - mike deploy "{{.VERSION}}" latest --update-aliases
-      - mike set-default "{{.VERSION}}"
+      - |
+        if [[ "{{.VERSION}}" == *-draft ]]; then
+          mike deploy "{{.VERSION}}"
+        else
+          mike deploy "{{.VERSION}}" latest --update-aliases
+          mike set-default "{{.VERSION}}"
+        fi
       - echo "Documentation deployed. Use 'mike serve' to view results..."
+    shell: bash
+
+  publish:draft:delete:
+    desc: "Remove the current public documentation draft from GitHub Pages."
+    prompt:
+      - "Dit verwijdert draft '{{.VERSION}}' van GitHub Pages. Doorgaan?"
+      - "Weet je het zeker?"
+    cmds:
+      - |
+        if [[ "{{.VERSION}}" != *-draft ]]; then
+          echo "Error: VERSION must end with '-draft' to delete a draft."
+          exit 1
+        fi
+        mike delete "{{.VERSION}}" --push
+      - echo "Draft '{{.VERSION}}' verwijderd van GitHub Pages."
     shell: bash
 
   publish:github:
