@@ -958,12 +958,6 @@
                                             &quot;description&quot;: &quot;De datum waarop de persoon is geboren.&quot;,
                                             &quot;$ref&quot;: &quot;#/$defs/datum&quot;
                                         },
-                                        &quot;Plaatsnaam&quot;: {
-                                            &quot;type&quot;: &quot;string&quot;
-                                        },
-                                        &quot;Straatnaam&quot;: {
-                                            &quot;type&quot;: &quot;string&quot;
-                                        },
                                         &quot;Postcode&quot;: {
                                             &quot;type&quot;: &quot;string&quot;
                                         },
@@ -1055,9 +1049,9 @@
                     }
                 },
                 &quot;required&quot;: [
-                    &quot;gemeentecode&quot;,
                     &quot;teller&quot;,
-                    &quot;aanleverende_organisatie&quot;
+                    &quot;aanleverende_organisatie&quot;,
+                    &quot;gemeentecode&quot;
                 ],
                 &quot;additionalProperties&quot;: false
             },
@@ -1097,6 +1091,23 @@
             &quot;type&quot;: &quot;integer&quot;,
             &quot;description&quot;: &quot;Een geldbedrag in hele euros nauwkeurig.&quot;
         },
+        &quot;EnumSignaalpartner&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met de soorten te onderscheiden Signaalpartners.&quot;,
+            &quot;enum&quot;: [
+                &quot;Energie&quot;,
+                &quot;Huur&quot;,
+                &quot;Hypotheek&quot;,
+                &quot;CAK Zorgverzekeringen&quot;,
+                &quot;Zorg&quot;,
+                &quot;Water&quot;,
+                &quot;DUO&quot;,
+                &quot;Belastingdienst&quot;,
+                &quot;CAK Eigen bijdrage&quot;,
+                &quot;Overige&quot;,
+                &quot;Dienst Toeslagen&quot;
+            ]
+        },
         &quot;EnumSignaalstatus&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;enum&quot;: [
@@ -1117,18 +1128,12 @@
                 &quot;Leeg&quot;
             ]
         },
-        &quot;EnumContactsoort&quot;: {
+        &quot;EnumDagdeel&quot;: {
             &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
             &quot;enum&quot;: [
-                &quot;Mail&quot;,
-                &quot;Brief&quot;,
-                &quot;SMS/Whatsapp&quot;,
-                &quot;Telefoon&quot;,
-                &quot;Huisbezoek&quot;,
-                &quot;Kaartje&quot;,
-                &quot;Administratief&quot;,
-                &quot;Afspraak op locatie&quot;
+                &quot;Ochtend&quot;,
+                &quot;Middag&quot;,
+                &quot;Avond&quot;
             ]
         },
         &quot;EnumEindresultaat&quot;: {
@@ -1152,29 +1157,18 @@
                 &quot;Vervolghulp en/of verwijzing niet financieel&quot;
             ]
         },
-        &quot;EnumDagdeel&quot;: {
+        &quot;EnumContactsoort&quot;: {
             &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
             &quot;enum&quot;: [
-                &quot;Ochtend&quot;,
-                &quot;Middag&quot;,
-                &quot;Avond&quot;
-            ]
-        },
-        &quot;EnumSignaalpartner&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Enumeratie met de soorten te onderscheiden Signaalpartners.&quot;,
-            &quot;enum&quot;: [
-                &quot;Energie&quot;,
-                &quot;Huur&quot;,
-                &quot;Hypotheek&quot;,
-                &quot;CAK Zorgverzekeringen&quot;,
-                &quot;Zorg&quot;,
-                &quot;Water&quot;,
-                &quot;DUO&quot;,
-                &quot;Belastingdienst&quot;,
-                &quot;CAK Eigen bijdrage&quot;,
-                &quot;Overige&quot;,
-                &quot;Dienst Toeslagen&quot;
+                &quot;Mail&quot;,
+                &quot;Brief&quot;,
+                &quot;SMS/Whatsapp&quot;,
+                &quot;Telefoon&quot;,
+                &quot;Huisbezoek&quot;,
+                &quot;Kaartje&quot;,
+                &quot;Administratief&quot;,
+                &quot;Afspraak op locatie&quot;
             ]
         }
     }
