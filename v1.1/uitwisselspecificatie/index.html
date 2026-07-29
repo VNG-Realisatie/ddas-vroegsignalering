@@ -834,7 +834,7 @@
 <p>Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een <a href="https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.1/json_schema_Uitwisselmodel.json">downloadversie</a> beschikbaar.</p>
 <div class="highlight"><pre><span></span><code>{
     &quot;$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
-    &quot;$id&quot;: &quot;https://raw.githubusercontent.com/VNG-Realisatie/ddas/main/v1.0/json_schema_Uitwisselmodel.json&quot;,
+    &quot;$id&quot;: &quot;https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/main/v1.1/json_schema_Uitwisselmodel.json&quot;,
     &quot;title&quot;: &quot;Uitwisselmodel&quot;,
     &quot;type&quot;: &quot;object&quot;,
     &quot;description&quot;: &quot;Het uitwisselmodel is een model dat de gegevens bevat die uitgewisseld worden tussen de verschillende partijen.&quot;,
@@ -950,18 +950,16 @@
                                         &quot;Burgerservicenummer&quot;: {
                                             &quot;type&quot;: &quot;string&quot;
                                         },
-                                        &quot;Voorletters&quot;: {
-                                            &quot;type&quot;: &quot;string&quot;
-                                        },
-                                        &quot;Voorvoegsel&quot;: {
-                                            &quot;type&quot;: &quot;string&quot;
-                                        },
-                                        &quot;Achternaam&quot;: {
-                                            &quot;type&quot;: &quot;string&quot;
+                                        &quot;Geslachtsaanduiding&quot;: {
+                                            &quot;description&quot;: &quot;Een aanduiding die aangeeft dat de ingeschrevene een man of een vrouw is, of dat het geslacht (nog) onbekend is.&quot;,
+                                            &quot;$ref&quot;: &quot;#/$defs/geslacht&quot;
                                         },
                                         &quot;Geboortedatum&quot;: {
                                             &quot;description&quot;: &quot;De datum waarop de persoon is geboren.&quot;,
                                             &quot;$ref&quot;: &quot;#/$defs/datum&quot;
+                                        },
+                                        &quot;Plaatsnaam&quot;: {
+                                            &quot;type&quot;: &quot;string&quot;
                                         },
                                         &quot;Straatnaam&quot;: {
                                             &quot;type&quot;: &quot;string&quot;
@@ -974,17 +972,14 @@
                                         },
                                         &quot;Huisnummertoevoeging&quot;: {
                                             &quot;type&quot;: &quot;string&quot;
-                                        },
-                                        &quot;Plaatsnaam&quot;: {
-                                            &quot;type&quot;: &quot;string&quot;
                                         }
                                     }
                                 }
                             },
                             &quot;required&quot;: [
+                                &quot;ID&quot;,
                                 &quot;signaalpartner&quot;,
-                                &quot;client&quot;,
-                                &quot;ID&quot;
+                                &quot;client&quot;
                             ],
                             &quot;additionalProperties&quot;: false
                         }
@@ -1072,9 +1067,9 @@
     },
     &quot;required&quot;: [
         &quot;einddatumLevering&quot;,
-        &quot;codeGegevensleverancier&quot;,
+        &quot;aanleverdatumEnTijd&quot;,
         &quot;startdatumLevering&quot;,
-        &quot;aanleverdatumEnTijd&quot;
+        &quot;codeGegevensleverancier&quot;
     ],
     &quot;additionalProperties&quot;: false,
     &quot;$defs&quot;: {
@@ -1101,6 +1096,26 @@
         &quot;bedrag&quot;: {
             &quot;type&quot;: &quot;integer&quot;,
             &quot;description&quot;: &quot;Een geldbedrag in hele euros nauwkeurig.&quot;
+        },
+        &quot;EnumSignaalstatus&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Nog niet opgepakt&quot;,
+                &quot;Niet opgepakt: onterecht signaal&quot;,
+                &quot;Inwoner is overleden&quot;,
+                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+                &quot;Niet opgepakt: herhaalde melding&quot;,
+                &quot;Niet opgepakt: andere reden&quot;
+            ]
+        },
+        &quot;geslacht&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Man&quot;,
+                &quot;Vrouw&quot;,
+                &quot;Onbekend&quot;,
+                &quot;Leeg&quot;
+            ]
         },
         &quot;EnumContactsoort&quot;: {
             &quot;type&quot;: &quot;string&quot;,
@@ -1161,17 +1176,6 @@
                 &quot;Overige&quot;,
                 &quot;Dienst Toeslagen&quot;
             ]
-        },
-        &quot;EnumSignaalstatus&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Nog niet opgepakt&quot;,
-                &quot;Niet opgepakt: onterecht signaal&quot;,
-                &quot;Inwoner is overleden&quot;,
-                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
-                &quot;Niet opgepakt: herhaalde melding&quot;,
-                &quot;Niet opgepakt: andere reden&quot;
-            ]
         }
     }
 }
@@ -1213,10 +1217,7 @@
             &quot;type&quot;: &quot;Energie&quot;
           },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;123456789&quot;,
-            &quot;Voorletters&quot;: &quot;A.B.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;van&quot;,
-            &quot;Achternaam&quot;: &quot;Dijk&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1985-06-12&quot;,
             &quot;Straatnaam&quot;: &quot;Voorbeeldstraat&quot;,
             &quot;Postcode&quot;: &quot;1234AB&quot;,
@@ -1298,16 +1299,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Energie&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;111111111&quot;,
-            &quot;Voorletters&quot;: &quot;A.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;de&quot;,
-            &quot;Achternaam&quot;: &quot;Vries&quot;,
-            &quot;Geboortedatum&quot;: &quot;1982-03-14&quot;,
-            &quot;Straatnaam&quot;: &quot;Energielaan&quot;,
-            &quot;Postcode&quot;: &quot;1234AB&quot;,
-            &quot;Huisnummer&quot;: &quot;12&quot;,
-            &quot;Huisnummertoevoeging&quot;: &quot;&quot;,
-            &quot;Plaatsnaam&quot;: &quot;Voorbeeldstad&quot;
+            &quot;Burgerservicenummer&quot;: &quot;111111111&quot;
           }
         },
         {
@@ -1320,16 +1312,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Water&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;111111111&quot;,
-            &quot;Voorletters&quot;: &quot;A.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;de&quot;,
-            &quot;Achternaam&quot;: &quot;Vries&quot;,
-            &quot;Geboortedatum&quot;: &quot;1982-03-14&quot;,
-            &quot;Straatnaam&quot;: &quot;Energielaan&quot;,
-            &quot;Postcode&quot;: &quot;1234AB&quot;,
-            &quot;Huisnummer&quot;: &quot;12&quot;,
-            &quot;Huisnummertoevoeging&quot;: &quot;&quot;,
-            &quot;Plaatsnaam&quot;: &quot;Voorbeeldstad&quot;
+            &quot;Burgerservicenummer&quot;: &quot;111111111&quot;
           }
         }
       ],
@@ -1393,10 +1376,7 @@
           &quot;status&quot;: &quot;Niet opgepakt: herhaalde melding&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Huur&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;222222222&quot;,
-            &quot;Voorletters&quot;: &quot;M.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;&quot;,
-            &quot;Achternaam&quot;: &quot;Bakker&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1990-11-02&quot;,
             &quot;Straatnaam&quot;: &quot;Huurdersplein&quot;,
             &quot;Postcode&quot;: &quot;5678CD&quot;,
@@ -1415,10 +1395,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Zorg&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;333333333&quot;,
-            &quot;Voorletters&quot;: &quot;S.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;van&quot;,
-            &quot;Achternaam&quot;: &quot;Leeuwen&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1976-09-29&quot;,
             &quot;Straatnaam&quot;: &quot;Zorgpad&quot;,
             &quot;Postcode&quot;: &quot;5678CD&quot;,
@@ -1498,16 +1475,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Energie&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;999012345&quot;,
-            &quot;Voorletters&quot;: &quot;J.P.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;van der&quot;,
-            &quot;Achternaam&quot;: &quot;Berg&quot;,
-            &quot;Geboortedatum&quot;: &quot;1978-02-14&quot;,
-            &quot;Straatnaam&quot;: &quot;Coolsingel&quot;,
-            &quot;Postcode&quot;: &quot;3011AD&quot;,
-            &quot;Huisnummer&quot;: &quot;40&quot;,
-            &quot;Huisnummertoevoeging&quot;: &quot;&quot;,
-            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+            &quot;Burgerservicenummer&quot;: &quot;999012345&quot;
           }
         },
         {
@@ -1520,16 +1488,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Huur&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;999012345&quot;,
-            &quot;Voorletters&quot;: &quot;J.P.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;van der&quot;,
-            &quot;Achternaam&quot;: &quot;Berg&quot;,
-            &quot;Geboortedatum&quot;: &quot;1978-02-14&quot;,
-            &quot;Straatnaam&quot;: &quot;Coolsingel&quot;,
-            &quot;Postcode&quot;: &quot;3011AD&quot;,
-            &quot;Huisnummer&quot;: &quot;40&quot;,
-            &quot;Huisnummertoevoeging&quot;: &quot;&quot;,
-            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+            &quot;Burgerservicenummer&quot;: &quot;999012345&quot;
           }
         },
         {
@@ -1542,9 +1501,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;CAK Zorgverzekeringen&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;998877665&quot;,
-            &quot;Voorletters&quot;: &quot;F.M.&quot;,
-            &quot;Achternaam&quot;: &quot;Osman&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1992-08-03&quot;,
             &quot;Straatnaam&quot;: &quot;Blaak&quot;,
             &quot;Postcode&quot;: &quot;3011TA&quot;,
@@ -1563,10 +1520,7 @@
           &quot;status&quot;: &quot;Niet opgepakt: herhaalde melding&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Water&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;887766554&quot;,
-            &quot;Voorletters&quot;: &quot;R.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;de&quot;,
-            &quot;Achternaam&quot;: &quot;Boer&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1965-11-30&quot;,
             &quot;Straatnaam&quot;: &quot;Westersingel&quot;,
             &quot;Postcode&quot;: &quot;3015LC&quot;,
@@ -1584,9 +1538,7 @@
           &quot;status&quot;: &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;DUO&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;776655443&quot;,
-            &quot;Voorletters&quot;: &quot;T.S.&quot;,
-            &quot;Achternaam&quot;: &quot;Nguyen&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;2000-05-19&quot;,
             &quot;Straatnaam&quot;: &quot;Lijnbaan&quot;,
             &quot;Postcode&quot;: &quot;3012EH&quot;,
@@ -1605,15 +1557,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Belastingdienst&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;665544332&quot;,
-            &quot;Voorletters&quot;: &quot;M.A.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;van&quot;,
-            &quot;Achternaam&quot;: &quot;Dijk&quot;,
-            &quot;Geboortedatum&quot;: &quot;1988-01-07&quot;,
-            &quot;Straatnaam&quot;: &quot;Kruiskade&quot;,
-            &quot;Postcode&quot;: &quot;3012EG&quot;,
-            &quot;Huisnummer&quot;: &quot;50&quot;,
-            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+            &quot;Burgerservicenummer&quot;: &quot;665544332&quot;
           }
         },
         {
@@ -1626,10 +1570,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Dienst Toeslagen&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;554433221&quot;,
-            &quot;Voorletters&quot;: &quot;E.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;ter&quot;,
-            &quot;Achternaam&quot;: &quot;Horst&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1973-07-22&quot;,
             &quot;Straatnaam&quot;: &quot;Schiedamsedijk&quot;,
             &quot;Postcode&quot;: &quot;3011ED&quot;,
@@ -1648,9 +1589,7 @@
           &quot;status&quot;: &quot;Inwoner is overleden&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Hypotheek&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;443322110&quot;,
-            &quot;Voorletters&quot;: &quot;W.F.&quot;,
-            &quot;Achternaam&quot;: &quot;Pietersen&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1950-12-01&quot;,
             &quot;Straatnaam&quot;: &quot;Mathenesserlaan&quot;,
             &quot;Postcode&quot;: &quot;3014HA&quot;,
@@ -1668,10 +1607,7 @@
           &quot;status&quot;: &quot;Niet opgepakt: andere reden&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;CAK Eigen bijdrage&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;332211009&quot;,
-            &quot;Voorletters&quot;: &quot;G.H.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;in &#39;t&quot;,
-            &quot;Achternaam&quot;: &quot;Veld&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1960-04-18&quot;,
             &quot;Straatnaam&quot;: &quot;Heemraadssingel&quot;,
             &quot;Postcode&quot;: &quot;3021DD&quot;,
@@ -1690,9 +1626,7 @@
           &quot;status&quot;: &quot;Niet opgepakt: onterecht signaal&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Overige&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;221100998&quot;,
-            &quot;Voorletters&quot;: &quot;B.&quot;,
-            &quot;Achternaam&quot;: &quot;Kaplan&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1995-09-14&quot;,
             &quot;Straatnaam&quot;: &quot;Nieuwe Binnenweg&quot;,
             &quot;Postcode&quot;: &quot;3015BE&quot;,
@@ -1711,15 +1645,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Zorg&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;665544332&quot;,
-            &quot;Voorletters&quot;: &quot;M.A.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;van&quot;,
-            &quot;Achternaam&quot;: &quot;Dijk&quot;,
-            &quot;Geboortedatum&quot;: &quot;1988-01-07&quot;,
-            &quot;Straatnaam&quot;: &quot;Kruiskade&quot;,
-            &quot;Postcode&quot;: &quot;3012EG&quot;,
-            &quot;Huisnummer&quot;: &quot;50&quot;,
-            &quot;Plaatsnaam&quot;: &quot;Rotterdam&quot;
+            &quot;Burgerservicenummer&quot;: &quot;665544332&quot;
           }
         }
       ],
@@ -1943,15 +1869,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Energie&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;112233445&quot;,
-            &quot;Voorletters&quot;: &quot;C.L.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;den&quot;,
-            &quot;Achternaam&quot;: &quot;Hartog&quot;,
-            &quot;Geboortedatum&quot;: &quot;1984-06-25&quot;,
-            &quot;Straatnaam&quot;: &quot;Hofweg&quot;,
-            &quot;Postcode&quot;: &quot;2511AA&quot;,
-            &quot;Huisnummer&quot;: &quot;3&quot;,
-            &quot;Plaatsnaam&quot;: &quot;Den Haag&quot;
+            &quot;Burgerservicenummer&quot;: &quot;112233445&quot;
           }
         },
         {
@@ -1964,9 +1882,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Huur&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;556677889&quot;,
-            &quot;Voorletters&quot;: &quot;K.&quot;,
-            &quot;Achternaam&quot;: &quot;Ibrahim&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1990-03-11&quot;,
             &quot;Straatnaam&quot;: &quot;Loosduinsekade&quot;,
             &quot;Postcode&quot;: &quot;2571AB&quot;,
@@ -1985,10 +1901,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Water&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;778899001&quot;,
-            &quot;Voorletters&quot;: &quot;N.J.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;van&quot;,
-            &quot;Achternaam&quot;: &quot;Vliet&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1970-12-09&quot;,
             &quot;Straatnaam&quot;: &quot;Prins Mauritslaan&quot;,
             &quot;Postcode&quot;: &quot;2582LT&quot;,
@@ -2007,15 +1920,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Dienst Toeslagen&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;112233445&quot;,
-            &quot;Voorletters&quot;: &quot;C.L.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;den&quot;,
-            &quot;Achternaam&quot;: &quot;Hartog&quot;,
-            &quot;Geboortedatum&quot;: &quot;1984-06-25&quot;,
-            &quot;Straatnaam&quot;: &quot;Hofweg&quot;,
-            &quot;Postcode&quot;: &quot;2511AA&quot;,
-            &quot;Huisnummer&quot;: &quot;3&quot;,
-            &quot;Plaatsnaam&quot;: &quot;Den Haag&quot;
+            &quot;Burgerservicenummer&quot;: &quot;112233445&quot;
           }
         }
       ],
@@ -2142,9 +2047,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Zorg&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;990011223&quot;,
-            &quot;Voorletters&quot;: &quot;S.W.&quot;,
-            &quot;Achternaam&quot;: &quot;Mulder&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1998-10-15&quot;,
             &quot;Straatnaam&quot;: &quot;Stadhuisplein&quot;,
             &quot;Postcode&quot;: &quot;1315HR&quot;,
@@ -2162,10 +2065,7 @@
           &quot;status&quot;: &quot;Nog niet opgepakt&quot;,
           &quot;signaalpartner&quot;: { &quot;type&quot;: &quot;Hypotheek&quot; },
           &quot;client&quot;: {
-            &quot;Burgerservicenummer&quot;: &quot;880022334&quot;,
-            &quot;Voorletters&quot;: &quot;P.J.&quot;,
-            &quot;Voorvoegsel&quot;: &quot;van den&quot;,
-            &quot;Achternaam&quot;: &quot;Broek&quot;,
+            &quot;Geslachtsaanduiding&quot;: &quot;Onbekend&quot;,
             &quot;Geboortedatum&quot;: &quot;1975-03-28&quot;,
             &quot;Straatnaam&quot;: &quot;Grote Markt&quot;,
             &quot;Postcode&quot;: &quot;1315JC&quot;,
