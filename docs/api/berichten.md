@@ -6,11 +6,11 @@ De technische beschrijving van de API is in het volgende OAS3-bestand beschreven
 
 <details><summary>Toon OAS3 beschrijving</summary>
 ``` { .yaml .copy }
-{!../v1.0/DDAS-SHV.yaml!}
+{!../v1.1/DDAS-SHV.yaml!}
 ```
 </details>
 
-- [Klik hier om het bestand te downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/main/v1.0/DDAS-SHV.yaml)  
+- [Klik hier om het bestand te downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/main/v1.1/DDAS-SHV.yaml)  
 
 
 ## Vroegsignaleringsgegevens
@@ -19,11 +19,11 @@ De technische beschrijving van de API is in het volgende OAS3-bestand beschreven
 
 <details><summary>Toon OAS3 beschrijving</summary>
 ``` { .yaml .copy }
-{!../v1.0/DDAS-VS.yaml!}
+{!../v1.1/DDAS-VS.yaml!}
 ```
 </details>
 
-- [Klik hier om het bestand te downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.0/DDAS-VS.yaml)  
+- [Klik hier om het bestand te downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/main/v1.1/DDAS-VS.yaml)  
 
 
 Hieronder worden de berichten die in het OAS-bestand technisch beschreven zijn, toegelicht.
@@ -31,7 +31,7 @@ Hieronder worden de berichten die in het OAS-bestand technisch beschreven zijn, 
 
 ## Encoding
 
-Conform de specificaties voor de bestandsuitwisseling voor [schuldhulpverlening](https://vng-realisatie.github.io/ddas/v1.0/uitwisselspecificatie/) en [vroegsignalering](https://vng-realisatie.github.io/ddas-vroegsignalering/v1.0/uitwisselspecificatie/), is de encoding van de berichten UTF-8.
+Conform de specificaties voor de bestandsuitwisseling voor [schuldhulpverlening](https://vng-realisatie.github.io/ddas/latest/uitwisselspecificatie/) en [vroegsignalering](https://vng-realisatie.github.io/ddas-vroegsignalering/latest/uitwisselspecificatie/), is de encoding van de berichten UTF-8.
 
 
 ## Vraagbericht (request)
