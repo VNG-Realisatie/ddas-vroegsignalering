@@ -1000,9 +1000,9 @@
                                 }
                             },
                             &quot;required&quot;: [
-                                &quot;signaalpartner&quot;,
                                 &quot;client&quot;,
-                                &quot;ID&quot;
+                                &quot;ID&quot;,
+                                &quot;signaalpartner&quot;
                             ],
                             &quot;additionalProperties&quot;: false
                         }
@@ -1080,8 +1080,8 @@
                     }
                 },
                 &quot;required&quot;: [
-                    &quot;gemeentecode&quot;,
                     &quot;teller&quot;,
+                    &quot;gemeentecode&quot;,
                     &quot;aanleverendeOrganisatie&quot;
                 ],
                 &quot;additionalProperties&quot;: false
@@ -1169,6 +1169,14 @@
                 &quot;Zorg&quot;
             ]
         },
+        &quot;EnumDagdeel&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Ochtend&quot;,
+                &quot;Middag&quot;,
+                &quot;Avond&quot;
+            ]
+        },
         &quot;EnumContactsoort&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
@@ -1183,14 +1191,6 @@
                 &quot;Overige&quot;,
                 &quot;SMS/Whatsapp&quot;,
                 &quot;Telefoon&quot;
-            ]
-        },
-        &quot;EnumDagdeel&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Ochtend&quot;,
-                &quot;Middag&quot;,
-                &quot;Avond&quot;
             ]
         },
         &quot;EnumSignaalstatus&quot;: {
