@@ -149,6 +149,26 @@ tasks:
       - echo "Generate JSON Schema '{{.JSON}}' from schema '{{.UM_SCHEMA_VROEGSIGNALERING}}' using root class '{{.ROOT_CLASS_UM_VROEGSIGNALERING}}'..."
       - crunch_uml  -sch {{.UM_SCHEMA_VROEGSIGNALERING}} -d export -t json_schema --output_class_id {{.ROOT_CLASS_UM_VROEGSIGNALERING}} -js_url {{.VROEGSIGNALERING_JSON_SCHEMA_URL}} -f {{.JSON}}
       - python3 tools/postprocess_json_schema.py "{{.JSON_SCHEMA_FILE}}"
+      - |
+        # Crunch UML zet rolnamen in de 'required'-lijst om naar kleine letters
+        # (getVerplichteAttributen in crunch_uml/renderers/jinja2renderer.py). Daardoor komt
+        # 'aanleverendeOrganisatie' als 'aanleverendeorganisatie' in het schema en matcht die
+        # nooit met de gelijknamige property. Zolang dat niet in crunch_uml is opgelost,
+        # herstellen we de schrijfwijze hier.
+        python3 - "{{.JSON_SCHEMA_FILE}}" <<'PYEOF'
+        import sys
+        from pathlib import Path
+
+        FOUT = '"aanleverendeorganisatie"'
+        GOED = '"aanleverendeOrganisatie"'
+
+        pad = Path(sys.argv[1])
+        tekst = pad.read_text(encoding="utf-8")
+        aantal = tekst.count(FOUT)
+        if aantal:
+            pad.write_text(tekst.replace(FOUT, GOED), encoding="utf-8")
+        print(f"Rolnaam in required-lijst hersteld: {aantal}x 'aanleverendeorganisatie' -> 'aanleverendeOrganisatie'.")
+        PYEOF
     shell: bash
 
   generate:docs:

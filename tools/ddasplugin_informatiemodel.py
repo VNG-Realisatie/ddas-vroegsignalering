@@ -1,4 +1,5 @@
 import logging
+import re
 
 import crunch_uml.util as util
 from crunch_uml.db import Attribute, Class
@@ -18,6 +19,44 @@ LEVERING_ID = "EAID_DAB09055_A5A6_4ff4_A158_21B20567B888"
 SCHULDEN_ID = "EAID_93E12A3E_71E3_431e_9871_BF6075EAAEF1"
 CONTACTPERSOON_ID = "EAID_B9287881_AD66_4396_A629_ED5FE9196316"
 GESLACHT_ENUM_ID = "EAID_5868306F_8B4E_4cd0_A47E_D171DAE493D5"
+
+# Enumeraties waarvan de waarden alfabetisch gesorteerd moeten worden. Enumeraties die
+# hier niet in staan (zoals EnumDagdeel en Geslachtsaanduiding) houden de volgorde uit
+# het bronmodel, omdat die volgorde daar betekenis heeft.
+ALFABETISCH_TE_SORTEREN_ENUMS = [
+    "EnumSignaalpartner",
+    "EnumContactsoort",
+    "EnumEindresultaat",
+    "EnumSignaalstatus",
+]
+
+
+def sorteer_enumeratiewaarden(package, enum_namen):
+    """Sorteer de literals van de opgegeven enumeraties alfabetisch.
+
+    De sleutel negeert hoofdletters en leestekens aan het begin van een waarde, zodat
+    bijvoorbeeld '(Budget)advies en/of quick fix' onder de B valt en niet vooraan komt.
+    """
+
+    def sorteersleutel(literal):
+        naam = str(literal.name)
+        return (re.sub(r"^[^0-9a-z]+", "", naam.casefold()), naam.casefold())
+
+    te_sorteren = {naam.strip().lower() for naam in enum_namen}
+    gevonden = set()
+    for enumeratie in package.enumerations:
+        naam = str(enumeratie.name).strip().lower()
+        if naam not in te_sorteren:
+            continue
+        enumeratie.literals.sort(key=sorteersleutel)
+        gevonden.add(naam)
+        logger.info(f"Enumeratie {enumeratie.name} alfabetisch gesorteerd.")
+
+    ontbrekend = te_sorteren - gevonden
+    if ontbrekend:
+        msg = f"Kan niet sorteren: de volgende enumeraties ontbreken in het model: {sorted(ontbrekend)}."
+        logger.error(msg)
+        raise CrunchException(msg)
 
 
 class DDASPluginInformatiemodel(Plugin):
@@ -72,6 +111,10 @@ class DDASPluginInformatiemodel(Plugin):
                 f"Enumeratie 'geslacht' met EAID {GESLACHT_ENUM_ID} ontbreekt in het bronmodel."
             )
         kopie.enumerations.append(geslacht_enum.get_copy(kopie))
+
+        # Sorteren gebeurt vóór schema_to.add(), zodat de literals in gesorteerde
+        # volgorde worden weggeschreven en ook de generatoren die volgorde aanhouden.
+        sorteer_enumeratiewaarden(kopie, ALFABETISCH_TE_SORTEREN_ENUMS)
 
         logger.info(f"Adding copy to schema {schema_to.schema_id}.")
         schema_to.add(kopie, recursive=True)

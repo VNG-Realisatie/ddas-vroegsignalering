@@ -13,6 +13,15 @@ VROEGSIGNAALZAAK_ID = "EAID_1AA67F0D_3B94_48a3_A037_A2ACC6D61CF0"  # 839017B2-0F
 UITWISSELMODEL_ID = "EAID_6b4326e3_eb4e_41d2_902b_44ff06604f63"
 CLIENT_ID = "EAID_DAF09055_A5A6_4ff4_A158_21B20567B296"
 AANLEVERENDEORGANISATIE = "EAID_3109FEF3_A1CB_4f50_800B_376A18465F9F"
+CONTACTPERSONEN_ASSOCIATIE_ID = "EAID_98E54A02_6094_44ba_927B_2F06691C90BD"
+
+# Associaties waarvan de rolnaam in het bronmodel aan de dst-kant staat in plaats van
+# aan de src-kant. Zonder src_role valt crunch_uml terug op util.getMeervoud(), en die
+# kent de regel voor open lettergrepen niet (persoon -> personen). Dat leverde de
+# foutieve property 'contactpersoonen' op in het JSON-schema.
+SRC_ROLE_OVERRIDES = {
+    CONTACTPERSONEN_ASSOCIATIE_ID: "contactpersonen",
+}
 TRAJECTEN_SORT_ORDER = [
     'signaalpartner',
     'vroegsinaalzaak'
@@ -50,6 +59,25 @@ class DDASPluginUitwisselmodel(Plugin):
                             association.order = sort_order.index(dst_name) + 1
                         else:
                             association.order = 100
+
+        # Herstel de rolnamen die anders automatisch (en fout) worden afgeleid
+        gevonden_overrides = set()
+        for clazz in kopie.classes:
+            for association in clazz.uitgaande_associaties:
+                src_role = SRC_ROLE_OVERRIDES.get(association.id)
+                if src_role:
+                    association.src_role = src_role
+                    gevonden_overrides.add(association.id)
+                    logger.info(f"Rolnaam van associatie {association.id} gezet op '{src_role}'.")
+
+        ontbrekend = set(SRC_ROLE_OVERRIDES) - gevonden_overrides
+        if ontbrekend:
+            msg = (
+                "Kan de rolnaam niet corrigeren: de volgende associaties ontbreken in het"
+                f" bronmodel: {sorted(ontbrekend)}."
+            )
+            logger.error(msg)
+            raise CrunchException(msg)
 
 
         # Now add the Class Uitwisselmodel
@@ -152,7 +180,7 @@ class DDASPluginUitwisselmodel(Plugin):
             dst_class_id=AANLEVERENDEORGANISATIE,
             dst_mult_start="1",
             dst_mult_end="1",
-            src_role="aanleverende_organisatie",
+            src_role="aanleverendeOrganisatie",
             definitie="De organisatie die de gegevens volgens het uitwisselmodel aanlevert.",
             order=1,
         )
