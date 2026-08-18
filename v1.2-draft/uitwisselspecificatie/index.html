@@ -869,7 +869,7 @@
                         &quot;description&quot;: &quot;Code van de gemeente names wie de levering is gedaan.&quot;,
                         &quot;type&quot;: &quot;string&quot;
                     },
-                    &quot;aanleverende_organisatie&quot;: {
+                    &quot;aanleverendeOrganisatie&quot;: {
                         &quot;type&quot;: &quot;object&quot;,
                         &quot;description&quot;: &quot;Organisatie de data aanlevert aan het CBS. Het kan hier gaan om de gemeente zelf, of een partij die namens de gemeente uitvoering geeft aan de afhandeling van vroegsignalen. &quot;,
                         &quot;properties&quot;: {
@@ -1001,8 +1001,8 @@
                             },
                             &quot;required&quot;: [
                                 &quot;signaalpartner&quot;,
-                                &quot;ID&quot;,
-                                &quot;client&quot;
+                                &quot;client&quot;,
+                                &quot;ID&quot;
                             ],
                             &quot;additionalProperties&quot;: false
                         }
@@ -1020,15 +1020,15 @@
                                     &quot;description&quot;: &quot;De datum waarop de matching wordt uitgevoerd.&quot;,
                                     &quot;$ref&quot;: &quot;#/$defs/datum&quot;
                                 },
-                                &quot;startdatum_matchtingperiode&quot;: {
+                                &quot;startdatumMatchtingperiode&quot;: {
                                     &quot;description&quot;: &quot;De matchingperiode is het tijdvak waarover de matching plaatsvindt. Hier de startdatum van de matching, die binnen de matchingsperiode valt. &quot;,
                                     &quot;$ref&quot;: &quot;#/$defs/datum&quot;
                                 },
-                                &quot;datum_opgepakt&quot;: {
+                                &quot;datumOpgepakt&quot;: {
                                     &quot;description&quot;: &quot;De datum waarop de gemeente de zaak heeft opgepakt.&quot;,
                                     &quot;$ref&quot;: &quot;#/$defs/datum&quot;
                                 },
-                                &quot;einddatum_matchingperiode&quot;: {
+                                &quot;einddatumMatchingperiode&quot;: {
                                     &quot;description&quot;: &quot;De matchingperiode is het tijdvak waarover de matching plaatsvindt. Hier de einddatum van de matching, die binnen de matchingsperiode valt. \n&quot;,
                                     &quot;$ref&quot;: &quot;#/$defs/datum&quot;
                                 },
@@ -1082,7 +1082,7 @@
                 &quot;required&quot;: [
                     &quot;gemeentecode&quot;,
                     &quot;teller&quot;,
-                    &quot;aanleverende_organisatie&quot;
+                    &quot;aanleverendeOrganisatie&quot;
                 ],
                 &quot;additionalProperties&quot;: false
             },
@@ -1092,9 +1092,9 @@
     },
     &quot;required&quot;: [
         &quot;startdatumLevering&quot;,
-        &quot;einddatumLevering&quot;,
+        &quot;aanleverdatumEnTijd&quot;,
         &quot;codeGegevensleverancier&quot;,
-        &quot;aanleverdatumEnTijd&quot;
+        &quot;einddatumLevering&quot;
     ],
     &quot;additionalProperties&quot;: false,
     &quot;$defs&quot;: {
@@ -1122,14 +1122,6 @@
             &quot;type&quot;: &quot;integer&quot;,
             &quot;description&quot;: &quot;Een geldbedrag in hele euros nauwkeurig.&quot;
         },
-        &quot;EnumDagdeel&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Ochtend&quot;,
-                &quot;Middag&quot;,
-                &quot;Avond&quot;
-            ]
-        },
         &quot;geslacht&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;enum&quot;: [
@@ -1139,67 +1131,78 @@
                 &quot;Leeg&quot;
             ]
         },
-        &quot;EnumSignaalstatus&quot;: {
+        &quot;EnumEindresultaat&quot;: {
             &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
             &quot;enum&quot;: [
-                &quot;Nog niet opgepakt&quot;,
-                &quot;Niet opgepakt: onterecht signaal&quot;,
+                &quot;(Budget)advies en/of quick fix&quot;,
+                &quot;Definitief geen contact kunnen krijgen&quot;,
+                &quot;Geen reactie na eerder contact&quot;,
+                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
+                &quot;Inwoner heeft al een ander lopend traject&quot;,
+                &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
                 &quot;Inwoner is overleden&quot;,
-                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+                &quot;Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering&quot;,
+                &quot;Niet opgepakt: andere reden&quot;,
                 &quot;Niet opgepakt: herhaalde melding&quot;,
-                &quot;Niet opgepakt: andere reden&quot;
-            ]
-        },
-        &quot;EnumContactsoort&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
-            &quot;enum&quot;: [
-                &quot;Mail&quot;,
-                &quot;Brief&quot;,
-                &quot;SMS/Whatsapp&quot;,
-                &quot;Telefoon&quot;,
-                &quot;Huisbezoek&quot;,
-                &quot;Kaartje&quot;,
-                &quot;Administratief&quot;,
-                &quot;Afspraak op locatie&quot;
+                &quot;Niet opgepakt: onterecht signaal&quot;,
+                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+                &quot;Vervolghulp en/of verwijzing financieel&quot;,
+                &quot;Vervolghulp en/of verwijzing niet financieel&quot;,
+                &quot;Verwijzing zonder toestemming&quot;
             ]
         },
         &quot;EnumSignaalpartner&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;description&quot;: &quot;Enumeratie met de soorten te onderscheiden Signaalpartners.&quot;,
             &quot;enum&quot;: [
+                &quot;Belastingdienst&quot;,
+                &quot;CAK Eigen bijdrage&quot;,
+                &quot;CAK Zorgverzekeringen&quot;,
+                &quot;Dienst Toeslagen&quot;,
+                &quot;DUO&quot;,
                 &quot;Energie&quot;,
                 &quot;Huur&quot;,
                 &quot;Hypotheek&quot;,
-                &quot;CAK Zorgverzekeringen&quot;,
-                &quot;Zorg&quot;,
-                &quot;Water&quot;,
-                &quot;DUO&quot;,
-                &quot;Belastingdienst&quot;,
-                &quot;CAK Eigen bijdrage&quot;,
                 &quot;Overige&quot;,
-                &quot;Dienst Toeslagen&quot;
+                &quot;Water&quot;,
+                &quot;Zorg&quot;
             ]
         },
-        &quot;EnumEindresultaat&quot;: {
+        &quot;EnumContactsoort&quot;: {
             &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
+            &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
             &quot;enum&quot;: [
+                &quot;Administratief&quot;,
+                &quot;Afspraak op locatie&quot;,
+                &quot;Brief&quot;,
+                &quot;Huisbezoek&quot;,
+                &quot;Kaartje&quot;,
+                &quot;Mail&quot;,
+                &quot;Onbekend&quot;,
+                &quot;Overige&quot;,
+                &quot;SMS/Whatsapp&quot;,
+                &quot;Telefoon&quot;
+            ]
+        },
+        &quot;EnumDagdeel&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Ochtend&quot;,
+                &quot;Middag&quot;,
+                &quot;Avond&quot;
+            ]
+        },
+        &quot;EnumSignaalstatus&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
+                &quot;Inwoner is overleden&quot;,
+                &quot;Niet opgepakt: andere reden&quot;,
                 &quot;Niet opgepakt: herhaalde melding&quot;,
                 &quot;Niet opgepakt: onterecht signaal&quot;,
-                &quot;Inwoner is overleden&quot;,
-                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
-                &quot;Niet opgepakt: andere reden&quot;,
-                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
-                &quot;Inwoner heeft al een ander lopend traject&quot;,
-                &quot;Definitief geen contact kunnen krijgen&quot;,
-                &quot;Geen reactie na eerder contact&quot;,
-                &quot;Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering&quot;,
-                &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
-                &quot;(Budget)advies en/of quick fix&quot;,
-                &quot;Vervolghulp en/of verwijzing financieel&quot;,
-                &quot;Verwijzing zonder toestemming&quot;,
-                &quot;Vervolghulp en/of verwijzing niet financieel&quot;
+                &quot;Nog niet opgepakt&quot;,
+                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;
             ]
         }
     }
@@ -1217,7 +1220,7 @@
     {
       &quot;teller&quot;: 1,
       &quot;gemeentecode&quot;: &quot;0344&quot;,
-      &quot;aanleverende_organisatie&quot;: {
+      &quot;aanleverendeOrganisatie&quot;: {
         &quot;naam&quot;: &quot;Gemeente Voorbeeldstad&quot;,
         &quot;kvk-nummer&quot;: &quot;12345678&quot;,
         &quot;contactpersonen&quot;: [
@@ -1253,9 +1256,9 @@
         {
           &quot;resultaat&quot;: &quot;(Budget)advies en/of quick fix&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-01-12&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-01-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-01-31&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-01-15&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-01-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-01-31&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-01-15&quot;,
           &quot;vroegsignalen&quot;: [
             {
               &quot;ID&quot;: &quot;VS-2025-0001&quot;
@@ -1292,7 +1295,7 @@
     {
       &quot;teller&quot;: 1,
       &quot;gemeentecode&quot;: &quot;0344&quot;,
-      &quot;aanleverende_organisatie&quot;: {
+      &quot;aanleverendeOrganisatie&quot;: {
         &quot;naam&quot;: &quot;Gemeente Voorbeeldstad&quot;,
         &quot;kvk-nummer&quot;: &quot;12345678&quot;,
         &quot;contactpersonen&quot;: [
@@ -1342,9 +1345,9 @@
         {
           &quot;resultaat&quot;: &quot;Vervolghulp en/of verwijzing financieel&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-01-10&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-01-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-01-31&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-01-11&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-01-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-01-31&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-01-11&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-2025-0001&quot; },
             { &quot;ID&quot;: &quot;VS-2025-0002&quot; }
@@ -1375,7 +1378,7 @@
     {
       &quot;teller&quot;: 2,
       &quot;gemeentecode&quot;: &quot;0363&quot;,
-      &quot;aanleverende_organisatie&quot;: {
+      &quot;aanleverendeOrganisatie&quot;: {
         &quot;naam&quot;: &quot;Gemeente Tweedeplaats&quot;,
         &quot;kvk-nummer&quot;: &quot;87654321&quot;,
         &quot;contactpersonen&quot;: [
@@ -1425,9 +1428,9 @@
         {
           &quot;resultaat&quot;: &quot;Definitief geen contact kunnen krijgen&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-01-23&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-01-15&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-01-31&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-01-24&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-01-15&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-01-31&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-01-24&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-2025-0102&quot; }
           ],
@@ -1462,7 +1465,7 @@
     {
       &quot;teller&quot;: 1,
       &quot;gemeentecode&quot;: &quot;0599&quot;,
-      &quot;aanleverende_organisatie&quot;: {
+      &quot;aanleverendeOrganisatie&quot;: {
         &quot;naam&quot;: &quot;Gemeente Rotterdam&quot;,
         &quot;kvk-nummer&quot;: &quot;24483298&quot;,
         &quot;contactpersonen&quot;: [
@@ -1648,9 +1651,9 @@
         {
           &quot;resultaat&quot;: &quot;Vervolghulp en/of verwijzing financieel&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-04-08&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-04-10&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-04-10&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0001&quot; },
             { &quot;ID&quot;: &quot;VS-RTD-2025-0002&quot; }
@@ -1685,9 +1688,9 @@
         {
           &quot;resultaat&quot;: &quot;(Budget)advies en/of quick fix&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-04-15&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-04-16&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-04-16&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0003&quot; }
           ],
@@ -1703,8 +1706,8 @@
         {
           &quot;resultaat&quot;: &quot;Niet opgepakt: herhaalde melding&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-04-20&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-04-30&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0004&quot; }
           ]
@@ -1712,8 +1715,8 @@
         {
           &quot;resultaat&quot;: &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-04-28&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-04-30&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0005&quot; }
           ]
@@ -1721,9 +1724,9 @@
         {
           &quot;resultaat&quot;: &quot;Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-05-05&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-05-06&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-05-06&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0006&quot; }
           ],
@@ -1745,9 +1748,9 @@
         {
           &quot;resultaat&quot;: &quot;Verwijzing zonder toestemming&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-05-12&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-05-13&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-05-13&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0007&quot; }
           ],
@@ -1769,8 +1772,8 @@
         {
           &quot;resultaat&quot;: &quot;Inwoner is overleden&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-05-18&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-05-31&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0008&quot; }
           ]
@@ -1778,8 +1781,8 @@
         {
           &quot;resultaat&quot;: &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-05-22&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-05-31&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0009&quot; }
           ]
@@ -1787,9 +1790,9 @@
         {
           &quot;resultaat&quot;: &quot;Definitief geen contact kunnen krijgen&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-06-02&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-06-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-06-30&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-06-03&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-06-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-06-30&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-06-03&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0006&quot; },
             { &quot;ID&quot;: &quot;VS-RTD-2025-0011&quot; }
@@ -1830,8 +1833,8 @@
         {
           &quot;resultaat&quot;: &quot;Niet opgepakt: onterecht signaal&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-06-05&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-06-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-06-30&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-06-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-06-30&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-RTD-2025-0010&quot; }
           ]
@@ -1841,7 +1844,7 @@
     {
       &quot;teller&quot;: 2,
       &quot;gemeentecode&quot;: &quot;0518&quot;,
-      &quot;aanleverende_organisatie&quot;: {
+      &quot;aanleverendeOrganisatie&quot;: {
         &quot;naam&quot;: &quot;Stichting Schuldhulp Regio Den Haag&quot;,
         &quot;kvk-nummer&quot;: &quot;55667788&quot;,
         &quot;contactpersonen&quot;: [
@@ -1917,9 +1920,9 @@
         {
           &quot;resultaat&quot;: &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-04-18&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-04-19&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-04-19&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-DH-2025-0001&quot; }
           ],
@@ -1935,9 +1938,9 @@
         {
           &quot;resultaat&quot;: &quot;Vervolghulp en/of verwijzing niet financieel&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-04-18&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-04-30&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-04-20&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-04-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-04-30&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-04-20&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-DH-2025-0002&quot; }
           ],
@@ -1953,9 +1956,9 @@
         {
           &quot;resultaat&quot;: &quot;Geen reactie na eerder contact&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-05-10&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-05-11&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-05-11&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-DH-2025-0003&quot; }
           ],
@@ -1989,8 +1992,8 @@
         {
           &quot;resultaat&quot;: &quot;Inwoner heeft al een ander lopend traject&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-05-25&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-05-01&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-31&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-05-01&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-05-31&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-DH-2025-0001&quot; },
             { &quot;ID&quot;: &quot;VS-DH-2025-0004&quot; }
@@ -2001,7 +2004,7 @@
     {
       &quot;teller&quot;: 3,
       &quot;gemeentecode&quot;: &quot;0034&quot;,
-      &quot;aanleverende_organisatie&quot;: {
+      &quot;aanleverendeOrganisatie&quot;: {
         &quot;naam&quot;: &quot;Gemeente Almere&quot;,
         &quot;kvk-nummer&quot;: &quot;32164027&quot;,
         &quot;contactpersonen&quot;: [
@@ -2062,8 +2065,8 @@
         {
           &quot;resultaat&quot;: &quot;Niet opgepakt: andere reden&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-05-01&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-15&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-15&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-04-15&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-05-15&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-ALM-2025-0001&quot; }
           ]
@@ -2071,9 +2074,9 @@
         {
           &quot;resultaat&quot;: &quot;Vervolghulp en/of verwijzing financieel&quot;,
           &quot;matchingsdatum&quot;: &quot;2025-05-08&quot;,
-          &quot;startdatum_matchtingperiode&quot;: &quot;2025-04-15&quot;,
-          &quot;einddatum_matchingperiode&quot;: &quot;2025-05-15&quot;,
-          &quot;datum_opgepakt&quot;: &quot;2025-05-09&quot;,
+          &quot;startdatumMatchtingperiode&quot;: &quot;2025-04-15&quot;,
+          &quot;einddatumMatchingperiode&quot;: &quot;2025-05-15&quot;,
+          &quot;datumOpgepakt&quot;: &quot;2025-05-09&quot;,
           &quot;vroegsignalen&quot;: [
             { &quot;ID&quot;: &quot;VS-ALM-2025-0002&quot; }
           ],
