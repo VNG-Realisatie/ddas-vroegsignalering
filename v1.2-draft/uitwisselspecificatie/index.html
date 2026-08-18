@@ -1000,9 +1000,9 @@
                                 }
                             },
                             &quot;required&quot;: [
+                                &quot;client&quot;,
                                 &quot;ID&quot;,
-                                &quot;signaalpartner&quot;,
-                                &quot;client&quot;
+                                &quot;signaalpartner&quot;
                             ],
                             &quot;additionalProperties&quot;: false
                         }
@@ -1080,8 +1080,8 @@
                     }
                 },
                 &quot;required&quot;: [
-                    &quot;gemeentecode&quot;,
                     &quot;teller&quot;,
+                    &quot;gemeentecode&quot;,
                     &quot;aanleverendeOrganisatie&quot;
                 ],
                 &quot;additionalProperties&quot;: false
@@ -1091,10 +1091,10 @@
         }
     },
     &quot;required&quot;: [
+        &quot;einddatumLevering&quot;,
         &quot;codeGegevensleverancier&quot;,
-        &quot;aanleverdatumEnTijd&quot;,
         &quot;startdatumLevering&quot;,
-        &quot;einddatumLevering&quot;
+        &quot;aanleverdatumEnTijd&quot;
     ],
     &quot;additionalProperties&quot;: false,
     &quot;$defs&quot;: {
@@ -1130,48 +1130,6 @@
                 &quot;Avond&quot;
             ]
         },
-        &quot;EnumEindresultaat&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
-            &quot;enum&quot;: [
-                &quot;(Budget)advies en/of quick fix&quot;,
-                &quot;Definitief geen contact kunnen krijgen&quot;,
-                &quot;Geen reactie na eerder contact&quot;,
-                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
-                &quot;Inwoner heeft al een ander lopend traject&quot;,
-                &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
-                &quot;Inwoner is overleden&quot;,
-                &quot;Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering&quot;,
-                &quot;Niet opgepakt: andere reden&quot;,
-                &quot;Niet opgepakt: herhaalde melding&quot;,
-                &quot;Niet opgepakt: onterecht signaal&quot;,
-                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
-                &quot;Vervolghulp en/of verwijzing financieel&quot;,
-                &quot;Vervolghulp en/of verwijzing niet financieel&quot;,
-                &quot;Verwijzing zonder toestemming&quot;
-            ]
-        },
-        &quot;geslacht&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Man&quot;,
-                &quot;Vrouw&quot;,
-                &quot;Onbekend&quot;,
-                &quot;Leeg&quot;
-            ]
-        },
-        &quot;EnumSignaalstatus&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;enum&quot;: [
-                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
-                &quot;Inwoner is overleden&quot;,
-                &quot;Niet opgepakt: andere reden&quot;,
-                &quot;Niet opgepakt: herhaalde melding&quot;,
-                &quot;Niet opgepakt: onterecht signaal&quot;,
-                &quot;Nog niet opgepakt&quot;,
-                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;
-            ]
-        },
         &quot;EnumContactsoort&quot;: {
             &quot;type&quot;: &quot;string&quot;,
             &quot;description&quot;: &quot;Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.&quot;,
@@ -1203,6 +1161,48 @@
                 &quot;Overige&quot;,
                 &quot;Water&quot;,
                 &quot;Zorg&quot;
+            ]
+        },
+        &quot;geslacht&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Man&quot;,
+                &quot;Vrouw&quot;,
+                &quot;Onbekend&quot;,
+                &quot;Leeg&quot;
+            ]
+        },
+        &quot;EnumEindresultaat&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;Enumeratie met de soorten Eindresultaten van een Vroegsignaalzaak.&quot;,
+            &quot;enum&quot;: [
+                &quot;(Budget)advies en/of quick fix&quot;,
+                &quot;Definitief geen contact kunnen krijgen&quot;,
+                &quot;Geen reactie na eerder contact&quot;,
+                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
+                &quot;Inwoner heeft al een ander lopend traject&quot;,
+                &quot;Inwoner heeft zelf al betaald/betalingsregeling getroffen&quot;,
+                &quot;Inwoner is overleden&quot;,
+                &quot;Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering&quot;,
+                &quot;Niet opgepakt: andere reden&quot;,
+                &quot;Niet opgepakt: herhaalde melding&quot;,
+                &quot;Niet opgepakt: onterecht signaal&quot;,
+                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;,
+                &quot;Vervolghulp en/of verwijzing financieel&quot;,
+                &quot;Vervolghulp en/of verwijzing niet financieel&quot;,
+                &quot;Verwijzing zonder toestemming&quot;
+            ]
+        },
+        &quot;EnumSignaalstatus&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;enum&quot;: [
+                &quot;Inwoner al bekend bij schuldhulpverlening&quot;,
+                &quot;Inwoner is overleden&quot;,
+                &quot;Niet opgepakt: andere reden&quot;,
+                &quot;Niet opgepakt: herhaalde melding&quot;,
+                &quot;Niet opgepakt: onterecht signaal&quot;,
+                &quot;Nog niet opgepakt&quot;,
+                &quot;Persoon is geen inwoner (meer) in de gemeente&quot;
             ]
         }
     }
