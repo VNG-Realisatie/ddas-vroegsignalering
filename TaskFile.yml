@@ -286,6 +286,7 @@ tasks:
   full-deploy:
     desc: "Execute the entire deployment process: json-schema, and documentation"
     cmds:
+      - task: build:validate
       - task: publish:local
       - echo "Documentation deployment completed."
       - task: generate:json-schema

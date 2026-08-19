@@ -57,7 +57,7 @@
         {
           "resultaat": "Vervolghulp en/of verwijzing financieel",
           "matchingsdatum": "2025-01-10",
-          "startdatumMatchtingperiode": "2025-01-01",
+          "startdatumMatchingperiode": "2025-01-01",
           "einddatumMatchingperiode": "2025-01-31",
           "datumOpgepakt": "2025-01-11",
           "vroegsignalen": [
@@ -140,7 +140,7 @@
         {
           "resultaat": "Definitief geen contact kunnen krijgen",
           "matchingsdatum": "2025-01-23",
-          "startdatumMatchtingperiode": "2025-01-15",
+          "startdatumMatchingperiode": "2025-01-15",
           "einddatumMatchingperiode": "2025-01-31",
           "datumOpgepakt": "2025-01-24",
           "vroegsignalen": [

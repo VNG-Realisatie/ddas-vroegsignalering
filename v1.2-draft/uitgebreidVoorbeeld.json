@@ -193,7 +193,7 @@
         {
           "resultaat": "Vervolghulp en/of verwijzing financieel",
           "matchingsdatum": "2025-04-08",
-          "startdatumMatchtingperiode": "2025-04-01",
+          "startdatumMatchingperiode": "2025-04-01",
           "einddatumMatchingperiode": "2025-04-30",
           "datumOpgepakt": "2025-04-10",
           "vroegsignalen": [
@@ -230,7 +230,7 @@
         {
           "resultaat": "(Budget)advies en/of quick fix",
           "matchingsdatum": "2025-04-15",
-          "startdatumMatchtingperiode": "2025-04-01",
+          "startdatumMatchingperiode": "2025-04-01",
           "einddatumMatchingperiode": "2025-04-30",
           "datumOpgepakt": "2025-04-16",
           "vroegsignalen": [
@@ -248,7 +248,7 @@
         {
           "resultaat": "Niet opgepakt: herhaalde melding",
           "matchingsdatum": "2025-04-20",
-          "startdatumMatchtingperiode": "2025-04-01",
+          "startdatumMatchingperiode": "2025-04-01",
           "einddatumMatchingperiode": "2025-04-30",
           "vroegsignalen": [
             { "ID": "VS-RTD-2025-0004" }
@@ -257,7 +257,7 @@
         {
           "resultaat": "Persoon is geen inwoner (meer) in de gemeente",
           "matchingsdatum": "2025-04-28",
-          "startdatumMatchtingperiode": "2025-04-01",
+          "startdatumMatchingperiode": "2025-04-01",
           "einddatumMatchingperiode": "2025-04-30",
           "vroegsignalen": [
             { "ID": "VS-RTD-2025-0005" }
@@ -266,7 +266,7 @@
         {
           "resultaat": "Inwoner regelt het zelf/hoeft geen hulp vanuit vroegsignalering",
           "matchingsdatum": "2025-05-05",
-          "startdatumMatchtingperiode": "2025-05-01",
+          "startdatumMatchingperiode": "2025-05-01",
           "einddatumMatchingperiode": "2025-05-31",
           "datumOpgepakt": "2025-05-06",
           "vroegsignalen": [
@@ -288,9 +288,9 @@
           ]
         },
         {
-          "resultaat": "Verwijzing zonder toestemming",
+          "resultaat": "Verwijzing zonder tussenkomst inwoner",
           "matchingsdatum": "2025-05-12",
-          "startdatumMatchtingperiode": "2025-05-01",
+          "startdatumMatchingperiode": "2025-05-01",
           "einddatumMatchingperiode": "2025-05-31",
           "datumOpgepakt": "2025-05-13",
           "vroegsignalen": [
@@ -314,7 +314,7 @@
         {
           "resultaat": "Inwoner is overleden",
           "matchingsdatum": "2025-05-18",
-          "startdatumMatchtingperiode": "2025-05-01",
+          "startdatumMatchingperiode": "2025-05-01",
           "einddatumMatchingperiode": "2025-05-31",
           "vroegsignalen": [
             { "ID": "VS-RTD-2025-0008" }
@@ -323,7 +323,7 @@
         {
           "resultaat": "Inwoner al bekend bij schuldhulpverlening",
           "matchingsdatum": "2025-05-22",
-          "startdatumMatchtingperiode": "2025-05-01",
+          "startdatumMatchingperiode": "2025-05-01",
           "einddatumMatchingperiode": "2025-05-31",
           "vroegsignalen": [
             { "ID": "VS-RTD-2025-0009" }
@@ -332,7 +332,7 @@
         {
           "resultaat": "Definitief geen contact kunnen krijgen",
           "matchingsdatum": "2025-06-02",
-          "startdatumMatchtingperiode": "2025-06-01",
+          "startdatumMatchingperiode": "2025-06-01",
           "einddatumMatchingperiode": "2025-06-30",
           "datumOpgepakt": "2025-06-03",
           "vroegsignalen": [
@@ -375,7 +375,7 @@
         {
           "resultaat": "Niet opgepakt: onterecht signaal",
           "matchingsdatum": "2025-06-05",
-          "startdatumMatchtingperiode": "2025-06-01",
+          "startdatumMatchingperiode": "2025-06-01",
           "einddatumMatchingperiode": "2025-06-30",
           "vroegsignalen": [
             { "ID": "VS-RTD-2025-0010" }
@@ -462,7 +462,7 @@
         {
           "resultaat": "Inwoner heeft zelf al betaald/betalingsregeling getroffen",
           "matchingsdatum": "2025-04-18",
-          "startdatumMatchtingperiode": "2025-04-01",
+          "startdatumMatchingperiode": "2025-04-01",
           "einddatumMatchingperiode": "2025-04-30",
           "datumOpgepakt": "2025-04-19",
           "vroegsignalen": [
@@ -480,7 +480,7 @@
         {
           "resultaat": "Vervolghulp en/of verwijzing niet financieel",
           "matchingsdatum": "2025-04-18",
-          "startdatumMatchtingperiode": "2025-04-01",
+          "startdatumMatchingperiode": "2025-04-01",
           "einddatumMatchingperiode": "2025-04-30",
           "datumOpgepakt": "2025-04-20",
           "vroegsignalen": [
@@ -498,7 +498,7 @@
         {
           "resultaat": "Geen reactie na eerder contact",
           "matchingsdatum": "2025-05-10",
-          "startdatumMatchtingperiode": "2025-05-01",
+          "startdatumMatchingperiode": "2025-05-01",
           "einddatumMatchingperiode": "2025-05-31",
           "datumOpgepakt": "2025-05-11",
           "vroegsignalen": [
@@ -534,7 +534,7 @@
         {
           "resultaat": "Inwoner heeft al een ander lopend traject",
           "matchingsdatum": "2025-05-25",
-          "startdatumMatchtingperiode": "2025-05-01",
+          "startdatumMatchingperiode": "2025-05-01",
           "einddatumMatchingperiode": "2025-05-31",
           "vroegsignalen": [
             { "ID": "VS-DH-2025-0001" },
@@ -607,7 +607,7 @@
         {
           "resultaat": "Niet opgepakt: andere reden",
           "matchingsdatum": "2025-05-01",
-          "startdatumMatchtingperiode": "2025-04-15",
+          "startdatumMatchingperiode": "2025-04-15",
           "einddatumMatchingperiode": "2025-05-15",
           "vroegsignalen": [
             { "ID": "VS-ALM-2025-0001" }
@@ -616,7 +616,7 @@
         {
           "resultaat": "Vervolghulp en/of verwijzing financieel",
           "matchingsdatum": "2025-05-08",
-          "startdatumMatchtingperiode": "2025-04-15",
+          "startdatumMatchingperiode": "2025-04-15",
           "einddatumMatchingperiode": "2025-05-15",
           "datumOpgepakt": "2025-05-09",
           "vroegsignalen": [

@@ -4,7 +4,7 @@
 ### AanleverendeOrganisatie
 > **Definitie AanleverendeOrganisatie:** 
 >
-> Organisatie de data aanlevert aan het CBS. Het kan hier gaan om de gemeente zelf, of een partij die namens de gemeente uitvoering geeft aan de afhandeling van vroegsignalen.
+> Organisatie die de data aanlevert aan het CBS. Het kan hier gaan om de gemeente zelf, of een partij die namens de gemeente uitvoering geeft aan de afhandeling van vroegsignalen.
 
 ??? info "Kenmerken Model AanleverendeOrganisatie"
     | Eigenschap | Waarde |
@@ -77,7 +77,7 @@ Attributen van objecttype Contactpoging
 | Attribute | Datatype | Description |
 | :--- | :--- | :--- |
 | soort | EnumContactsoort |  |
-| bereikt | boolean | Er is succesvol contact met de client gemaakt. |
+| bereikt | boolean | Er is succesvol contact met de cliënt gemaakt. |
 | datum | Date |  |
 | dagdeel | EnumDagdeel | Ochtend, middag of avond |
 
@@ -132,7 +132,7 @@ Attributen van objecttype Vroegsignaal
 | Attribute | Datatype | Description |
 | :--- | :--- | :--- |
 | crisissignaal | boolean | Betreft het een crisis? |
-| warmeOverdracht | boolean | Er is al contact met persoon. Betreft verzoek deze persoon op te pakken in het kader van vroegsignalering. |
+| warmeOverdracht | boolean | Er is al contact met de persoon. Betreft verzoek deze persoon op te pakken in het kader van vroegsignalering. |
 | bedrag | bedrag |  |
 | ontstaansdatum | Date |  |
 | signaaldatum | Date | Datum waarop de signaalpartner het signaal heeft verstuurd. |
@@ -143,7 +143,7 @@ Attributen van objecttype Vroegsignaal
 ### Vroegsignaalzaak
 > **Definitie Vroegsignaalzaak:** 
 >
-> Een Vroegsignaalzaak is procesmatige eenheid binnen de gemeentelijke organisatie waarin de behandeling van één of meerdere vroegsigna(a)len is/zijn ondergebracht. De vroegsignaalzaak omvat alle handelingen die de gemeente verricht naar aanleiding van het ontvangen vroegsignaal, zoals het vastleggen van het signaal, het uitvoeren van een eerste beoordeling, het leggen van contact met de inwoner, het registreren van contactpogingen en -resultaten, en het eventueel toeleiden naar schuldhulpverlening of andere passende ondersteuning.
+> Een Vroegsignaalzaak is een procesmatige eenheid binnen de gemeentelijke organisatie waarin de behandeling van één of meerdere vroegsignalen is ondergebracht. De vroegsignaalzaak omvat alle handelingen die de gemeente verricht naar aanleiding van het ontvangen vroegsignaal, zoals het vastleggen van het signaal, het uitvoeren van een eerste beoordeling, het leggen van contact met de inwoner, het registreren van contactpogingen en -resultaten, en het eventueel toeleiden naar schuldhulpverlening of andere passende ondersteuning.
 
 ??? info "Kenmerken Model Vroegsignaalzaak"
     | Eigenschap | Waarde |
@@ -163,9 +163,9 @@ Attributen van objecttype Vroegsignaalzaak
 | :--- | :--- | :--- |
 | resultaat | EnumEindresultaat |  |
 | matchingsdatum | Date | De datum waarop de matching wordt uitgevoerd. |
-| startdatumMatchtingperiode | Date | De matchingperiode is het tijdvak waarover de matching plaatsvindt. Hier de startdatum van de matching, die binnen de matchingsperiode valt. |
+| startdatumMatchingperiode | Date | De matchingperiode is het tijdvak waarover de matching plaatsvindt. Hier de startdatum van de matching, die binnen de matchingperiode valt. |
 | datumOpgepakt | Date | De datum waarop de gemeente de zaak heeft opgepakt. |
-| einddatumMatchingperiode | Date | De matchingperiode is het tijdvak waarover de matching plaatsvindt. Hier de einddatum van de matching, die binnen de matchingsperiode valt. |
+| einddatumMatchingperiode | Date | De matchingperiode is het tijdvak waarover de matching plaatsvindt. Hier de einddatum van de matching, die binnen de matchingperiode valt. |
 
 
 
@@ -208,7 +208,7 @@ Attributen van objecttype Client
 ### EnumContactsoort
 > **Definitie EnumContactsoort:** 
 >
-> Enumeratie met daarin de soorten onderscheiden contactsoorten bij een contactpoging.
+> Enumeratie met daarin de te onderscheiden contactsoorten bij een contactpoging.
 
 Het enumeratie EnumContactsoort kent de volgende waarden:
 
@@ -217,7 +217,7 @@ Het enumeratie EnumContactsoort kent de volgende waarden:
 * **Brief**: Een fysieke brief, vaak met uitleg over de achterstand en het hulpaanbod, verzonden per post.
 * **Huisbezoek**: Een persoonlijke contactpoging aan huis, al dan niet aangekondigd, om direct met de inwoner in gesprek te gaan.
 * **Kaartje**: Een informatief of uitnodigend kaartje dat bij de inwoner thuis wordt achtergelaten, bijvoorbeeld bij een gemist huisbezoek.
-* **Mail**: Contact via e-mail, Contact via e-mail, zowel individueel en bulkmatig verzonden berichten.
+* **Mail**: Contact via e-mail, zowel individueel als bulkmatig verzonden berichten.
 * **Onbekend**: 
 * **Overige**: 
 * **SMS/Whatsapp**: Een tekstbericht verstuurd via sms, WhatsApp of andere digitale berichtendienst.
@@ -286,14 +286,14 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 > * Berekening van de beslagvrije voet.
 * **Definitief geen contact kunnen krijgen**: Als het voor het afsluiten van de melding niet is gelukt om in contact te komen met de inwoner. De inwoner reageert niet op de contactpoging(en).
 * **Geen reactie na eerder contact**: 
-> Er is in eerste instantie contact is met de inwoner. Vervolgens lukt het niet meer om contact te krijgen.
+> Er is in eerste instantie contact geweest met de inwoner. Vervolgens lukt het niet meer om contact te krijgen.
 > Bijvoorbeeld: de inwoner komt niet op de afspraak, is telefonisch onbereikbaar of reageert niet op e-mails of WhatsApp-berichten.
 * **Inwoner al bekend bij schuldhulpverlening**: Een inwoner is al bekend bij schuldhulpverlening (als particulier of als (ex-)ondernemer). Vanuit vroegsignalering is er contact geweest met de betrokken schuldhulpverlener. Deze neemt contact op met de schuldeiser en inwoner.
 * **Inwoner heeft al een ander lopend traject**: 
 > Uit eerder contact met de inwoner is bekend dat de inwoner al hulpverlening ontvangt, anders dan schuldhulpverlening. Dit kan zijn bij een externe netwerkpartner of bij een ander onderdeel van het sociaal domein.
 > Wanneer de betrokken hulpverlener het signaal overneemt en verdere opvolging doet, wordt de melding binnen vroegsignalering afgesloten met het resultaat: *‘inwoner heeft al een ander lopend traject’.*
 > **Voorwaarde: afstemming tussen vroegsignalering en betrokken hulpverlener**
-> Vroegsignalering neemt contact op de betrokken hulpverlener. Zij spreken af wie de opvolging doet:
+> Vroegsignalering neemt contact op met de betrokken hulpverlener. Zij spreken af wie de opvolging doet:
 >
 > * **Optie 1:** De betrokken hulpverlener neemt contact op met de inwoner en eventueel de schuldeiser.
 >   De vroegsignalering blijft niet actief betrokken en ontvangt mogelijk alleen een terugkoppeling.
@@ -302,7 +302,7 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 >   → Eindresultaat: afhankelijk van de uitkomst van het contact. In de notities kan worden vermeld dat de inwoner ook andere hulp ontvangt, maar het resultaat is **niet** *‘inwoner heeft al een ander lopend traject’.*
 >
 > **Let op:** Een bewindvoerder wordt niet beschouwd als betrokken hulpverlener, maar als een verlengde van de inwoner zelf.
-* **Inwoner heeft zelf al betaald/betalingsregeling getroffen**: Wanneer de inwoner al een oplossing blijkt te hebben voor de betalingsachterstand op het moment dat ervan uit vroegsignalering contact is met de inwoner. Hij/zij heeft al betaald of een betalingsregeling getroffen.
+* **Inwoner heeft zelf al betaald/betalingsregeling getroffen**: Wanneer de inwoner al een oplossing blijkt te hebben voor de betalingsachterstand op het moment dat er vanuit vroegsignalering contact is met de inwoner. Hij/zij heeft al betaald of een betalingsregeling getroffen.
 * **Inwoner is overleden**: 
 > Inwoner is overleden, hierbij kan het nodig zijn om aan het achtergebleven huishouden/de erven een hulpaanbod te doen. Dit is bijvoorbeeld relevant als nabestaanden nog op het adres wonen en afsluiting van water of energie ongewenst is.
 > Al contact met nabestaanden? Registreer desondanks dit resultaat. Zo wordt de vastelastenpartner op de hoogte gebracht.
@@ -317,7 +317,7 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 > Tijdens het contactmoment kunnen (algemene) informatie en tips zijn gegeven, zonder in te gaan op de persoonlijke situatie.
 > Er wordt meestal geen opvolging gegeven aan dit contactmoment.
 * **Niet opgepakt: andere reden**: 
-> Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeente kunnen de redenen voor zichzelf wel bijhouden.
+> Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeenten kunnen de redenen voor zichzelf wel bijhouden.
 > Mogelijke redenen om een melding **niet** op te pakken:
 >
 > * Inwoner verblijft onrechtmatig in Nederland volgens de BRP
@@ -326,7 +326,7 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 > * Als het vanwege een tekort aan personeel niet lukt om een melding op te pakken en contact te leggen met een inwoner.
 > * Als een persoon niet meer op het adres woont en het is onbekend waar diegene wel woont
 >
-> **Verhuizing binnen de gemeente**: woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan in principe op. Als onbekend is waar ieHet eindresultaat hangt dan af van de uitkomst van het contact.
+> **Verhuizing binnen de gemeente**: woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan in principe op. Het eindresultaat hangt dan af van de uitkomst van het contact.
 * **Niet opgepakt: herhaalde melding**: 
 > Een signaal dat niet wordt opgepakt, omdat er recent al een signaal is ontvangen en opgepakt over dezelfde betalingsachterstand van dezelfde vastelastenpartner. De betalingsachterstand is niet hoger geworden. Als de achterstand wel hoger is geworden, moet deze wel worden opgepakt.
 > Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.
@@ -344,13 +344,14 @@ Het enumeratie EnumEindresultaat kent de volgende waarden:
 >
 > * **Al contact gehad met inwoner**: Is de inwoner niet meer woonachtig in de gemeente, maar is er wel (telefonisch) contact geweest? Registreer dan alsnog dit als eindresultaat. Zo wordt de vastelastenpartner op de hoogte gebracht.
 > * **Verhuizing binnen de gemeente**: Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan op. Het eindresultaat hangt dan af van de uitkomst van het contact.
+* **Vervolghulp en/of verwijzing**: Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. Het is onbekend of deze vervolghulp en/of doorverwijzing financieel of niet-financieel van aard is.
 * **Vervolghulp en/of verwijzing financieel**: 
 > Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is financieel: schuldhulpverlening, budgetcoaching of bewindvoering, etc.
 > De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.
 * **Vervolghulp en/of verwijzing niet financieel**: 
 > Hiervan is sprake als er een langer hulptraject wordt ingezet na (afronding van) de vroegsignalering. De vervolghulp en/of doorverwijzing is niet-financieel: maatschappelijk werk, verslavingszorg of gezinszorg etc.
 > De vervolghulp kan binnen de eigen organisatie zijn (zelfs door dezelfde persoon) of een doorverwijzing naar een externe organisatie betekenen. Dit hangt af van wie en welke organisatie de vroegsignalering uitvoert en de beschikbare expertises binnen de organisatie.
-* **Verwijzing zonder toestemming**: Wanneer bij vroegsignalering een inwoner wordt aangemeld bij een andere instantie, zonder dat de inwoner hiervan op de hoogte is of hiervoor toestemming heeft gegeven. Dit gebeurt alleen in uiterste gevallen, wanneer zorg noodzakelijk lijkt. Een voorbeeld hiervan is een aanmelding bij bemoeizorg.
+* **Verwijzing zonder tussenkomst inwoner**: Wanneer bij vroegsignalering een inwoner wordt aangemeld bij een andere instantie, zonder dat de inwoner hiervan op de hoogte is of hiervoor toestemming heeft gegeven. Dit gebeurt alleen in uiterste gevallen, wanneer zorg noodzakelijk lijkt. Een voorbeeld hiervan is een aanmelding bij bemoeizorg.
 
 
 De enumeratie EnumEindresultaat heeft de volgende kenmerken:
@@ -379,7 +380,7 @@ Het enumeratie EnumSignaalpartner kent de volgende waarden:
 * **CAK Eigen bijdrage**: 
 > Achterstand bij het betalen van de Eigen bijdrage in het kader van WLZ, en WMO. De doelgroep voldoet aan deze drie voorwaarden:
 >
-> * Inwoners van de Gemeenten die het incassotraject hebben doorlopen (schriftelijke herinnering, aanmaning, minnelijk deurwaarders traject en telefonische poging tot persoonlijk contact). Het betreft hier achterstanden op gebied van eigen bijdrage Wmo of Wlz, geïncasseerd door het CAK. Het gaat hierbij specifiek om de groep die terugkeert van een minnelijk deurwaarderstraject.
+> * Inwoners van de Gemeenten die het incassotraject hebben doorlopen (schriftelijke herinnering, aanmaning, minnelijk deurwaarderstraject en telefonische poging tot persoonlijk contact). Het betreft hier achterstanden op gebied van eigen bijdrage Wmo of Wlz, geïncasseerd door het CAK. Het gaat hierbij specifiek om de groep die terugkeert van een minnelijk deurwaarderstraject.
 > * Er is nog geen sprake van een gerechtelijke dwangmaatregel. De vroegsignalering gaat vooraf aan de inzet van een gerechtelijke procedure (doorgaans wordt die ingezet bij vorderingen > € 100,= achterstand).
 > * Het lukt CAK niet om contact te krijgen of een betaalafspraak te maken met de klant.
 * **CAK Zorgverzekeringen**: Als de zorgverzekering meer dan 6 maanden niet is betaald, wordt deze door CAK overgenomen.
@@ -418,7 +419,7 @@ Het enumeratie EnumSignaalstatus kent de volgende waarden:
 * **Inwoner al bekend bij schuldhulpverlening**: 
 * **Inwoner is overleden**: Inwoner is overleden, hierbij kan het nodig zijn om aan het achtergebleven huishouden/de erven een hulpaanbod te doen. Dit is bijvoorbeeld relevant als nabestaanden nog op het adres wonen en afsluiting van water of energie ongewenst is.
 * **Niet opgepakt: andere reden**: 
-> Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeente kunnen de redenen voor zichzelf wel bijhouden.
+> Als er een andere reden is dan de hierboven genoemde redenen waarom de melding niet wordt opgepakt. Vastelastenpartners mogen hierbij alleen weten dat de melding niet is opgepakt, maar de specifieke reden daarvoor niet. De gemeenten kunnen de redenen voor zichzelf wel bijhouden.
 > Mogelijke redenen om een melding **niet** op te pakken:
 >
 > * Inwoner verblijft onrechtmatig in Nederland volgens de BRP
@@ -428,7 +429,7 @@ Het enumeratie EnumSignaalstatus kent de volgende waarden:
 > * Als een persoon niet meer op het adres woont en het is onbekend waar diegene wel woont
 >
 > **Verhuizing binnen de gemeente**
-> Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan in principe op. Als onbekend is waar ieHet eindresultaat hangt dan af van de uitkomst van het contact.
+> Woont de persoon niet meer op het adres dat bij het signaal staat, maar nog wel binnen de gemeente? Pak de melding dan in principe op. Het eindresultaat hangt dan af van de uitkomst van het contact.
 * **Niet opgepakt: herhaalde melding**: 
 > Een signaal dat niet wordt opgepakt, omdat er recent al een signaal is ontvangen en opgepakt over dezelfde betalingsachterstand van dezelfde vastelastenpartner. De betalingsachterstand is niet hoger geworden. Als de achterstand wel hoger is geworden, moet deze wel worden opgepakt.
 > Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.

@@ -24,7 +24,7 @@ SRC_ROLE_OVERRIDES = {
 }
 TRAJECTEN_SORT_ORDER = [
     'signaalpartner',
-    'vroegsinaalzaak'
+    'vroegsignaalzaak'
 ]
 
 
@@ -117,7 +117,7 @@ class DDASPluginUitwisselmodel(Plugin):
             id=util.getEAGuid(),
             name="codeGegevensleverancier",
             schema_id=schema_to.schema_id,
-            definitie="Code van de gegevensleverancier (softwareleverancier of hosting partij) die de gegevens voor 1 of meer partijen levert.",
+            definitie="Code van de gegevensleverancier (softwareleverancier of hostingpartij) die de gegevens voor één of meer partijen levert.",
             verplicht=True,
             primitive="AN200",
         )
@@ -151,7 +151,7 @@ class DDASPluginUitwisselmodel(Plugin):
                 id=util.getEAGuid(),
                 name="gemeentecode",
                 schema_id=schema_to.schema_id,
-                definitie="Code van de gemeente names wie de levering is gedaan.",
+                definitie="Code van de gemeente namens wie de levering is gedaan.",
                 verplicht=True,
                 primitive="AN6",
             )

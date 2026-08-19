@@ -124,7 +124,7 @@ components:
           example: "2025-12-31"
         aanleverendeOrganisatie:
           type: string
-          example: "Naam Gegevensleverancier (BKR, Xxllnc)"
+          example: "Naam van de organisaties waarover de gegevens geleverd worden (bijv. Gemeente X of Samenwerkingsorganisatie Y)."
         page:
           type: integer
           minimum: 1
