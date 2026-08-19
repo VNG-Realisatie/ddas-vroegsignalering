@@ -22,10 +22,12 @@ Alle bestanden dienen te worden aangeleverd in [UTF-8-formaat](https://www.forum
 
 Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/###VERSION###/json_schema_Uitwisselmodel.json) beschikbaar.
 
-```
+<details open><summary>Toon JSON-schema</summary>
+``` { .json .copy }
 {!../###VERSION###/json_schema_Uitwisselmodel.json!}
 
 ```
+</details>
 
 ## Voorbeelden
 
@@ -33,25 +35,31 @@ Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook
 
 Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/###VERSION###/enkelvoudigVoorbeeld.json).
 
-```
+<details open><summary>Toon voorbeeldbestand</summary>
+``` { .json .copy }
 {!../###VERSION###/enkelvoudigVoorbeeld.json!}
 
 ```
+</details>
 
 ### Meervoudig voorbeeld
 
 Onderstaand een voorbeeld van een meervoudig JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/###VERSION###/meervoudigVoorbeeld.json).
 
-```
+<details open><summary>Toon voorbeeldbestand</summary>
+``` { .json .copy }
 {!../###VERSION###/meervoudigVoorbeeld.json!}
 
 ```
+</details>
 
 ### Uitgebreid voorbeeld
 
 Onderstaand een uitgebreid voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/###VERSION###/uitgebreidVoorbeeld.json).
 
-```
+<details open><summary>Toon voorbeeldbestand</summary>
+``` { .json .copy }
 {!../###VERSION###/uitgebreidVoorbeeld.json!}
 
 ```
+</details>

@@ -1210,7 +1210,7 @@
 <span class="w">          </span><span class="nt">example</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025-12-31&quot;</span>
 <span class="w">        </span><span class="nt">aanleverendeOrganisatie</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">          </span><span class="nt">example</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Naam</span><span class="nv"> </span><span class="s">Gegevensleverancier</span><span class="nv"> </span><span class="s">(BKR,</span><span class="nv"> </span><span class="s">Xxllnc)&quot;</span>
+<span class="w">          </span><span class="nt">example</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Naam</span><span class="nv"> </span><span class="s">van</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">organisaties</span><span class="nv"> </span><span class="s">waarover</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">gegevens</span><span class="nv"> </span><span class="s">geleverd</span><span class="nv"> </span><span class="s">worden</span><span class="nv"> </span><span class="s">(bijv.</span><span class="nv"> </span><span class="s">Gemeente</span><span class="nv"> </span><span class="s">X</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Samenwerkingsorganisatie</span><span class="nv"> </span><span class="s">Y).&quot;</span>
 <span class="w">        </span><span class="nt">page</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
 <span class="w">          </span><span class="nt">minimum</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
@@ -1405,7 +1405,7 @@
 <p>aanleverperiodeEinddatum (date - startdatum van rapportageperiode, default leeg: gegevensleverancier bepaalt dan einddatum<sup>*</sup>)</p>
 </li>
 <li>
-<p>Aanleverende_organisatie (string - organisatie waarvan de gegevens geleverd worden, default alle; alleen relevant als over meer dan 1 organisatie (gemeente/ schuldhulpverlener) gegevens aangeleverd worden)</p>
+<p>AanleverendeOrganisatie (string - organisatie waarvan de gegevens geleverd worden, default leeg, dan worden alle organisaties geleverd; alleen relevant als over meer dan 1 organisatie (gemeente/ schuldhulpverlener) gegevens aangeleverd worden)</p>
 </li>
 <li>
 <p>page (integer - de gewenste pagina, als er meerdere pagina's aan gegevens zijn; zie ook <a href="../non-functionals/#performance">niet-functionele eisen</a>, default de eerste pagina)</p>
