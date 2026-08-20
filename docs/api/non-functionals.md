@@ -12,7 +12,7 @@ De services moeten beschikbaar zijn op de momenten dat CBS de gegevens verzameld
 ## Performance
 
 De berichtenuitwisseling is synchroon. De API moet daarom binnen de "time-out" tijd reageren op een request. Er is nog te weinig ervaring met het koppelvlak om een goed onderbouwde maximale response-tijd en daaraan gekoppeld een maximaal aantal records.
-Vooralsnog wordt uitgegaan van de volgende maximale aantallen records (vroegsignalen/schuldhulptrajecten):  
+Vooralsnog wordt uitgegaan van de volgende maximale aantallen records (vroegsignalen):  
 
 | Items | Maximaal aantal per bericht |
 |-------|----------------------------|
@@ -24,7 +24,7 @@ Dit gebeurt conform de volgende definities:
 
 | Veld | Betekenis | Waarde |
 |------|-----------|--------|
-| **pageSize** | Het aantal records (schuldhulptrajecten/vroegsignalen) per pagina | integer [min: 1, max: 25.000 of 50.000 (zie hierboven)] |
+| **pageSize** | Het aantal records (vroegsignalen) per pagina | integer [min: 1, max: 25.000 of 50.000 (zie hierboven)] |
 | **currentPage** | De huidige pagina | integer [min: 1] |
 | **totalPages** | Het totaal aantal beschikbare pagina's | integer [min: 1] |
 | **totalRecords** | Het totaal aantal te versturen records (schuldhulptrajecten/vroegsignalen) | integer [min: 0] |
@@ -35,7 +35,8 @@ In het request-bericht van CBS worden dan ook de volgende paginering velden meeg
 | Veld | Betekenis | Waarde | Opmerking |
 |------|-----------|--------|-----------|
 | **page** | De opgevraagde pagina | integer [min: 1] | Als een niet bestaande pagina opgevraagd wordt, wordt de eerste pagina in het response-bericht teruggestuurd, met paginering-gegevens. Als er geen page in het request-bericht zit, maar er wel gepagineerd moet worden, wordt de eerste pagina in het response-bericht gestuurd. |
-| **pageSize** | Het aantal records (schuldhulptrajecten/vroegsignalen) dat in het response-bericht opgenomen mag worden | integer [min: 1, max: zie hierboven] | Als PageSize in het request-bericht zit en er meer records verstuurd moeten worden, **moet** er gebruik gemaakt worden van paginering |
+| **pageSize** | Het aantal records (vroegsignalen) dat in het response-bericht opgenomen mag worden | integer [min: 1, max: zie hierboven] | Als PageSize in het request-bericht zit en er meer records verstuurd moeten worden, **moet** er gebruik gemaakt worden van paginering |
+
 
 
 Om belasting van de productiesystemen te beperken mag een cache gebruikt worden, onder de volgende voorwaarden:

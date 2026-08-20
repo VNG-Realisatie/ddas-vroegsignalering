@@ -47,10 +47,7 @@ Om gebruik te maken van de directory moeten de volgende stappen doorlopen worden
 
 ## Naamsconventie
 
-Gebruik voor het publiceren van services een duidelijke naam, die de functie en afzender van de services bevat. De afspraak is als volgt:
-
-- Voor schuldhulpverleningsgegevens: **DDAS-schuldhulpverlening-ophaal-[gegevensleverancier]**  
-  [gegevensleverancier] is de naam van de leverancier van gegevens (om er zeker van te zijn dat dit tot een unieke naam leidt, is het verstandig dit met het programma DDAS af te stemmen)  
+Gebruik voor het publiceren van services een duidelijke naam, die de functie en afzender van de services bevat. De afspraak is als volgt:  
 
 - Voor vroegsignaleringsgegevens: **DDAS-vroegsignalering-ophaal-[gegevensleverancier]**  
   [gegevensleverancier] is de naam van de leverancier van gegevens (om er zeker van te zijn dat dit tot een unieke naam leidt, is het verstandig dit met het programma DDAS af te stemmen)  
