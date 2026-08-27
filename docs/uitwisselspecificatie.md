@@ -20,11 +20,11 @@ Alle bestanden dienen te worden aangeleverd in [UTF-8-formaat](https://www.forum
 
 ## Uitwisselspecificatie
 
-Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.2-draft/json_schema_Uitwisselmodel.json) beschikbaar.
+Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook een [downloadversie](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.2/json_schema_Uitwisselmodel.json) beschikbaar.
 
 <details open><summary>Toon JSON-schema</summary>
 ``` { .json .copy }
-{!../v1.2-draft/json_schema_Uitwisselmodel.json!}
+{!../v1.2/json_schema_Uitwisselmodel.json!}
 
 ```
 </details>
@@ -33,33 +33,33 @@ Onderstaand de definitie van de uitwisselspecificatie. Van deze definitie is ook
 
 ### Enkelvoudig voorbeeld
 
-Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.2-draft/enkelvoudigVoorbeeld.json).
+Onderstaand een voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.2/enkelvoudigVoorbeeld.json).
 
 <details open><summary>Toon voorbeeldbestand</summary>
 ``` { .json .copy }
-{!../v1.2-draft/enkelvoudigVoorbeeld.json!}
+{!../v1.2/enkelvoudigVoorbeeld.json!}
 
 ```
 </details>
 
 ### Meervoudig voorbeeld
 
-Onderstaand een voorbeeld van een meervoudig JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.2-draft/meervoudigVoorbeeld.json).
+Onderstaand een voorbeeld van een meervoudig JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.2/meervoudigVoorbeeld.json).
 
 <details open><summary>Toon voorbeeldbestand</summary>
 ``` { .json .copy }
-{!../v1.2-draft/meervoudigVoorbeeld.json!}
+{!../v1.2/meervoudigVoorbeeld.json!}
 
 ```
 </details>
 
 ### Uitgebreid voorbeeld
 
-Onderstaand een uitgebreid voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.2-draft/uitgebreidVoorbeeld.json).
+Onderstaand een uitgebreid voorbeeld JSON-bestand conform de uitwisselspecificatie. Dit voorbeeld kun je ook [downloaden](https://raw.githubusercontent.com/VNG-Realisatie/ddas-vroegsignalering/refs/heads/main/v1.2/uitgebreidVoorbeeld.json).
 
 <details open><summary>Toon voorbeeldbestand</summary>
 ``` { .json .copy }
-{!../v1.2-draft/uitgebreidVoorbeeld.json!}
+{!../v1.2/uitgebreidVoorbeeld.json!}
 
 ```
 </details>

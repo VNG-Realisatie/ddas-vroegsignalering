@@ -1,0 +1,167 @@
+{
+  "codeGegevensleverancier": "SOFTLEVERANCIER-XYZ",
+  "startdatumLevering": "2025-01-01",
+  "einddatumLevering": "2025-01-31",
+  "aanleverdatumEnTijd": "2025-02-05T10:15:30Z",
+  "leveringen": [
+    {
+      "teller": 1,
+      "gemeentecode": "0344",
+      "aanleverendeOrganisatie": {
+        "naam": "Gemeente Voorbeeldstad",
+        "kvk-nummer": "12345678",
+        "contactpersonen": [
+          {
+            "naam": "Jan Jansen",
+            "telefoonnummer": "0612345678",
+            "email": "jan.jansen@gemeentevoorbeeldstad.nl",
+            "functietitel": "Beleidsmedewerker Schuldhulpverlening"
+          },
+          {
+            "naam": "Sara Smit",
+            "telefoonnummer": "0623456789",
+            "email": "sara.smit@gemeentevoorbeeldstad.nl",
+            "functietitel": "Casusregisseur Vroegsignalering"
+          }
+        ]
+      },
+      "vroegsignalen": [
+        {
+          "ID": "VS-2025-0001",
+          "crisissignaal": false,
+          "warmeOverdracht": false,
+          "bedrag": 350,
+          "ontstaansdatum": "2024-12-20",
+          "signaaldatum": "2025-01-06",
+          "status": "Nog niet opgepakt",
+          "signaalpartner": { "type": "Energie" },
+          "client": {
+            "burgerservicenummer": "111111111"
+          }
+        },
+        {
+          "ID": "VS-2025-0002",
+          "crisissignaal": true,
+          "warmeOverdracht": true,
+          "bedrag": 980,
+          "ontstaansdatum": "2024-12-05",
+          "signaaldatum": "2025-01-08",
+          "status": "Nog niet opgepakt",
+          "signaalpartner": { "type": "Water" },
+          "client": {
+            "burgerservicenummer": "111111111"
+          }
+        }
+      ],
+      "vroegsignaalzaken": [
+        {
+          "resultaat": "Vervolghulp en/of verwijzing financieel",
+          "matchingsdatum": "2025-01-10",
+          "startdatumMatchingperiode": "2025-01-01",
+          "einddatumMatchingperiode": "2025-01-31",
+          "datumOpgepakt": "2025-01-11",
+          "vroegsignalen": [
+            { "ID": "VS-2025-0001" },
+            { "ID": "VS-2025-0002" }
+          ],
+          "contactpogingen": [
+            {
+              "soort": "Telefoon",
+              "bereikt": false,
+              "datum": "2025-01-12",
+              "dagdeel": "Ochtend"
+            },
+            {
+              "soort": "Brief",
+              "bereikt": false,
+              "datum": "2025-01-13",
+              "dagdeel": "Middag"
+            },
+            {
+              "soort": "Huisbezoek",
+              "bereikt": true,
+              "datum": "2025-01-16",
+              "dagdeel": "Avond"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teller": 2,
+      "gemeentecode": "0363",
+      "aanleverendeOrganisatie": {
+        "naam": "Gemeente Tweedeplaats",
+        "kvk-nummer": "87654321",
+        "contactpersonen": [
+          {
+            "naam": "Pieter Post",
+            "telefoonnummer": "0633333333",
+            "email": "pieter.post@gemeentetweedeplaats.nl",
+            "functietitel": "Coördinator Vroegsignalering"
+          }
+        ]
+      },
+      "vroegsignalen": [
+        {
+          "ID": "VS-2025-0101",
+          "crisissignaal": false,
+          "warmeOverdracht": false,
+          "bedrag": 210,
+          "ontstaansdatum": "2025-01-03",
+          "signaaldatum": "2025-01-18",
+          "status": "Niet opgepakt: herhaalde melding",
+          "signaalpartner": { "type": "Huur" },
+          "client": {
+            "geslachtsaanduiding": "Onbekend",
+            "geboortedatum": "1990-11-02",
+            "postcode": "5678CD",
+            "huisnummer": "5",
+            "huisnummertoevoeging": "bis"          }
+        },
+        {
+          "ID": "VS-2025-0102",
+          "crisissignaal": false,
+          "warmeOverdracht": false,
+          "bedrag": 130,
+          "ontstaansdatum": "2025-01-07",
+          "signaaldatum": "2025-01-22",
+          "status": "Nog niet opgepakt",
+          "signaalpartner": { "type": "Zorg" },
+          "client": {
+            "geslachtsaanduiding": "Onbekend",
+            "geboortedatum": "1976-09-29",
+            "postcode": "5678CD",
+            "huisnummer": "18",
+            "huisnummertoevoeging": ""          }
+        }
+      ],
+      "vroegsignaalzaken": [
+        {
+          "resultaat": "Definitief geen contact kunnen krijgen",
+          "matchingsdatum": "2025-01-23",
+          "startdatumMatchingperiode": "2025-01-15",
+          "einddatumMatchingperiode": "2025-01-31",
+          "datumOpgepakt": "2025-01-24",
+          "vroegsignalen": [
+            { "ID": "VS-2025-0102" }
+          ],
+          "contactpogingen": [
+            {
+              "soort": "SMS/Whatsapp",
+              "bereikt": false,
+              "datum": "2025-01-24",
+              "dagdeel": "Middag"
+            },
+            {
+              "soort": "Telefoon",
+              "bereikt": false,
+              "datum": "2025-01-27",
+              "dagdeel": "Avond"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
