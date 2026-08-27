@@ -442,6 +442,7 @@ Het enumeratie EnumSignaalstatus kent de volgende waarden:
 >
 > Dit eindresultaat wordt teruggekoppeld aan de vastelastenpartner.
 * **Nog niet opgepakt**: De gemeente heeft het signaal nog niet opgepakt.
+* **Opgepakt**: Het signaal is opgepakt en maakt onderdeel uit van een Signaalzaak
 * **Persoon is geen inwoner (meer) in de gemeente**: 
 > Wanneer de inwoner in een andere gemeente staat ingeschreven, geef de melding dan dit eindresultaat. De vastelastenpartner wordt hierdoor automatisch vanuit het systeem geïnformeerd dat de aangemelde klant geen inwoner (meer) is van de gemeente.
 > Deel het signaal – waar mogelijk – vanuit vroegsignalering met de gemeente waar de inwoner **wél** staat ingeschreven. Doe dit telefonisch en/of per (beveiligde) e-mail.
